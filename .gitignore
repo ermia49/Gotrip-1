@@ -1,0 +1,54 @@
+# WordPress Core Files
+app/public/wp-admin/
+app/public/wp-includes/
+app/public/index.php
+app/public/license.txt
+app/public/readme.html
+app/public/wp-*.php
+app/public/xmlrpc.php
+
+# WordPress Config
+app/public/wp-config.php
+app/public/wp-config-sample.php
+
+# Database
+app/sql/
+*.sql
+
+# Logs
+logs/
+*.log
+
+# Local by Flywheel Config
+conf/
+
+# WordPress Plugins (keep themes)
+app/public/wp-content/plugins/
+
+# WordPress Uploads (can be large)
+app/public/wp-content/uploads/
+
+# Cache
+app/public/wp-content/cache/
+app/public/wp-content/w3tc-config/
+
+# Backup files
+*.bak
+*.swp
+*.tmp
+*~
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Node modules (if any)
+node_modules/
+package-lock.json
+
+# Composer
+vendor/

@@ -1,0 +1,30 @@
+# GoTrip Today - Robots.txt Configuration
+# Optimized for SEO - Private Transfers & Chauffeur Services
+
+User-agent: *
+Allow: /
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/cache/
+Disallow: /wp-content/themes/*/inc/
+Disallow: /cgi-bin/
+Disallow: /trackback/
+Disallow: /feed/
+Disallow: /comments/
+Disallow: /?s=
+Disallow: /*?
+Allow: /wp-content/uploads/
+Allow: /wp-content/themes/*/assets/
+
+# Allow Google Images
+User-agent: Googlebot-Image
+Allow: /wp-content/uploads/
+
+# XML Sitemap
+Sitemap: https://yoursite.com/sitemap.xml
+Sitemap: https://yoursite.com/sitemap_index.xml
+
+# Crawl Delay (optional - remove if not needed)
+# User-agent: *
+# Crawl-delay: 10
