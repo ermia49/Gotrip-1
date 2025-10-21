@@ -3,8 +3,8 @@
 
 get_header(); ?>
 
-
-<section class="hero-section bg-dark">    
+<!-- Hero Section with Booking -->
+<section class="hero-section bg-dark position-relative overflow-hidden">    
     <?php gotriptoday_social_icons(); ?>
     <div class="swiper background-swiper">
         <div class="swiper-wrapper h-100">
@@ -28,6 +28,12 @@ get_header(); ?>
 
     <div class="container">
         <div class="row">
+            <div class="col-12 col-lg-8 mx-auto text-center mb-4">
+                <h1 class="display-4 fw-bold text-white mb-3">Premium Transfer & Day Trip Services</h1>
+                <p class="lead text-white-50 mb-0">Experience luxury transportation and unforgettable tours in Frankfurt and beyond</p>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-12 col-sm-12">
                 <ul class="nav forms-tabs mb-3" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
@@ -48,6 +54,42 @@ get_header(); ?>
                 </div>
             </div>
 
+        </div>
+    </div>
+</section>
+
+<!-- Trust Badges Section -->
+<section class="py-4 bg-white border-bottom">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-6 col-md-3">
+                <div class="d-flex flex-column align-items-center">
+                    <i class="ti ti-shield-check text-success mb-2" style="font-size: 2.5rem;"></i>
+                    <h6 class="mb-1 fw-bold">Licensed & Insured</h6>
+                    <p class="text-muted small mb-0">Fully certified</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="d-flex flex-column align-items-center">
+                    <i class="ti ti-clock text-success mb-2" style="font-size: 2.5rem;"></i>
+                    <h6 class="mb-1 fw-bold">24/7 Available</h6>
+                    <p class="text-muted small mb-0">Always ready</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="d-flex flex-column align-items-center">
+                    <i class="ti ti-star text-success mb-2" style="font-size: 2.5rem;"></i>
+                    <h6 class="mb-1 fw-bold">5-Star Rated</h6>
+                    <p class="text-muted small mb-0">Top reviews</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="d-flex flex-column align-items-center">
+                    <i class="ti ti-credit-card text-success mb-2" style="font-size: 2.5rem;"></i>
+                    <h6 class="mb-1 fw-bold">Best Prices</h6>
+                    <p class="text-muted small mb-0">No hidden fees</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -300,7 +342,9 @@ get_header(); ?>
                         adventures worldwide.</p>
                 </div>
 
-                <form id="contactForm" class="me-lg-5" action="#" method="post">
+                <form id="contactForm" class="me-lg-5" action="<?php echo admin_url('admin-ajax.php'); ?>" method="post">
+                    <input type="hidden" name="action" value="submit_contact_form">
+                    <?php wp_nonce_field('contact_form_nonce', 'security'); ?>
                     <div class="contact-form">
                         <div class="row g-4">
                             <div class="col-12 col-md-6">
@@ -310,6 +354,10 @@ get_header(); ?>
                             <div class="col-12 col-md-6">
                                 <input type="email" id="email" class="form-control" name="email"
                                     placeholder="Email Address *" required>
+                            </div>
+                            <div class="col-12">
+                                <input type="tel" id="phone" class="form-control" name="phone"
+                                    placeholder="Phone Number (Optional)">
                             </div>
                             <div class="col-12">
                                 <input type="text" id="subject" class="form-control" name="subject"

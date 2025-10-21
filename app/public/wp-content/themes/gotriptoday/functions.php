@@ -308,3 +308,66 @@ function add_async_defer_attributes($tag, $handle, $src) {
     
     return $tag;
 }
+
+// Contact Form Handler
+add_action('wp_ajax_submit_contact_form', 'handle_contact_form_submission');
+add_action('wp_ajax_nopriv_submit_contact_form', 'handle_contact_form_submission');
+
+function handle_contact_form_submission() {
+    // Verify nonce for security
+    if (!isset($_POST['security']) || !wp_verify_nonce($_POST['security'], 'contact_form_nonce')) {
+        wp_send_json_error(array('message' => 'Security verification failed'));
+        return;
+    }
+    
+    // Sanitize input
+    $name = sanitize_text_field($_POST['name']);
+    $email = sanitize_email($_POST['email']);
+    $phone = isset($_POST['phone']) ? sanitize_text_field($_POST['phone']) : '';
+    $subject = sanitize_text_field($_POST['subject']);
+    $message = sanitize_textarea_field($_POST['message']);
+    
+    // Validate required fields
+    if (empty($name) || empty($email) || empty($subject) || empty($message)) {
+        wp_send_json_error(array('message' => 'Please fill in all required fields'));
+        return;
+    }
+    
+    // Validate email
+    if (!is_email($email)) {
+        wp_send_json_error(array('message' => 'Please enter a valid email address'));
+        return;
+    }
+    
+    // Admin email
+    $admin_email = get_option('admin_email');
+    
+    // Email subject
+    $email_subject = 'Contact Form: ' . $subject;
+    
+    // Email body
+    $email_body = "You have received a new message from your website contact form.\n\n";
+    $email_body .= "Name: $name\n";
+    $email_body .= "Email: $email\n";
+    if (!empty($phone)) {
+        $email_body .= "Phone: $phone\n";
+    }
+    $email_body .= "Subject: $subject\n\n";
+    $email_body .= "Message:\n$message\n";
+    
+    // Email headers
+    $headers = array(
+        'From: ' . get_bloginfo('name') . ' <' . $admin_email . '>',
+        'Reply-To: ' . $name . ' <' . $email . '>',
+        'Content-Type: text/plain; charset=UTF-8'
+    );
+    
+    // Send email
+    $sent = wp_mail($admin_email, $email_subject, $email_body, $headers);
+    
+    if ($sent) {
+        wp_send_json_success(array('message' => 'Thank you! Your message has been sent successfully.'));
+    } else {
+        wp_send_json_error(array('message' => 'Failed to send email. Please try again or contact us directly.'));
+    }
+}
