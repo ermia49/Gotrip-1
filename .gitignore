@@ -28,6 +28,24 @@ app/public/wp-content/plugins/
 # WordPress Uploads (can be large)
 app/public/wp-content/uploads/
 
+# Cache and temp files
+app/public/wp-content/cache/
+app/public/wp-content/wpo-cache*/
+app/public/wp-content/updraft/
+app/public/wp-content/object-cache*.php
+app/public/wp-content/*-old
+app/public/wp-content/.htaccess-old
+
+# Debug and testing files
+app/public/local-xdebuginfo.php
+app/public/check-passengers.php
+app/public/fix-*.php
+
+# Theme - Exclude default/unused themes
+app/public/wp-content/themes/twenty*/
+app/public/wp-content/themes/hello-elementor/
+app/public/wp-content/themes/index.php
+
 # Cache
 app/public/wp-content/cache/
 app/public/wp-content/w3tc-config/
