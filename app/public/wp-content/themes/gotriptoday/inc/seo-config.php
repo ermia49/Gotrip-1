@@ -259,6 +259,66 @@ class GoTrip_SEO_Config {
     }
     
     /**
+     * Generate FAQ Schema
+     */
+    public static function get_faq_schema() {
+        return [
+            '@context' => 'https://schema.org',
+            '@type' => 'FAQPage',
+            'mainEntity' => [
+                [
+                    '@type' => 'Question',
+                    'name' => 'What areas do you service in Germany?',
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => 'We provide premium transfer and chauffeur services throughout Germany, with a primary focus on Frankfurt and surrounding areas including Frankfurt Airport (FRA), Rhine Valley, Heidelberg, Rothenburg, and major cities like Munich, Berlin, and Cologne. We offer airport transfers, city-to-city rides, and private day trips across the entire country.'
+                    ]
+                ],
+                [
+                    '@type' => 'Question',
+                    'name' => 'How far in advance should I book?',
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => 'We recommend booking at least 24-48 hours in advance to ensure vehicle availability and optimal pricing. However, we also accept last-minute bookings subject to availability. For airport transfers during peak travel seasons or major events, we suggest booking 3-5 days ahead.'
+                    ]
+                ],
+                [
+                    '@type' => 'Question',
+                    'name' => 'What payment methods do you accept?',
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => 'We accept all major credit cards (Visa, Mastercard, American Express), bank transfers, and PayPal. Payment can be made online during booking or directly to your driver in cash (Euros only). For corporate clients, we offer invoice billing with NET 30 terms.'
+                    ]
+                ],
+                [
+                    '@type' => 'Question',
+                    'name' => 'What types of vehicles are available?',
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => 'Our premium fleet includes luxury sedans (Mercedes E-Class, BMW 5-Series), executive SUVs (Mercedes V-Class, BMW X5), and spacious vans for groups (Mercedes Sprinter). All vehicles are less than 3 years old, fully licensed, insured, and equipped with Wi-Fi, bottled water, and phone chargers.'
+                    ]
+                ],
+                [
+                    '@type' => 'Question',
+                    'name' => 'Do you track my flight for airport pickups?',
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => 'Yes! We automatically track all flights for airport transfers. If your flight is delayed or arrives early, your driver will adjust the pickup time accordingly at no extra charge. You will receive SMS/WhatsApp updates with your driver\'s contact details and vehicle information.'
+                    ]
+                ],
+                [
+                    '@type' => 'Question',
+                    'name' => 'What is your cancellation policy?',
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => 'Free cancellation up to 24 hours before your scheduled pickup time. Cancellations made less than 24 hours before pickup incur a 50% fee. No-shows or cancellations within 2 hours of pickup are charged 100%. Flight delays and emergencies are handled case-by-case with full transparency.'
+                    ]
+                ]
+            ]
+        ];
+    }
+    
+    /**
      * Output SEO meta tags
      */
     public static function output_meta_tags($page_type = 'home') {
@@ -311,7 +371,8 @@ add_action('wp_head', function() {
         
         $schemas = [
             GoTrip_SEO_Config::get_organization_schema(),
-            GoTrip_SEO_Config::get_service_schema('Private Transfer & Chauffeur Service Marketplace')
+            GoTrip_SEO_Config::get_service_schema('Private Transfer & Chauffeur Service Marketplace'),
+            GoTrip_SEO_Config::get_faq_schema()
         ];
         
         GoTrip_SEO_Config::output_schema($schemas);

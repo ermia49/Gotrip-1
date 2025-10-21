@@ -18,19 +18,18 @@ get_header(); ?>
     </div>
     <!-- Background Slider Navigation -->
     <div class="background-slider-nav d-none d-sm-flex">
-        <div class="background-button-prev">
-            <i class="icon-arrow-left"></i>
-        </div>
-        <div class="background-button-next">
-            <i class="icon-arrow-right"></i>
-        </div>
+        <button class="background-button-prev" type="button" aria-label="<?php esc_attr_e('Previous slide','gotriptoday'); ?>">
+            <span class="icon-arrow-left" aria-hidden="true"></span>
+        </button>
+        <button class="background-button-next" type="button" aria-label="<?php esc_attr_e('Next slide','gotriptoday'); ?>">
+            <span class="icon-arrow-right" aria-hidden="true"></span>
+        </button>
     </div>
 
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-8 mx-auto text-center mb-4">
-                <h1 class="display-4 fw-bold text-white mb-3">Professional Drivers & Comfortable Car Transfer</h1>
-                <p class="lead text-white-50 mb-0">Experience luxury transportation and unforgettable tours in Frankfurt and beyond</p>
+                <h1 class="display-4 fw-bold text-white mb-3"><?php esc_html_e('Professional Drivers & Comfortable Car Transfer', 'gotriptoday'); ?></h1>
             </div>
         </div>
         <div class="row">
@@ -38,13 +37,13 @@ get_header(); ?>
                 <ul class="nav forms-tabs mb-3" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <button class="tab-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1"
-                            type="button" role="tab" aria-controls="tab1" aria-selected="true">Transfer</button>
+                            type="button" role="tab" aria-controls="tab1" aria-selected="true"><?php esc_html_e('Transfer', 'gotriptoday'); ?></button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="tab-link" href="<?php echo home_url('/day-trip'); ?>" type="button">Day Trip</a>
+                        <a class="tab-link" href="<?php echo home_url('/day-trips'); ?>" type="button"><?php esc_html_e('Day Trip', 'gotriptoday'); ?></a>
                     </li>
                 </ul>
-                <div class="tab-content pt-3" id="">
+                <div class="tab-content pt-3" id="booking-tab-content">
                     <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
                         <div class="go_trip_form">
                             <?php get_template_part('partials/content', 'tab1'); ?>
@@ -64,30 +63,30 @@ get_header(); ?>
         <div class="row text-center g-4">
             <div class="col-6 col-md-3">
                 <div class="d-flex flex-column align-items-center">
-                    <i class="ti ti-shield-check text-success mb-2" style="font-size: 2.5rem;"></i>
-                    <h6 class="mb-1 fw-bold">Licensed & Insured</h6>
-                    <p class="text-muted small mb-0">Fully certified</p>
+                    <i class="ti ti-shield-check text-success mb-2" style="font-size: 2.5rem;" aria-hidden="true"></i>
+                    <h6 class="mb-1 fw-bold"><?php esc_html_e('Licensed & Insured', 'gotriptoday'); ?></h6>
+                    <p class="text-muted small mb-0"><?php esc_html_e('Fully certified', 'gotriptoday'); ?></p>
                 </div>
             </div>
             <div class="col-6 col-md-3">
                 <div class="d-flex flex-column align-items-center">
-                    <i class="ti ti-clock text-success mb-2" style="font-size: 2.5rem;"></i>
-                    <h6 class="mb-1 fw-bold">24/7 Available</h6>
-                    <p class="text-muted small mb-0">Always ready</p>
+                    <i class="ti ti-clock text-success mb-2" style="font-size: 2.5rem;" aria-hidden="true"></i>
+                    <h6 class="mb-1 fw-bold"><?php esc_html_e('24/7 Available', 'gotriptoday'); ?></h6>
+                    <p class="text-muted small mb-0"><?php esc_html_e('Always ready', 'gotriptoday'); ?></p>
                 </div>
             </div>
             <div class="col-6 col-md-3">
                 <div class="d-flex flex-column align-items-center">
-                    <i class="ti ti-star text-success mb-2" style="font-size: 2.5rem;"></i>
-                    <h6 class="mb-1 fw-bold">5-Star Rated</h6>
-                    <p class="text-muted small mb-0">Top reviews</p>
+                    <i class="ti ti-star text-success mb-2" style="font-size: 2.5rem;" aria-hidden="true"></i>
+                    <h6 class="mb-1 fw-bold"><?php esc_html_e('5-Star Rated', 'gotriptoday'); ?></h6>
+                    <p class="text-muted small mb-0"><?php esc_html_e('Top reviews', 'gotriptoday'); ?></p>
                 </div>
             </div>
             <div class="col-6 col-md-3">
                 <div class="d-flex flex-column align-items-center">
-                    <i class="ti ti-credit-card text-success mb-2" style="font-size: 2.5rem;"></i>
-                    <h6 class="mb-1 fw-bold">Best Prices</h6>
-                    <p class="text-muted small mb-0">No hidden fees</p>
+                    <i class="ti ti-credit-card text-success mb-2" style="font-size: 2.5rem;" aria-hidden="true"></i>
+                    <h6 class="mb-1 fw-bold"><?php esc_html_e('Best Prices', 'gotriptoday'); ?></h6>
+                    <p class="text-muted small mb-0"><?php esc_html_e('No hidden fees', 'gotriptoday'); ?></p>
                 </div>
             </div>
         </div>
@@ -106,17 +105,17 @@ get_header(); ?>
                 <div class="about-thumbnail">
                     <!-- Shape -->
                     <div class="shape wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1000ms">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/core-img/shape.png" alt="Shape">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/core-img/shape.png" alt="Decorative shape element" loading="lazy">
                     </div>
 
                     <!-- First Image -->
                     <div class="first-img wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1000ms">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-img/7.jpg" alt="First Image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-img/7.jpg" alt="Premium luxury vehicle for Frankfurt airport transfers and Germany day trips" loading="lazy">
                     </div>
 
                     <!-- Second Image -->
                     <div class="second-img wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1000ms">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-img/8.jpg" alt="<?php bloginfo('name'); ?>">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-img/8.jpg" alt="Professional chauffeur service - <?php bloginfo('name'); ?> luxury fleet" loading="lazy">
 
                         <!-- Play Video -->
                         <div class="play-video-btn video-btn" data-video="https://youtu.be/zCSmY_WjvPs">
@@ -128,7 +127,7 @@ get_header(); ?>
 
                     <!-- Third Image -->
                     <div class="third-img wow fadeInUp" data-wow-delay="800ms" data-wow-duration="1000ms">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-img/9.jpg" alt="Image 9">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/bg-img/9.jpg" alt="Comfortable Mercedes-Benz interior for private transfers in Germany" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -207,12 +206,12 @@ get_header(); ?>
                 <h2 class="mb-0 text-white">Book Your Next Day Trips</h2>
             </div>
             <div class="deals-navigation-container">
-                <div class="deals-button-prev">
-                    <i class="icon-arrow-left"></i>
-                </div>
-                <div class="deals-button-next">
-                    <i class="icon-arrow-right"></i>
-                </div>
+                <button class="deals-button-prev" type="button" aria-label="<?php esc_attr_e('Previous slide','gotriptoday'); ?>">
+                    <span class="icon-arrow-left" aria-hidden="true"></span>
+                </button>
+                <button class="deals-button-next" type="button" aria-label="<?php esc_attr_e('Next slide','gotriptoday'); ?>">
+                    <span class="icon-arrow-right" aria-hidden="true"></span>
+                </button>
             </div>
         </div>
 
@@ -281,7 +280,7 @@ get_header(); ?>
             <!-- Featured Destination Card -->
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="featured-destination-card wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1000ms">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/aireport.jpg" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/aireport.jpg" alt="Frankfurt Airport Transfer Service - Premium chauffeur waiting at terminal" loading="lazy">
 
                     <!-- Overlay Content -->
                     <div class="overlay-content d-flex flex-wrap gap-4 align-items-end justify-content-between">
@@ -296,7 +295,7 @@ get_header(); ?>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="featured-destination-card wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1000ms">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/city.jpg" alt="City Tour">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/city.jpg" alt="Frankfurt City Tour - Explore Germany's financial capital in luxury" loading="lazy">
                     <div class="overlay-content d-flex flex-wrap gap-4 align-items-end justify-content-between">
                         <div>
                             <h4 class="text-white">City Tour</h4>
@@ -308,7 +307,7 @@ get_header(); ?>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="featured-destination-card wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1000ms">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/reserve.jpg" alt="Reserve">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/reserve.jpg" alt="Premium vehicle fleet - Mercedes-Benz luxury cars available for booking in Germany" loading="lazy">
                     <div class="overlay-content d-flex flex-wrap gap-4 align-items-end justify-content-between">
                         <div>
                             <h4 class="text-white">Reserve Your Fleet</h4>
@@ -348,24 +347,29 @@ get_header(); ?>
                     <div class="contact-form">
                         <div class="row g-4">
                             <div class="col-12 col-md-6">
-                                <input type="text" id="name" class="form-control" name="name"
-                                    placeholder="Full Name *" required>
+                                <label for="name" class="form-label text-white"><?php esc_html_e('Full Name *','gotriptoday'); ?></label>
+                                <input autocomplete="name" type="text" id="name" class="form-control" name="name"
+                                    placeholder="<?php esc_attr_e('Full Name *','gotriptoday'); ?>" required>
                             </div>
                             <div class="col-12 col-md-6">
-                                <input type="email" id="email" class="form-control" name="email"
-                                    placeholder="Email Address *" required>
+                                <label for="email" class="form-label text-white"><?php esc_html_e('Email Address *','gotriptoday'); ?></label>
+                                <input autocomplete="email" type="email" id="email" class="form-control" name="email"
+                                    placeholder="<?php esc_attr_e('Email Address *','gotriptoday'); ?>" required>
                             </div>
                             <div class="col-12">
-                                <input type="tel" id="phone" class="form-control" name="phone"
-                                    placeholder="Phone Number (Optional)">
+                                <label for="phone" class="form-label text-white"><?php esc_html_e('Phone Number (Optional)','gotriptoday'); ?></label>
+                                <input autocomplete="tel" type="tel" id="phone" class="form-control" name="phone"
+                                    placeholder="<?php esc_attr_e('Phone Number (Optional)','gotriptoday'); ?>">
                             </div>
                             <div class="col-12">
+                                <label for="subject" class="form-label text-white"><?php esc_html_e('Subject *','gotriptoday'); ?></label>
                                 <input type="text" id="subject" class="form-control" name="subject"
-                                    placeholder="Subject *" required>
+                                    placeholder="<?php esc_attr_e('Subject *','gotriptoday'); ?>" required>
                             </div>
                             <div class="col-12">
+                                <label for="message" class="form-label text-white"><?php esc_html_e('Your Message *','gotriptoday'); ?></label>
                                 <textarea name="message" id="message" class="form-control" rows="6"
-                                    placeholder="Your Message *" required></textarea>
+                                    placeholder="<?php esc_attr_e('Your Message *','gotriptoday'); ?>" required></textarea>
                             </div>
                             
                             <!-- reCAPTCHA Badge Info -->
@@ -422,12 +426,12 @@ get_header(); ?>
         </div>
     </div>
     
-    <!-- Divider -->
     <div class="divider"></div>
 </section>
 
-
 <?php get_template_part('partials/home', 'services'); ?>
+
+<?php get_template_part('partials/home', 'faq'); ?>
 
 <!-- Blog Section -->
 <section class="blog-section">
@@ -476,154 +480,10 @@ get_header(); ?>
             ?>
         </div>
     </div>
-    <div class="divider"></div>
+        <div class="divider"></div>
 </section>
 
-<style>
-/* Professional Contact Form Styles - Complete Override */
-.contact-section .contact-form {
-    padding: 40px !important;
-    background-color: rgba(255, 255, 255, 0.95) !important;
-    border-radius: 18px !important;
-}
-
-.contact-section .contact-form .form-control {
-    height: 56px !important;
-    border: 2px solid #e0e0e0 !important;
-    border-radius: 12px !important;
-    padding: 16px 20px !important;
-    font-size: 15px !important;
-    transition: all 0.3s ease !important;
-    background: #fff !important;
-    color: #333 !important;
-    width: 100% !important;
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-.contact-section .contact-form .form-control:focus {
-    border-color: #3cb371 !important;
-    box-shadow: 0 0 0 4px rgba(60, 179, 113, 0.1) !important;
-    background: #fff !important;
-    outline: none !important;
-}
-
-.contact-section .contact-form .form-control::placeholder {
-    color: #999 !important;
-}
-
-.contact-section .contact-form textarea.form-control {
-    height: auto !important;
-    min-height: 150px !important;
-    resize: vertical !important;
-    padding-top: 16px !important;
-}
-
-.contact-section .contact-form .form-group {
-    position: relative;
-    z-index: 1;
-    margin-bottom: 0;
-}
-
-.contact-section .contact-form .form-group label {
-    display: none !important;
-}
-
-.contact-section .submit-btn {
-    padding: 0 !important;
-    background: transparent !important;
-    border-radius: 0 !important;
-    margin-top: 20px;
-}
-
-.contact-section .submit-btn .btn {
-    min-width: 200px !important;
-    height: 56px !important;
-    font-weight: 600 !important;
-    font-size: 16px !important;
-    border-radius: 12px !important;
-    transition: all 0.3s ease !important;
-}
-
-.contact-section .submit-btn .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(60, 179, 113, 0.3);
-}
-
-.contact-section .submit-btn .btn .btn-loader {
-    display: none;
-}
-
-.contact-section .submit-btn .btn.loading .btn-text {
-    display: none;
-}
-
-.contact-section .submit-btn .btn.loading .btn-loader {
-    display: inline-block;
-}
-
-.contact-section .submit-btn .btn:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-}
-
-/* Form Response Messages */
-#formResponse {
-    margin-top: 20px;
-    padding: 16px 20px;
-    border-radius: 12px;
-    font-weight: 500;
-    display: none;
-    animation: slideIn 0.3s ease;
-}
-
-#formResponse.success {
-    background: rgba(60, 179, 113, 0.15);
-    border: 2px solid #3cb371;
-    color: #3cb371;
-    display: block;
-}
-
-#formResponse.error {
-    background: rgba(220, 53, 69, 0.15);
-    border: 2px solid #dc3545;
-    color: #dc3545;
-    display: block;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsive Adjustments */
-@media (max-width: 767px) {
-    .contact-section .contact-form {
-        padding: 30px 20px !important;
-    }
-    
-    .contact-section .contact-form .form-control {
-        height: 50px !important;
-        font-size: 14px !important;
-    }
-    
-    .contact-section .submit-btn .btn {
-        width: 100%;
-        height: 52px !important;
-    }
-    
-    .contact-section .contact-form textarea.form-control {
-        min-height: 120px !important;
-    }
-}
-</style>
+<!-- Blog Section -->
 
 <!-- Contact Section -->
 

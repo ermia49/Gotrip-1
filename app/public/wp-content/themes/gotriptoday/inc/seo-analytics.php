@@ -11,15 +11,17 @@ if (!defined('ABSPATH')) exit;
 
 /**
  * Add Google Analytics 4 (GA4) tracking code
- * Replace 'G-XXXXXXXXXX' with your actual GA4 Measurement ID
+ * Get GA4 ID from wp-config.php or WordPress options
  */
 add_action('wp_head', 'add_google_analytics', 1);
 function add_google_analytics() {
     // Only add on frontend, not in admin
     if (is_admin()) return;
     
-    $ga_id = 'G-XXXXXXXXXX'; // REPLACE WITH YOUR GA4 ID
+    // Get GA4 ID from wp-config.php first, then fallback to options
+    $ga_id = defined('GA4_MEASUREMENT_ID') ? GA4_MEASUREMENT_ID : get_option('ga4_measurement_id', 'G-XXXXXXXXXX');
     
+    // Don't output if not configured
     if (empty($ga_id) || $ga_id === 'G-XXXXXXXXXX') return;
     ?>
     <!-- Google Analytics 4 -->
@@ -35,12 +37,12 @@ function add_google_analytics() {
         
         // Track form submissions
         document.addEventListener('DOMContentLoaded', function() {
-            const forms = document.querySelectorAll('form[action*="booking"], form[action*="quote"]');
+            const forms = document.querySelectorAll('form[action*="booking"], form[action*="quote"], #contactForm');
             forms.forEach(function(form) {
                 form.addEventListener('submit', function() {
                     gtag('event', 'form_submit', {
                         'event_category': 'engagement',
-                        'event_label': 'booking_form'
+                        'event_label': form.id || 'booking_form'
                     });
                 });
             });
