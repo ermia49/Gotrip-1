@@ -29,7 +29,7 @@ get_header(); ?>
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-8 mx-auto text-center mb-4">
-                <h1 class="display-4 fw-bold text-white mb-3">Premium Transfer & Day Trip Services</h1>
+                <h1 class="display-4 fw-bold text-white mb-3">Professional Drivers & Comfortable Car Transfer</h1>
                 <p class="lead text-white-50 mb-0">Experience luxury transportation and unforgettable tours in Frankfurt and beyond</p>
             </div>
         </div>
