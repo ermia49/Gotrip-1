@@ -7,11 +7,15 @@ function day_trips_seo_meta() {
     $page_description = 'Discover unforgettable day trips and tours. Book your adventure with trusted local guides. Premium transportation, expert planning, and memorable experiences.';
     $page_url = home_url($_SERVER['REQUEST_URI']);
     $site_name = get_bloginfo('name');
+    $hero_image = get_template_directory_uri() . '/assets/img/bg-img/day-trips-hero-scenic-coastal-road-mountains.webp';
     
     echo '<meta name="description" content="' . esc_attr($page_description) . '">';
-    echo '<meta name="keywords" content="day trips, tours, travel, adventure, sightseeing, local tours, guided tours, day tours">';
+    echo '<meta name="keywords" content="day trips, tours, travel, adventure, sightseeing, local tours, guided tours, day tours, scenic drives, mountain tours">';
     echo '<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">';
     echo '<link rel="canonical" href="' . esc_url($page_url) . '">';
+    
+    // Preload hero image for performance
+    echo '<link rel="preload" as="image" href="' . esc_url($hero_image) . '" type="image/webp">';
     
     // Open Graph
     echo '<meta property="og:locale" content="en_US">';
@@ -20,11 +24,17 @@ function day_trips_seo_meta() {
     echo '<meta property="og:description" content="' . esc_attr($page_description) . '">';
     echo '<meta property="og:url" content="' . esc_url($page_url) . '">';
     echo '<meta property="og:site_name" content="' . esc_attr($site_name) . '">';
+    echo '<meta property="og:image" content="' . esc_url($hero_image) . '">';
+    echo '<meta property="og:image:width" content="1920">';
+    echo '<meta property="og:image:height" content="1080">';
+    echo '<meta property="og:image:alt" content="Scenic coastal road winding through mountains - Day trips destination">';
     
     // Twitter Card
     echo '<meta name="twitter:card" content="summary_large_image">';
     echo '<meta name="twitter:title" content="' . esc_attr($page_title) . '">';
     echo '<meta name="twitter:description" content="' . esc_attr($page_description) . '">';
+    echo '<meta name="twitter:image" content="' . esc_url($hero_image) . '">';
+    echo '<meta name="twitter:image:alt" content="Scenic coastal road through mountains - Day trips and tours">';
 }
 add_action('wp_head', 'day_trips_seo_meta');
 
@@ -36,7 +46,7 @@ function day_trips_schema_markup() {
         'name' => get_bloginfo('name') . ' - Day Trips',
         'description' => 'Premium day trips and tours with expert guides and comfortable transportation',
         'url' => home_url('/day-trip'),
-        'image' => get_template_directory_uri() . '/assets/img/bg-img/slide1.webp',
+        'image' => get_template_directory_uri() . '/assets/img/bg-img/day-trips-hero-scenic-coastal-road-mountains.webp',
         'address' => array(
             '@type' => 'PostalAddress',
             'addressCountry' => 'US'
@@ -110,41 +120,70 @@ get_header();
     padding: 20px 0;
 }
 
-/* Tab Navigation Responsive */
+/* Tab Navigation - Slider Style Toggle */
 .forms-tabs {
     display: flex;
     justify-content: center;
-    gap: 12px;
     padding: 0;
     margin: 0 auto 30px;
     flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    padding: 6px;
+    position: relative;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: fit-content;
+}
+
+.forms-tabs .nav-item {
+    position: relative;
+    z-index: 2;
 }
 
 .forms-tabs .tab-link {
     display: inline-block;
-    padding: 14px 35px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 14px 40px;
+    background: transparent;
+    border: none;
     border-radius: 50px;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.8);
     font-weight: 600;
     font-size: 16px;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     white-space: nowrap;
+    position: relative;
+    min-width: 140px;
+    text-align: center;
 }
 
 .forms-tabs .tab-link:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.5);
-    transform: translateY(-2px);
+    color: #fff;
 }
 
 .forms-tabs .tab-link.active {
-    background: #3cb371;
-    border-color: #3cb371;
     color: #fff;
-    box-shadow: 0 4px 15px rgba(60, 179, 113, 0.3);
+}
+
+/* Sliding Background */
+.forms-tabs::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: calc(50% - 6px);
+    height: calc(100% - 12px);
+    background: linear-gradient(135deg, #3cb371 0%, #2e9960 100%);
+    border-radius: 50px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+    box-shadow: 0 4px 15px rgba(60, 179, 113, 0.4);
+}
+
+/* Move slider when Day Trip is active */
+.forms-tabs:has(.tab-link.active[href*="day-trip"])::before {
+    transform: translateX(calc(100% + 6px));
 }
 
 /* Hero Heading */
@@ -561,9 +600,26 @@ get_header();
         margin-bottom: 25px;
     }
     
+    .forms-tabs {
+        margin-bottom: 25px;
+        padding: 5px;
+    }
+    
     .forms-tabs .tab-link {
-        padding: 12px 28px;
+        padding: 12px 32px;
         font-size: 15px;
+        min-width: 130px;
+    }
+    
+    .forms-tabs::before {
+        top: 5px;
+        left: 5px;
+        width: calc(50% - 5px);
+        height: calc(100% - 10px);
+    }
+    
+    .forms-tabs:has(.tab-link.active[href*="day-trip"])::before {
+        transform: translateX(calc(100% + 5px));
     }
     
     .hero-search-form {
@@ -631,13 +687,25 @@ get_header();
     }
     
     .forms-tabs {
-        gap: 8px;
         margin-bottom: 20px;
+        padding: 4px;
     }
     
     .forms-tabs .tab-link {
-        padding: 10px 20px;
+        padding: 10px 24px;
         font-size: 14px;
+        min-width: 120px;
+    }
+    
+    .forms-tabs::before {
+        top: 4px;
+        left: 4px;
+        width: calc(50% - 4px);
+        height: calc(100% - 8px);
+    }
+    
+    .forms-tabs:has(.tab-link.active[href*="day-trip"])::before {
+        transform: translateX(calc(100% + 4px));
     }
     
     .hero-search-form {
@@ -747,13 +815,25 @@ get_header();
     }
     
     .forms-tabs {
-        gap: 6px;
-        justify-content: center;
+        margin-bottom: 20px;
+        padding: 4px;
     }
     
     .forms-tabs .tab-link {
-        padding: 9px 18px;
+        padding: 9px 20px;
         font-size: 13px;
+        min-width: 110px;
+    }
+    
+    .forms-tabs::before {
+        top: 4px;
+        left: 4px;
+        width: calc(50% - 4px);
+        height: calc(100% - 8px);
+    }
+    
+    .forms-tabs:has(.tab-link.active[href*="day-trip"])::before {
+        transform: translateX(calc(100% + 4px));
     }
     
     .hero-search-form {
@@ -860,9 +940,25 @@ get_header();
         font-size: 1.2rem;
     }
     
+    .forms-tabs {
+        padding: 4px;
+    }
+    
     .forms-tabs .tab-link {
-        padding: 8px 15px;
+        padding: 8px 18px;
         font-size: 12px;
+        min-width: 100px;
+    }
+    
+    .forms-tabs::before {
+        top: 4px;
+        left: 4px;
+        width: calc(50% - 4px);
+        height: calc(100% - 8px);
+    }
+    
+    .forms-tabs:has(.tab-link.active[href*="day-trip"])::before {
+        transform: translateX(calc(100% + 4px));
     }
     
     .hero-search-form {
@@ -1052,7 +1148,9 @@ a:focus-visible {
     <div class="background-swiper1">
         <div class="h-100">
             <div class="h-100 tour_slide"
-                style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/bg-img/slide1.webp')">
+                style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/bg-img/day-trips-hero-scenic-coastal-road-mountains.webp?v=<?php echo time(); ?>')"
+                role="img"
+                aria-label="Scenic coastal road winding through mountains - Day trips and tours destination">
             </div>
         </div>
     </div>
@@ -1146,102 +1244,6 @@ a:focus-visible {
     </div>
 </section>
 
-<!-- SEO Content Section -->
-<section class="seo-content-section" style="background: #f8f9fa; padding: 50px 0;">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <div class="seo-content" style="background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-                    <h1 style="font-size: 28px; font-weight: 700; color: #161920; margin-bottom: 20px;">Discover Unforgettable Day Trips & Tours</h1>
-                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 15px;">
-                        Explore the world's most amazing destinations with our carefully curated <strong>day trips and tours</strong>. Whether you're seeking adventure, culture, or relaxation, we offer premium experiences with expert local guides and comfortable transportation.
-                    </p>
-                    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 15px;">
-                        Our <a href="<?php echo home_url('/booking-page'); ?>" style="color: #3cb371; font-weight: 600; text-decoration: none;">transfer services</a> ensure you travel in comfort and style. Each tour is designed to provide maximum value and unforgettable memories.
-                    </p>
-                    
-                    <h2 style="font-size: 22px; font-weight: 700; color: #161920; margin-top: 25px; margin-bottom: 15px;">Why Choose Our Day Trips?</h2>
-                    <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
-                        <li style="padding: 8px 0; padding-left: 30px; position: relative; font-size: 15px; color: #555;">
-                            <i class="ti ti-check" style="position: absolute; left: 0; color: #3cb371; font-size: 18px;"></i>
-                            Professional licensed guides with extensive local knowledge
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 30px; position: relative; font-size: 15px; color: #555;">
-                            <i class="ti ti-check" style="position: absolute; left: 0; color: #3cb371; font-size: 18px;"></i>
-                            Premium vehicles with air conditioning and comfort features
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 30px; position: relative; font-size: 15px; color: #555;">
-                            <i class="ti ti-check" style="position: absolute; left: 0; color: #3cb371; font-size: 18px;"></i>
-                            Flexible booking with instant confirmation
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 30px; position: relative; font-size: 15px; color: #555;">
-                            <i class="ti ti-check" style="position: absolute; left: 0; color: #3cb371; font-size: 18px;"></i>
-                            Small group sizes for personalized experiences
-                        </li>
-                    </ul>
-                    
-                    <div style="margin-top: 25px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
-                        <h3 style="font-size: 18px; font-weight: 600; color: #161920; margin-bottom: 15px;">Popular Destinations & Resources</h3>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h4 style="font-size: 16px; font-weight: 600; color: #3cb371; margin-bottom: 10px;">Internal Links</h4>
-                                <ul style="list-style: none; padding: 0;">
-                                    <li style="margin-bottom: 8px;">
-                                        <a href="<?php echo home_url('/'); ?>" style="color: #555; text-decoration: none; font-size: 14px;">
-                                            <i class="ti ti-home" style="color: #3cb371; margin-right: 5px;"></i> Home
-                                        </a>
-                                    </li>
-                                    <li style="margin-bottom: 8px;">
-                                        <a href="<?php echo home_url('/booking-page'); ?>" style="color: #555; text-decoration: none; font-size: 14px;">
-                                            <i class="ti ti-car" style="color: #3cb371; margin-right: 5px;"></i> Airport Transfers
-                                        </a>
-                                    </li>
-                                    <li style="margin-bottom: 8px;">
-                                        <a href="<?php echo home_url('/about'); ?>" style="color: #555; text-decoration: none; font-size: 14px;">
-                                            <i class="ti ti-info-circle" style="color: #3cb371; margin-right: 5px;"></i> About Us
-                                        </a>
-                                    </li>
-                                    <li style="margin-bottom: 8px;">
-                                        <a href="<?php echo home_url('/contact'); ?>" style="color: #555; text-decoration: none; font-size: 14px;">
-                                            <i class="ti ti-mail" style="color: #3cb371; margin-right: 5px;"></i> Contact Us
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <h4 style="font-size: 16px; font-weight: 600; color: #3cb371; margin-bottom: 10px;">Helpful Resources</h4>
-                                <ul style="list-style: none; padding: 0;">
-                                    <li style="margin-bottom: 8px;">
-                                        <a href="https://www.tripadvisor.com" target="_blank" rel="nofollow noopener" style="color: #555; text-decoration: none; font-size: 14px;">
-                                            <i class="ti ti-external-link" style="color: #3cb371; margin-right: 5px;"></i> TripAdvisor Reviews
-                                        </a>
-                                    </li>
-                                    <li style="margin-bottom: 8px;">
-                                        <a href="https://www.lonelyplanet.com" target="_blank" rel="nofollow noopener" style="color: #555; text-decoration: none; font-size: 14px;">
-                                            <i class="ti ti-external-link" style="color: #3cb371; margin-right: 5px;"></i> Travel Guides
-                                        </a>
-                                    </li>
-                                    <li style="margin-bottom: 8px;">
-                                        <a href="https://www.google.com/travel" target="_blank" rel="nofollow noopener" style="color: #555; text-decoration: none; font-size: 14px;">
-                                            <i class="ti ti-external-link" style="color: #3cb371; margin-right: 5px;"></i> Google Travel
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-
-
-
-
 <!-- Tour List Section -->
 <section class="tour-list-section">
     <div class="divider-sm"></div>
@@ -1272,6 +1274,127 @@ a:focus-visible {
         </div>
     </div>
 </section>
+
+<!-- Professional Links Section - Above Footer -->
+<section class="professional-links-section" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); padding: 60px 0; border-top: 1px solid #e9ecef;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="text-center mb-5">
+                    <h2 style="font-size: 32px; font-weight: 700; color: #161920; margin-bottom: 12px;">Explore More with GoTrip Today</h2>
+                    <p style="font-size: 17px; color: #767676; margin: 0;">Your trusted platform for seamless travel experiences across Germany</p>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- Quick Links Column -->
+                    <div class="col-md-6">
+                        <div class="links-card" style="background: #fff; padding: 35px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); height: 100%; transition: all 0.3s ease;">
+                            <div class="d-flex align-items-center mb-4">
+                                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #3cb371 0%, #2e9960 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                                    <i class="ti ti-route" style="font-size: 26px; color: #fff;"></i>
+                                </div>
+                                <h3 style="font-size: 22px; font-weight: 700; color: #161920; margin: 0;">Our Services</h3>
+                            </div>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 16px;">
+                                    <a href="<?php echo home_url('/'); ?>" style="color: #555; text-decoration: none; font-size: 16px; display: flex; align-items: center; padding: 10px; border-radius: 8px; transition: all 0.3s ease;" onmouseover="this.style.background='#f8f9fa'; this.style.paddingLeft='20px';" onmouseout="this.style.background='transparent'; this.style.paddingLeft='10px';">
+                                        <i class="ti ti-home" style="color: #3cb371; margin-right: 12px; font-size: 20px;"></i>
+                                        <span style="font-weight: 500;">Home</span>
+                                    </a>
+                                </li>
+                                <li style="margin-bottom: 16px;">
+                                    <a href="<?php echo home_url('/booking-page'); ?>" style="color: #555; text-decoration: none; font-size: 16px; display: flex; align-items: center; padding: 10px; border-radius: 8px; transition: all 0.3s ease;" onmouseover="this.style.background='#f8f9fa'; this.style.paddingLeft='20px';" onmouseout="this.style.background='transparent'; this.style.paddingLeft='10px';">
+                                        <i class="ti ti-car" style="color: #3cb371; margin-right: 12px; font-size: 20px;"></i>
+                                        <span style="font-weight: 500;">Airport Transfers</span>
+                                    </a>
+                                </li>
+                                <li style="margin-bottom: 16px;">
+                                    <a href="<?php echo home_url('/fleet'); ?>" style="color: #555; text-decoration: none; font-size: 16px; display: flex; align-items: center; padding: 10px; border-radius: 8px; transition: all 0.3s ease;" onmouseover="this.style.background='#f8f9fa'; this.style.paddingLeft='20px';" onmouseout="this.style.background='transparent'; this.style.paddingLeft='10px';">
+                                        <i class="ti ti-steering-wheel" style="color: #3cb371; margin-right: 12px; font-size: 20px;"></i>
+                                        <span style="font-weight: 500;">Fleet Marketplace</span>
+                                    </a>
+                                </li>
+                                <li style="margin-bottom: 16px;">
+                                    <a href="<?php echo home_url('/about'); ?>" style="color: #555; text-decoration: none; font-size: 16px; display: flex; align-items: center; padding: 10px; border-radius: 8px; transition: all 0.3s ease;" onmouseover="this.style.background='#f8f9fa'; this.style.paddingLeft='20px';" onmouseout="this.style.background='transparent'; this.style.paddingLeft='10px';">
+                                        <i class="ti ti-info-circle" style="color: #3cb371; margin-right: 12px; font-size: 20px;"></i>
+                                        <span style="font-weight: 500;">About Us</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo home_url('/contact'); ?>" style="color: #555; text-decoration: none; font-size: 16px; display: flex; align-items: center; padding: 10px; border-radius: 8px; transition: all 0.3s ease;" onmouseover="this.style.background='#f8f9fa'; this.style.paddingLeft='20px';" onmouseout="this.style.background='transparent'; this.style.paddingLeft='10px';">
+                                        <i class="ti ti-mail" style="color: #3cb371; margin-right: 12px; font-size: 20px;"></i>
+                                        <span style="font-weight: 500;">Contact Us</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- External Resources Column -->
+                    <div class="col-md-6">
+                        <div class="links-card" style="background: #fff; padding: 35px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); height: 100%; transition: all 0.3s ease;">
+                            <div class="d-flex align-items-center mb-4">
+                                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                                    <i class="ti ti-world" style="font-size: 26px; color: #fff;"></i>
+                                </div>
+                                <h3 style="font-size: 22px; font-weight: 700; color: #161920; margin: 0;">Travel Resources</h3>
+                            </div>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-bottom: 16px;">
+                                    <a href="https://www.tripadvisor.com" target="_blank" rel="nofollow noopener" style="color: #555; text-decoration: none; font-size: 16px; display: flex; align-items: center; padding: 10px; border-radius: 8px; transition: all 0.3s ease;" onmouseover="this.style.background='#f8f9fa'; this.style.paddingLeft='20px';" onmouseout="this.style.background='transparent'; this.style.paddingLeft='10px';">
+                                        <i class="ti ti-star" style="color: #667eea; margin-right: 12px; font-size: 20px;"></i>
+                                        <span style="font-weight: 500;">TripAdvisor Reviews</span>
+                                        <i class="ti ti-external-link" style="margin-left: auto; font-size: 16px; color: #999;"></i>
+                                    </a>
+                                </li>
+                                <li style="margin-bottom: 16px;">
+                                    <a href="https://www.lonelyplanet.com" target="_blank" rel="nofollow noopener" style="color: #555; text-decoration: none; font-size: 16px; display: flex; align-items: center; padding: 10px; border-radius: 8px; transition: all 0.3s ease;" onmouseover="this.style.background='#f8f9fa'; this.style.paddingLeft='20px';" onmouseout="this.style.background='transparent'; this.style.paddingLeft='10px';">
+                                        <i class="ti ti-book" style="color: #667eea; margin-right: 12px; font-size: 20px;"></i>
+                                        <span style="font-weight: 500;">Lonely Planet Guides</span>
+                                        <i class="ti ti-external-link" style="margin-left: auto; font-size: 16px; color: #999;"></i>
+                                    </a>
+                                </li>
+                                <li style="margin-bottom: 16px;">
+                                    <a href="https://www.google.com/travel" target="_blank" rel="nofollow noopener" style="color: #555; text-decoration: none; font-size: 16px; display: flex; align-items: center; padding: 10px; border-radius: 8px; transition: all 0.3s ease;" onmouseover="this.style.background='#f8f9fa'; this.style.paddingLeft='20px';" onmouseout="this.style.background='transparent'; this.style.paddingLeft='10px';">
+                                        <i class="ti ti-plane" style="color: #667eea; margin-right: 12px; font-size: 20px;"></i>
+                                        <span style="font-weight: 500;">Google Travel</span>
+                                        <i class="ti ti-external-link" style="margin-left: auto; font-size: 16px; color: #999;"></i>
+                                    </a>
+                                </li>
+                                <li style="margin-bottom: 16px;">
+                                    <a href="https://www.germany.travel" target="_blank" rel="nofollow noopener" style="color: #555; text-decoration: none; font-size: 16px; display: flex; align-items: center; padding: 10px; border-radius: 8px; transition: all 0.3s ease;" onmouseover="this.style.background='#f8f9fa'; this.style.paddingLeft='20px';" onmouseout="this.style.background='transparent'; this.style.paddingLeft='10px';">
+                                        <i class="ti ti-map-pin" style="color: #667eea; margin-right: 12px; font-size: 20px;"></i>
+                                        <span style="font-weight: 500;">Germany Tourism</span>
+                                        <i class="ti ti-external-link" style="margin-left: auto; font-size: 16px; color: #999;"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.frankfurt-tourismus.de/en" target="_blank" rel="nofollow noopener" style="color: #555; text-decoration: none; font-size: 16px; display: flex; align-items: center; padding: 10px; border-radius: 8px; transition: all 0.3s ease;" onmouseover="this.style.background='#f8f9fa'; this.style.paddingLeft='20px';" onmouseout="this.style.background='transparent'; this.style.paddingLeft='10px';">
+                                        <i class="ti ti-building-skyscraper" style="color: #667eea; margin-right: 12px; font-size: 20px;"></i>
+                                        <span style="font-weight: 500;">Frankfurt Tourism</span>
+                                        <i class="ti ti-external-link" style="margin-left: auto; font-size: 16px; color: #999;"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bottom CTA -->
+                <div class="text-center mt-5">
+                    <div style="background: linear-gradient(135deg, #3cb371 0%, #2e9960 100%); padding: 30px 40px; border-radius: 16px; box-shadow: 0 8px 30px rgba(60, 179, 113, 0.25);">
+                        <h3 style="font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 10px;">Ready to Start Your Journey?</h3>
+                        <p style="font-size: 16px; color: rgba(255,255,255,0.9); margin-bottom: 20px;">Book your next adventure with trusted providers on our platform</p>
+                        <a href="<?php echo home_url('/booking-page'); ?>" class="btn btn-light" style="padding: 14px 40px; font-weight: 600; font-size: 16px; border-radius: 50px; color: #3cb371; background: #fff; border: none; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s ease; text-decoration: none; display: inline-block;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.1)';">
+                            Book Now <i class="ti ti-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <div class="divider"></div>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/isotope.pkgd.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/flatpickr.min.js"></script>
