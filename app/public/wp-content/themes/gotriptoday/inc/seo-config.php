@@ -329,7 +329,6 @@ class GoTrip_SEO_Config {
         ?>
         <!-- SEO Meta Tags -->
         <meta name="description" content="<?php echo esc_attr($seo['description']); ?>">
-        <meta name="keywords" content="<?php echo esc_attr($seo['keywords']); ?>">
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
         <link rel="canonical" href="<?php echo esc_url($current_url); ?>">
         

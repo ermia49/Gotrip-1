@@ -5,8 +5,8 @@
 add_action('wp_head', function() {
     if (!is_page_template('temp-fleet.php')) return;
     
-    $page_title = 'Marketplace | Compare Frankfurt Transfers & Germany Day Trips';
-    $page_description = 'Discover and book premium transfers and day trips across Frankfurt and Germany. Choose from licensed chauffeurs, executive cars, and curated experiences from trusted providers.';
+    $page_title = 'Premium Fleet: Luxury & Economy Vehicles | Frankfurt Airport Transfers & Germany Chauffeur Service';
+    $page_description = 'Browse our premium fleet of luxury sedans, executive vans, and economy vehicles for Frankfurt airport transfers and Germany chauffeur service. Mercedes S-Class, BMW 7 Series, passenger vans, and budget-friendly options. Professional drivers, 24/7 availability, instant booking.';
     $page_url = home_url($_SERVER['REQUEST_URI']);
     $site_name = get_bloginfo('name');
     ?>
@@ -15,8 +15,7 @@ add_action('wp_head', function() {
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="<?php echo esc_attr($page_description); ?>">
-    <meta name="keywords" content="transfer marketplace, day trip marketplace, book transfers Frankfurt, chauffeur marketplace Germany, private driver Frankfurt, Frankfurt airport transfer, Germany day trips, licensed chauffeurs Germany, executive cars Frankfurt, private transfers Germany, book chauffeur online, compare transfer prices">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="<?php echo esc_url($page_url); ?>">
     
     <!-- Open Graph -->
@@ -32,20 +31,48 @@ add_action('wp_head', function() {
     <meta name="twitter:title" content="<?php echo esc_attr($page_title); ?>">
     <meta name="twitter:description" content="<?php echo esc_attr($page_description); ?>">
     
-    <!-- Schema.org - Service Marketplace -->
+    <!-- Schema.org - Service with Fleet -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Private Transfer & Chauffeur Service Marketplace",
-      "name": "<?php echo esc_js($site_name); ?> Fleet",
+      "@type": "AutoRental",
+      "name": "<?php echo esc_js($site_name); ?> - Premium Fleet Services",
       "description": "<?php echo esc_js($page_description); ?>",
       "url": "<?php echo esc_url($page_url); ?>",
-      "provider": {
-        "@type": "Organization",
-        "name": "<?php echo esc_js($site_name); ?>",
-        "description": "Luxury travel marketplace connecting customers with licensed chauffeurs and premium vehicles for private transfers and day trips"
+      "image": "<?php echo esc_url(get_template_directory_uri() . '/assets/images/logo.png'); ?>",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Frankfurt",
+        "addressRegion": "Hesse",
+        "addressCountry": "DE"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "50.1109",
+        "longitude": "8.6821"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Frankfurt",
+          "containedIn": {
+            "@type": "Country",
+            "name": "Germany"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Heidelberg"
+        },
+        {
+          "@type": "City",
+          "name": "Munich"
+        },
+        {
+          "@type": "City",
+          "name": "Stuttgart"
+        }
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Premium Fleet Vehicles",
@@ -53,36 +80,59 @@ add_action('wp_head', function() {
           {
             "@type": "Offer",
             "itemOffered": {
-              "@type": "Product",
+              "@type": "Car",
               "name": "Luxury Sedans",
-              "description": "Executive sedans for airport transfers and private chauffeur service"
+              "description": "Mercedes S-Class, BMW 7 Series, Audi A8 for executive airport transfers",
+              "vehicleSeatingCapacity": "3-4 passengers",
+              "brand": {
+                "@type": "Brand",
+                "name": "Mercedes-Benz, BMW, Audi"
+              }
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
-              "@type": "Product",
+              "@type": "Car",
               "name": "Executive Vans",
-              "description": "Premium vans for group transfers and day trips"
+              "description": "Mercedes V-Class, Premium Sprinter for group transfers",
+              "vehicleSeatingCapacity": "7-12 passengers",
+              "brand": {
+                "@type": "Brand",
+                "name": "Mercedes-Benz"
+              }
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
-              "@type": "Product",
-              "name": "Group Transport",
-              "description": "Luxury buses for large group transfers and excursions"
+              "@type": "Car",
+              "name": "Economy Sedans",
+              "description": "Volkswagen Passat, Toyota Camry for budget-friendly transfers",
+              "vehicleSeatingCapacity": "3-4 passengers",
+              "brand": {
+                "@type": "Brand",
+                "name": "Volkswagen, Toyota"
+              }
             }
           }
         ]
       },
-      "areaServed": {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": "37.7749",
-          "longitude": "-122.4194"
-        }
+      "priceRange": "€€-€€€€",
+      "telephone": "+49-XXX-XXXXXXX",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
       },
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -134,7 +184,8 @@ get_header();
     margin-bottom: 50px;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
-    padding: 60px 15px;
+    margin-top: -150px;
+    padding: 210px 15px 80px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     position: relative;
     overflow: hidden;
@@ -460,7 +511,8 @@ get_header();
     
     .fleet-hero-section {
         margin-bottom: 40px;
-        padding-top: 30px;
+        margin-top: -120px;
+        padding: 180px 15px 60px;
     }
     
     .fleet-stats {
@@ -505,7 +557,8 @@ get_header();
     
     .fleet-hero-section {
         margin-bottom: 30px;
-        padding: 0 20px;
+        margin-top: -100px;
+        padding: 150px 20px 50px;
     }
     
     .fleet-stats {
@@ -574,7 +627,8 @@ get_header();
     }
     
     .fleet-hero-section {
-        padding: 0 15px;
+        margin-top: -90px;
+        padding: 140px 15px 45px;
     }
     
     .fleet-stats {
@@ -636,14 +690,60 @@ get_header();
 .vehicle-card {
     animation: fadeInUp 0.6s ease-out;
 }
+
+/* SEO Content Sections Responsive */
+@media (max-width: 991px) {
+    .fleet-content-sections {
+        margin-top: 60px !important;
+    }
+    
+    .fleet-info-section {
+        padding: 30px 25px !important;
+    }
+    
+    .fleet-cta-section {
+        padding: 40px 30px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .fleet-content-sections {
+        margin-top: 50px !important;
+    }
+    
+    .fleet-info-section {
+        padding: 25px 20px !important;
+    }
+    
+    .fleet-cta-section {
+        padding: 35px 25px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .fleet-content-sections {
+        margin-top: 40px !important;
+        padding: 0 !important;
+    }
+    
+    .fleet-info-section {
+        padding: 20px 15px !important;
+        border-radius: 12px !important;
+    }
+    
+    .fleet-cta-section {
+        padding: 30px 20px !important;
+        border-radius: 12px !important;
+    }
+}
 </style>
 
 <section class="fleet-page">
     <div class="container">
         <!-- Fleet Hero Section -->
         <div class="fleet-hero-section">
-            <h1>Frankfurt & Germany Transfer Marketplace</h1>
-            <p>Compare and book premium transfers and day trips from trusted providers across Frankfurt and Germany. Check real-time availability, compare prices from licensed chauffeurs, and book directly for airport transfers, city rides, and curated day trip experiences. All providers are verified for your peace of mind.</p>
+            <h1>Premium Fleet for Frankfurt Airport Transfers & Germany Chauffeur Service</h1>
+            <p>Discover our diverse fleet of luxury sedans, executive vans, and economy vehicles for Frankfurt airport transfers and Germany-wide chauffeur service. From Mercedes S-Class to budget-friendly options, all vehicles feature professional drivers, 24/7 availability, and instant booking confirmation.</p>
             
             <!-- Fleet Service Badges -->
             <div class="fleet-stats">
@@ -670,7 +770,12 @@ get_header();
         <div class="fleet-tabs-wrapper text-center">
             <ul class="nav nav-pills" id="fleetTabs" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="luxury-tab" data-bs-toggle="pill" data-bs-target="#luxury" type="button" role="tab">
+                    <button class="nav-link active" id="all-tab" data-bs-toggle="pill" data-bs-target="#all" type="button" role="tab">
+                        <i class="ti ti-layout-grid"></i>All Vehicles
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="luxury-tab" data-bs-toggle="pill" data-bs-target="#luxury" type="button" role="tab">
                         <i class="ti ti-crown"></i>Luxury
                     </button>
                 </li>
@@ -689,8 +794,98 @@ get_header();
 
         <!-- Tab Content -->
         <div class="tab-content" id="fleetTabsContent">
+            <!-- All Vehicles Tab -->
+            <div class="tab-pane fade show active" id="all" role="tabpanel">
+                <div class="vehicle-grid">
+                    <?php
+                    $all_args = array(
+                        'post_type' => 'cars',
+                        'posts_per_page' => -1,
+                        'post_status' => 'publish',
+                    );
+                    $all_query = new WP_Query($all_args);
+
+                    if ($all_query->have_posts()):
+                        while ($all_query->have_posts()):
+                            $all_query->the_post();
+                            $title = strtolower(get_the_title());
+                            $passengers = get_post_meta(get_the_ID(), 'passengers', true);
+                            $luggage = get_post_meta(get_the_ID(), 'large_bag', true);
+                            $equivalent = get_post_meta(get_the_ID(), 'car_equivalent', true);
+                            
+                            // Determine category badge
+                            $badge = 'Standard';
+                            if (strpos($title, 'premium sedan') !== false || 
+                                strpos($title, 'luxury') !== false ||
+                                strpos($title, 's-class') !== false ||
+                                strpos($title, 'e-class') !== false ||
+                                strpos($title, 'bmw 5') !== false ||
+                                strpos($title, 'bmw 7') !== false ||
+                                strpos($title, 'audi a6') !== false ||
+                                strpos($title, 'audi a8') !== false) {
+                                $badge = 'Luxury';
+                            } elseif (strpos($title, 'van') !== false || 
+                                      strpos($title, 'bus') !== false || 
+                                      strpos($title, 'minibus') !== false ||
+                                      strpos($title, 'vito') !== false ||
+                                      strpos($title, 'sprinter') !== false ||
+                                      ($passengers && intval($passengers) >= 7)) {
+                                $badge = 'Van';
+                            }
+                            ?>
+                            <div class="vehicle-card">
+                                <div class="vehicle-image-wrapper">
+                                    <?php if (has_post_thumbnail()): ?>
+                                        <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>" 
+                                             alt="<?php echo esc_attr(get_the_title()); ?>" 
+                                             class="vehicle-image"
+                                             loading="lazy"
+                                             width="600"
+                                             height="400">
+                                    <?php else: ?>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/tour.jpg" 
+                                             alt="<?php echo esc_attr(get_the_title()); ?>" 
+                                             class="vehicle-image"
+                                             loading="lazy">
+                                    <?php endif; ?>
+                                    <div class="vehicle-badge"><?php echo esc_html($badge); ?></div>
+                                </div>
+                                <div class="vehicle-card-body">
+                                    <h3 class="vehicle-title">
+                                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                    </h3>
+                                    <?php if ($equivalent): ?>
+                                        <p class="vehicle-subtitle"><?php echo esc_html($equivalent); ?></p>
+                                    <?php endif; ?>
+                                    
+                                    <div class="vehicle-features">
+                                        <div class="vehicle-feature-item">
+                                            <i class="ti ti-users"></i>
+                                            <span><?php echo esc_html($passengers ?: '4'); ?> Passengers</span>
+                                        </div>
+                                        <div class="vehicle-feature-item">
+                                            <i class="ti ti-luggage"></i>
+                                            <span><?php echo esc_html($luggage ?: '2'); ?> Luggage</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="vehicle-cta">
+                                        <a href="<?php the_permalink(); ?>" class="vehicle-btn">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                        endwhile;
+                        wp_reset_postdata();
+                    else:
+                        echo '<div class="empty-state"><i class="ti ti-car-off"></i><p>No vehicles available at the moment.</p></div>';
+                    endif;
+                    ?>
+                </div>
+            </div>
+
             <!-- Luxury Tab -->
-            <div class="tab-pane fade show active" id="luxury" role="tabpanel">
+            <div class="tab-pane fade" id="luxury" role="tabpanel">
                 <div class="vehicle-grid">
                     <?php
                     $luxury_args = array(
@@ -944,6 +1139,157 @@ get_header();
                     endif;
                     ?>
                 </div>
+            </div>
+        </div>
+
+        <!-- SEO Content Sections -->
+        <div class="fleet-content-sections" style="margin-top: 80px; padding: 0 15px;">
+            <!-- Why Choose Our Fleet -->
+            <div class="fleet-info-section" style="background: #fff; border-radius: 16px; padding: 40px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                <h2 style="font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; color: #161920; margin-bottom: 20px; border-left: 4px solid #3cb371; padding-left: 20px;">
+                    <i class="ti ti-award" style="color: #3cb371; margin-right: 10px;"></i>
+                    Why Choose Our Premium Fleet for Frankfurt Transfers
+                </h2>
+                <p style="font-size: clamp(0.95rem, 2vw, 1.05rem); line-height: 1.8; color: #555; margin-bottom: 20px;">
+                    Our carefully curated fleet offers the perfect vehicle for every travel need in Frankfurt and Germany. Whether you require a luxury Mercedes S-Class for executive airport transfers, a spacious passenger van for group travel, or an economy sedan for budget-friendly transportation, we provide professional chauffeur service with vehicles that meet the highest standards of comfort, safety, and reliability.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 20px; margin-top: 25px;">
+                    <div style="padding: 20px; background: rgba(60, 179, 113, 0.05); border-radius: 12px; border-left: 3px solid #3cb371;">
+                        <h3 style="font-size: clamp(1rem, 2.5vw, 1.1rem); font-weight: 600; color: #161920; margin-bottom: 10px;">
+                            <i class="ti ti-shield-check" style="color: #3cb371;"></i> Fully Licensed & Insured
+                        </h3>
+                        <p style="font-size: clamp(0.85rem, 2vw, 0.95rem); color: #555; line-height: 1.6; margin: 0;">
+                            All vehicles are professionally maintained, fully licensed, and comprehensively insured for your safety and peace of mind.
+                        </p>
+                    </div>
+                    <div style="padding: 20px; background: rgba(60, 179, 113, 0.05); border-radius: 12px; border-left: 3px solid #3cb371;">
+                        <h3 style="font-size: clamp(1rem, 2.5vw, 1.1rem); font-weight: 600; color: #161920; margin-bottom: 10px;">
+                            <i class="ti ti-user-star" style="color: #3cb371;"></i> Professional Chauffeurs
+                        </h3>
+                        <p style="font-size: clamp(0.85rem, 2vw, 0.95rem); color: #555; line-height: 1.6; margin: 0;">
+                            Experienced, multilingual drivers with extensive local knowledge ensure punctual, courteous service for every journey.
+                        </p>
+                    </div>
+                    <div style="padding: 20px; background: rgba(60, 179, 113, 0.05); border-radius: 12px; border-left: 3px solid #3cb371;">
+                        <h3 style="font-size: clamp(1rem, 2.5vw, 1.1rem); font-weight: 600; color: #161920; margin-bottom: 10px;">
+                            <i class="ti ti-clock-24" style="color: #3cb371;"></i> 24/7 Availability
+                        </h3>
+                        <p style="font-size: clamp(0.85rem, 2vw, 0.95rem); color: #555; line-height: 1.6; margin: 0;">
+                            Round-the-clock service for early morning flights, late-night arrivals, and urgent transportation needs across Germany.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fleet Categories Explained -->
+            <div class="fleet-info-section" style="background: #fff; border-radius: 16px; padding: 40px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                <h2 style="font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; color: #161920; margin-bottom: 20px; border-left: 4px solid #3cb371; padding-left: 20px;">
+                    <i class="ti ti-car-garage" style="color: #3cb371; margin-right: 10px;"></i>
+                    Our Fleet Categories: From Luxury to Economy
+                </h2>
+                
+                <div style="margin-bottom: 30px;">
+                    <h3 style="font-size: clamp(1.15rem, 3vw, 1.35rem); font-weight: 600; color: #161920; margin-bottom: 12px;">
+                        <i class="ti ti-crown" style="color: #3cb371; margin-right: 8px;"></i>
+                        Luxury Sedans – Executive Airport Transfers
+                    </h3>
+                    <p style="font-size: clamp(0.95rem, 2vw, 1.05rem); line-height: 1.8; color: #555; margin-bottom: 15px;">
+                        Experience first-class travel with our premium fleet of <strong>Mercedes S-Class, BMW 7 Series, and Audi A8</strong> vehicles. Perfect for business executives, VIP clients, and luxury travelers requiring Frankfurt airport transfers or point-to-point chauffeur service. Features include handcrafted leather interiors, advanced climate control, privacy glass, and whisper-quiet cabins for maximum comfort and discretion.
+                    </p>
+                    <p style="font-size: clamp(0.85rem, 2vw, 0.95rem); color: #767676; font-style: italic;">
+                        <strong>Ideal for:</strong> Executive airport transfers, business meetings, VIP events, luxury city tours
+                    </p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <h3 style="font-size: clamp(1.15rem, 3vw, 1.35rem); font-weight: 600; color: #161920; margin-bottom: 12px;">
+                        <i class="ti ti-bus" style="color: #3cb371; margin-right: 8px;"></i>
+                        Executive Vans – Premium Group Transportation
+                    </h3>
+                    <p style="font-size: clamp(0.95rem, 2vw, 1.05rem); line-height: 1.8; color: #555; margin-bottom: 15px;">
+                        Travel together in style with our <strong>Mercedes V-Class, First Class Van, and Premium Sprinter</strong> vehicles. Accommodating 7-12 passengers with ample luggage space, these executive vans feature individual climate controls, premium entertainment systems, and captain's chairs for corporate groups, family celebrations, and luxury tours across Germany.
+                    </p>
+                    <p style="font-size: clamp(0.85rem, 2vw, 0.95rem); color: #767676; font-style: italic;">
+                        <strong>Ideal for:</strong> Corporate delegations, family vacations, group airport transfers, wedding parties, golf outings
+                    </p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <h3 style="font-size: clamp(1.15rem, 3vw, 1.35rem); font-weight: 600; color: #161920; margin-bottom: 12px;">
+                        <i class="ti ti-users" style="color: #3cb371; margin-right: 8px;"></i>
+                        Standard Vans – Reliable Group Travel
+                    </h3>
+                    <p style="font-size: clamp(0.95rem, 2vw, 1.05rem); line-height: 1.8; color: #555; margin-bottom: 15px;">
+                        Cost-effective group transportation with our comfortable <strong>passenger vans and minibuses</strong>. Perfect for families, sports teams, and corporate groups requiring spacious, reliable transportation for Frankfurt airport transfers, city tours, or day trips. Modern amenities include air conditioning, USB charging, and generous luggage capacity.
+                    </p>
+                    <p style="font-size: clamp(0.85rem, 2vw, 0.95rem); color: #767676; font-style: italic;">
+                        <strong>Ideal for:</strong> Family trips, team travel, conference shuttles, multi-generational vacations, budget-conscious groups
+                    </p>
+                </div>
+
+                <div style="margin-bottom: 0;">
+                    <h3 style="font-size: clamp(1.15rem, 3vw, 1.35rem); font-weight: 600; color: #161920; margin-bottom: 12px;">
+                        <i class="ti ti-currency-euro" style="color: #3cb371; margin-right: 8px;"></i>
+                        Economy Sedans – Budget-Friendly Excellence
+                    </h3>
+                    <p style="font-size: clamp(0.95rem, 2vw, 1.05rem); line-height: 1.8; color: #555; margin-bottom: 15px;">
+                        Affordable, reliable transportation with our <strong>Volkswagen Passat, Toyota Camry, and economy sedan</strong> fleet. Ideal for budget-conscious travelers, students, and business trips requiring dependable Frankfurt airport transfers or city transportation without compromising on safety, cleanliness, or professional service.
+                    </p>
+                    <p style="font-size: clamp(0.85rem, 2vw, 0.95rem); color: #767676; font-style: italic;">
+                        <strong>Ideal for:</strong> Budget travelers, students, solo business trips, short city transfers, daily commutes
+                    </p>
+                </div>
+            </div>
+
+            <!-- Service Areas -->
+            <div class="fleet-info-section" style="background: linear-gradient(135deg, rgba(60, 179, 113, 0.05) 0%, rgba(46, 153, 96, 0.05) 100%); border-radius: 16px; padding: 40px; margin-bottom: 30px; border: 2px solid rgba(60, 179, 113, 0.2);">
+                <h2 style="font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; color: #161920; margin-bottom: 20px; border-left: 4px solid #3cb371; padding-left: 20px;">
+                    <i class="ti ti-map-pin" style="color: #3cb371; margin-right: 10px;"></i>
+                    Service Areas: Frankfurt & Germany-Wide Coverage
+                </h2>
+                <p style="font-size: clamp(0.95rem, 2vw, 1.05rem); line-height: 1.8; color: #555; margin-bottom: 25px;">
+                    Our premium fleet serves Frankfurt and all major German cities with professional chauffeur service. Whether you need Frankfurt airport transfers (FRA), intercity travel, or day trips to Germany's most beautiful destinations, our vehicles and drivers are ready to serve you 24/7.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 15px;">
+                    <div style="background: #fff; padding: 15px 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; align-items: center; gap: 12px;">
+                        <i class="ti ti-plane-departure" style="font-size: 24px; color: #3cb371;"></i>
+                        <span style="font-weight: 600; color: #161920; font-size: clamp(0.9rem, 2vw, 1rem);">Frankfurt Airport (FRA)</span>
+                    </div>
+                    <div style="background: #fff; padding: 15px 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; align-items: center; gap: 12px;">
+                        <i class="ti ti-building-skyscraper" style="font-size: 24px; color: #3cb371;"></i>
+                        <span style="font-weight: 600; color: #161920; font-size: clamp(0.9rem, 2vw, 1rem);">Frankfurt City Center</span>
+                    </div>
+                    <div style="background: #fff; padding: 15px 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; align-items: center; gap: 12px;">
+                        <i class="ti ti-castle" style="font-size: 24px; color: #3cb371;"></i>
+                        <span style="font-weight: 600; color: #161920; font-size: clamp(0.9rem, 2vw, 1rem);">Heidelberg</span>
+                    </div>
+                    <div style="background: #fff; padding: 15px 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; align-items: center; gap: 12px;">
+                        <i class="ti ti-building-community" style="font-size: 24px; color: #3cb371;"></i>
+                        <span style="font-weight: 600; color: #161920; font-size: clamp(0.9rem, 2vw, 1rem);">Munich</span>
+                    </div>
+                    <div style="background: #fff; padding: 15px 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; align-items: center; gap: 12px;">
+                        <i class="ti ti-building-factory" style="font-size: 24px; color: #3cb371;"></i>
+                        <span style="font-weight: 600; color: #161920; font-size: clamp(0.9rem, 2vw, 1rem);">Stuttgart</span>
+                    </div>
+                    <div style="background: #fff; padding: 15px 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; align-items: center; gap: 12px;">
+                        <i class="ti ti-mountain" style="font-size: 24px; color: #3cb371;"></i>
+                        <span style="font-weight: 600; color: #161920; font-size: clamp(0.9rem, 2vw, 1rem);">Rhine Valley</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Booking CTA -->
+            <div class="fleet-cta-section" style="background: linear-gradient(135deg, #3cb371 0%, #2e9960 100%); border-radius: 16px; padding: 50px 40px; text-align: center; box-shadow: 0 8px 30px rgba(60, 179, 113, 0.3); margin-bottom: 30px;">
+                <h2 style="font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 700; color: #fff; margin-bottom: 15px;">
+                    Ready to Book Your Frankfurt Transfer?
+                </h2>
+                <p style="font-size: clamp(1rem, 2.5vw, 1.15rem); color: rgba(255, 255, 255, 0.95); margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+                    Choose from our premium fleet and enjoy professional chauffeur service with instant confirmation, transparent pricing, and 24/7 customer support.
+                </p>
+                <a href="<?php echo esc_url(home_url('/booking-page/')); ?>" style="display: inline-block; background: #fff; color: #3cb371; padding: 16px 40px; border-radius: 50px; font-weight: 700; font-size: clamp(1rem, 2.5vw, 1.1rem); text-decoration: none; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); transition: all 0.3s ease;">
+                    <i class="ti ti-calendar-check" style="margin-right: 8px;"></i>
+                    Book Your Transfer Now
+                </a>
             </div>
         </div>
     </div>

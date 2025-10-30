@@ -6,6 +6,7 @@ get_template_part('partials/content', 'breadcrumb', [
     'bg' => $bg_image
 ]); ?>
 
+<main id="main-content" tabindex="-1">
 <!-- Tour Details Section -->
 <div class="tour-details-section">
     <!-- Divider -->
@@ -29,4 +30,5 @@ get_template_part('partials/content', 'breadcrumb', [
 
     </div>
 </div>
+</main>
 <?php get_footer(); ?>

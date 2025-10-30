@@ -1,6 +1,8 @@
+<!-- Footer Full-Width Styles -->
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/footer-fullwidth.css">
+
 <!-- Footer -->
-<footer class="footer-wrapper style-two px-3 mx-3 mx-lg-4 mx-xxl-5 mb-3 mb-lg-4 mb-xxl-5 jarallax" data-jarallax
-    data-speed="0.6">
+<footer class="footer-wrapper style-two px-3 mx-lg-4 mx-xxl-5 mb-3 mb-lg-4 mb-xxl-5 jarallax" data-jarallax data-speed="0.6">
     <div class="divider-sm"></div>
     <div class="container-fluid">
         <div class="row g-5">
@@ -33,13 +35,14 @@
                     </div>
 
                     <!-- Subscribe Form -->
-                    <div class="subscribe-form">
-                        <input class="form-control" type="email" value="info@gotriptoday.com"
-                            placeholder="Email Address">
-                        <button type="submit" class="btn">
+                    <form class="subscribe-form" action="#" method="post" novalidate>
+                        <label class="visually-hidden" for="footer-subscribe-email"><?php echo esc_html__( 'Email address', 'gotriptoday' ); ?></label>
+                        <input id="footer-subscribe-email" class="form-control" type="email" name="email" value=""
+                            placeholder="<?php echo esc_attr__( 'Email address', 'gotriptoday' ); ?>" autocomplete="email" required>
+                        <button type="submit" class="btn" aria-label="<?php echo esc_attr__( 'Subscribe', 'gotriptoday' ); ?>">
                             <i class="icon-arrow-right"></i>
                         </button>
-                    </div>
+                    </form>
                 </div>
             </div>
 
@@ -93,13 +96,13 @@
                     </div>
                     <!-- Social Nav -->
                     <div class="social-nav">
-                        <a href="https://www.facebook.com/profile.php?id=61577812495327" target="_blank">
+                        <a href="<?php echo esc_url('https://www.facebook.com/profile.php?id=61577812495327'); ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr__( 'Facebook', 'gotriptoday' ); ?>">
                             <i class="ti ti-brand-facebook"></i>
                         </a>
-                        <a href="https://www.instagram.com/gotriptodaycom/" target="_blank">
+                        <a href="<?php echo esc_url('https://www.instagram.com/gotriptodaycom/'); ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr__( 'Instagram', 'gotriptoday' ); ?>">
                             <i class="ti ti-brand-instagram"></i>
                         </a>
-                        <a href="https://www.tiktok.com/@gotriptoday" target="_blank">
+                        <a href="<?php echo esc_url('https://www.tiktok.com/@gotriptoday'); ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr__( 'TikTok', 'gotriptoday' ); ?>">
                             <i class="ti ti-brand-tiktok"></i>
                         </a>
                     </div>
@@ -116,8 +119,8 @@
             <div class="row align-items-center">
                 <!-- Copyright -->
                 <div class="col-12 col-md-6">
-                    <p class="mb-3 mb-md-0 copyright">Copyright © <span id="year"></span> <a
-                            href="https://gotriptoday.com/">Go Trip Today</a>
+                    <p class="mb-3 mb-md-0 copyright">Copyright © <?php echo date('Y'); ?> <a
+                            href="<?php echo esc_url('https://gotriptoday.com/'); ?>">Go Trip Today</a>
                         All rights reserved.</p>
                 </div>
 
@@ -125,7 +128,7 @@
                 <div class="col-12 col-md-6">
                     <div class="footer-bottom-nav">
                         <div class="icon">
-                            <svg width="32px" height="32px" viewBox="0 -140 780 780" enable-background="new 0 0 780 500"
+                            <svg aria-hidden="true" width="32px" height="32px" viewBox="0 -140 780 780" enable-background="new 0 0 780 500"
                                 version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" fill="#000000">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -143,7 +146,7 @@
                             </svg>
                         </div>
                         <div class="icon">
-                            <svg fill="#ffffff" height="32px" width="32px" version="1.1" id="Capa_1"
+                            <svg aria-hidden="true" fill="#ffffff" height="32px" width="32px" version="1.1" id="Capa_1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                 viewBox="0 0 512 512" xml:space="preserve" stroke="#ffffff">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -188,7 +191,7 @@
                             </svg>
                         </div>
                         <div class="icon">
-                            <svg width="32px" height="32px" viewBox="0 -139.5 750 750" version="1.1"
+                            <svg aria-hidden="true" width="32px" height="32px" viewBox="0 -139.5 750 750" version="1.1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                 fill="#000000" stroke="#000000">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -227,7 +230,7 @@
                             </svg>
                         </div>
                         <div class="icon">
-                            <svg height="32px" width="32px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                            <svg aria-hidden="true" height="32px" width="32px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 26 26" xml:space="preserve"
                                 fill="#000000">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -252,7 +255,7 @@
                             </svg>
                         </div>
                         <div class="icon">
-                            <svg width="32px" height="32px" viewBox="0 -29.75 165.5 165.5" id="Artwork"
+                            <svg aria-hidden="true" width="32px" height="32px" viewBox="0 -29.75 165.5 165.5" id="Artwork"
                                 xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff"
                                 stroke-width="0.0016550000000000002">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -281,7 +284,7 @@
                             </svg>
                         </div>
                         <div class="icon">
-                            <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none">
+                            <svg aria-hidden="true" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                                 <g id="SVGRepo_iconCarrier">
@@ -301,7 +304,7 @@
                             </svg>
                         </div>
                         <div class="icon">
-                            <svg fill="#ffffff" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                            <svg aria-hidden="true" fill="#ffffff" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                                 <g id="SVGRepo_iconCarrier">
@@ -341,6 +344,46 @@
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/active.js"></script>
 <?php wp_footer(); ?>
 
+<!-- CHBS Vehicle Pre-selection Script -->
+<script>
+jQuery(document).ready(function($) {
+    // Check if we're on the booking page and have a pre-selected vehicle
+    if ($('.chbs-booking-form').length > 0) {
+        var vehicleData = sessionStorage.getItem('chbs_preselected_vehicle');
+        var forceStep2 = sessionStorage.getItem('chbs_force_step_2');
+        
+        if (vehicleData && forceStep2 === '1') {
+            vehicleData = JSON.parse(vehicleData);
+            console.log('Pre-selected vehicle:', vehicleData);
+            
+            // Wait for CHBS to fully load
+            setTimeout(function() {
+                // Try to auto-select the vehicle on step 2
+                var vehicleButton = $('.chbs-vehicle-list').find('[data-vehicle-id="' + vehicleData.id + '"]');
+                
+                if (vehicleButton.length > 0) {
+                    console.log('Auto-selecting vehicle:', vehicleData.name);
+                    vehicleButton.click();
+                    // Clear the session storage
+                    sessionStorage.removeItem('chbs_preselected_vehicle');
+                    sessionStorage.removeItem('chbs_force_step_2');
+                } else {
+                    console.log('Vehicle button not found, trying alternative selector');
+                    // Alternative: try clicking by vehicle name or other attributes
+                    $('.chbs-vehicle-list .chbs-button').each(function() {
+                        if ($(this).text().indexOf(vehicleData.name) !== -1) {
+                            $(this).click();
+                            sessionStorage.removeItem('chbs_preselected_vehicle');
+                            sessionStorage.removeItem('chbs_force_step_2');
+                            return false;
+                        }
+                    });
+                }
+            }, 1500);
+        }
+    }
+});
+</script>
 
 </body>
 

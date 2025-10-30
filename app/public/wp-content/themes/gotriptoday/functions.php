@@ -1,5 +1,5 @@
 <?php 
-	add_theme_support( 'post-thumbnails' );
+       add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 140, 140, true );
 	add_image_size( 'single-post-thumbnail', 300, 9999 );
     add_image_size( 'tour-thumbnail', 300, 200, true );
@@ -194,6 +194,39 @@ add_action('wp_head', function () {
     }
 }, 1);
 
+// Enqueue booking page assets
+function enqueue_booking_page_assets() {
+    if (is_page('booking-page') || is_page_template('temp-transfer.php')) {
+        wp_enqueue_style(
+            'booking-page',
+            get_stylesheet_directory_uri() . '/assets/css/booking-page.css',
+            array(),
+            '2.0.' . time()
+        );
+
+        wp_enqueue_script(
+            'booking-page',
+            get_stylesheet_directory_uri() . '/assets/js/booking-page.js',
+            array(),
+            '2.0.' . time(),
+            true
+        );
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_booking_page_assets');
+
+// Enqueue checkout page assets
+function enqueue_checkout_page_assets() {
+    if (is_checkout() || is_wc_endpoint_url('order-pay')) {
+        wp_enqueue_style(
+            'checkout-page',
+            get_stylesheet_directory_uri() . '/assets/css/checkout-page.css',
+            array(),
+            '1.0.' . time()
+        );
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_checkout_page_assets');
 
 
 function enqueue_wishlist_script() {

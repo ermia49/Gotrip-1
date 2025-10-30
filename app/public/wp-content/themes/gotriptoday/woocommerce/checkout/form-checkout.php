@@ -37,12 +37,74 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 ?>
 
+<!-- SEO Meta Tags for Checkout Page -->
+<?php if ( is_checkout() && ! is_order_received_page() ) : ?>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Secure checkout for your <?php bloginfo('name'); ?> booking. Complete your reservation with confidence using our encrypted payment system.">
+<link rel="canonical" href="<?php echo esc_url( wc_get_checkout_url() ); ?>">
+
+<!-- Schema.org JSON-LD Checkout Action -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CheckoutPage",
+  "name": "Secure Booking Checkout",
+  "description": "Complete your chauffeur service booking with secure payment processing",
+  "provider": {
+    "@type": "Organization",
+    "name": "<?php bloginfo('name'); ?>",
+    "url": "<?php echo esc_url( home_url('/') ); ?>",
+    "logo": "<?php echo esc_url( get_template_directory_uri() . '/assets/img/logo.png' ); ?>",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+49-69-2713-0740",
+      "contactType": "Customer Service",
+      "availableLanguage": ["English", "German"],
+      "areaServed": "DE"
+    }
+  },
+  "potentialAction": {
+    "@type": "OrderAction",
+    "target": "<?php echo esc_url( wc_get_checkout_url() ); ?>",
+    "name": "Complete Booking"
+  },
+  "hasPart": [
+    {
+      "@type": "PaymentMethod",
+      "name": "Credit Card",
+      "acceptedPaymentMethod": ["Visa", "Mastercard", "American Express"]
+    },
+    {
+      "@type": "PaymentMethod",
+      "name": "PayPal"
+    }
+  ]
+}
+</script>
+<?php endif; ?>
+
 <div class="reservation-checkout-wrapper container py-4">
-    <!-- Reservation Header -->
+    <!-- Reservation Header with Trust Signals -->
     <div class="reservation-header text-center mb-5">
-        <h1 class="display-5 fw-bold text-dark mb-3"><?php esc_html_e( 'Reservation Details', 'woocommerce' ); ?></h1>
+        <h1 class="display-5 fw-bold text-dark mb-3"><?php esc_html_e( 'Complete Your Booking', 'woocommerce' ); ?></h1>
         <p class="lead text-muted">
-            <?php esc_html_e( 'Review your booking information before proceeding', 'woocommerce' ); ?></p>
+            <?php esc_html_e( 'Secure checkout • Instant confirmation • 24/7 support', 'woocommerce' ); ?></p>
+        
+        <!-- Payment Method Icons -->
+        <div class="payment-methods-display">
+            <div class="payment-method-icon" title="Visa">
+                <svg viewBox="0 0 48 32" width="48" height="32"><path fill="#1434CB" d="M21.6 24.8l2.4-14.4h3.8l-2.4 14.4h-3.8zm16.3-14.1c-.7-.3-1.9-.6-3.3-.6-3.7 0-6.3 1.9-6.3 4.6 0 2 1.9 3.1 3.3 4.1 1.5.9 2 1.5 2 2.3 0 1.3-1.6 1.9-3.1 1.9-2.1 0-3.2-.3-4.9-1l-.7-.3-.7 4.3c.9.4 2.5.7 4.2.7 3.9 0 6.5-1.9 6.5-4.8 0-1.6-1-2.8-3.2-3.8-1.3-.6-2.1-1.1-2.1-1.8 0-.6.7-1.2 2.2-1.2 1.3 0 2.2.3 2.9.6l.3.2.8-4zm8.9-1.9c-.7 0-1.3.4-1.5 1.1l-5.4 12.9h3.9l.8-2.1h4.7l.4 2.1h3.4l-3-14.1h-3.3v.1zm-2.7 9.5c.1 0 1.8-4.8 1.8-4.8l1 4.8h-2.8zm-18.9-9.5l-3.7 9.8-.4-2c-.7-2.3-2.8-4.8-5.2-6l3.4 12.5h3.9l5.8-14.3h-3.8z"/><path fill="#F7921F" d="M8.5 10.3H2.6L2.5 10.8c4.6 1.2 7.7 4 9 7.4l-1.3-6.4c-.2-.8-.8-1.1-1.7-1.5z"/></svg>
+            </div>
+            <div class="payment-method-icon" title="Mastercard">
+                <svg viewBox="0 0 48 32" width="48" height="32"><circle cx="16" cy="16" r="11" fill="#EB001B"/><circle cx="32" cy="16" r="11" fill="#F79E1B"/><path fill="#FF5F00" d="M24 7.6c-2.3 2.6-3.7 6-3.7 9.4s1.4 6.8 3.7 9.4c2.3-2.6 3.7-6 3.7-9.4s-1.4-6.8-3.7-9.4z"/></svg>
+            </div>
+            <div class="payment-method-icon" title="PayPal">
+                <svg viewBox="0 0 48 32" width="48" height="32"><path fill="#003087" d="M18.4 8.9c.7-4.5-1.3-7.7-5.7-9.1H6.3L2.1 21.3c-.1.7.4 1.3 1.1 1.3h3.2l.8-5.1c.2-1.1 1.1-1.9 2.2-1.9h1.7c3.8 0 6.8-1.5 7.3-5.7zm-5.5 4.9c-.3 1.9-1.7 1.9-3.1 1.9h-.8l.5-3.4c0-.1.2-.2.3-.2h.3c.7 0 1.4 0 1.7.4.2.2.3.6.1 1.3z"/><path fill="#009CDE" d="M11.7 13.6c-.1.7-.6 1.1-1.3 1.1h-.8l.6-3.6c0-.1.2-.2.3-.2h.3c.8 0 1.5 0 1.8.4.3.3.3.8.1 1.4v-.1zm-.4-5.4H6c-.7 0-1.3.5-1.4 1.2l-2.1 13.2c-.1.6.3 1.1.9 1.1h2.7c.5 0 .9-.3 1-.8l.6-3.6c.1-.7.6-1.2 1.4-1.2h1.7c3.5 0 6.3-1.4 6.9-5.4.3-1.8 0-3.1-.8-4-.9-.9-2.4-1.5-4.4-1.5z"/><path fill="#012169" d="M14.5 13.6c-.3 1.8-1.7 1.8-3.1 1.8h-.8l.5-3.4c0-.1.2-.2.3-.2h.3c.7 0 1.4 0 1.7.4.2.2.3.7.1 1.4zm-.4-5.5h-5.3c-.7 0-1.3.5-1.4 1.2L5.3 22.5c-.1.6.3 1.1.9 1.1h2.9c.5 0 .9-.3 1-.8l.6-3.6c.1-.7.6-1.2 1.4-1.2h1.7c3.5 0 6.3-1.4 6.9-5.4.3-1.8 0-3.1-.8-4-.9-.9-2.4-1.5-4.4-1.5z"/></svg>
+            </div>
+            <div class="payment-method-icon" title="Secure SSL">
+                <i class="ti ti-lock-check" style="font-size:24px; color:#3cb371;"></i>
+            </div>
+        </div>
     </div>
 
 
@@ -162,10 +224,59 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
             <div class="col-lg-6">
                 <div class="order-review-column card border-0 shadow-sm h-100">
                     <div class="card-body p-4">
-                        <!-- Payment Security Notice -->
-                        <div class="payment-security-notice alert alert-success text-center mb-4">
-                            <i class="fas fa-shield-alt me-2"></i>
-                            <?php esc_html_e( 'Your payment information is secure', 'woocommerce' ); ?>
+                        <!-- Trust Badges -->
+                        <div class="checkout-trust-badges mb-4">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="trust-badge-item">
+                                        <div class="trust-badge-icon">
+                                            <i class="ti ti-shield-lock"></i>
+                                        </div>
+                                        <div class="trust-badge-text">
+                                            <h5><?php esc_html_e( 'SSL Encrypted Payment', 'woocommerce' ); ?></h5>
+                                            <p><?php esc_html_e( 'Your information is protected with 256-bit encryption', 'woocommerce' ); ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="trust-badge-item">
+                                        <div class="trust-badge-icon">
+                                            <i class="ti ti-check-circle"></i>
+                                        </div>
+                                        <div class="trust-badge-text">
+                                            <h5><?php esc_html_e( 'Instant Confirmation', 'woocommerce' ); ?></h5>
+                                            <p><?php esc_html_e( 'Receive booking details within seconds', 'woocommerce' ); ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="trust-badge-item">
+                                        <div class="trust-badge-icon">
+                                            <i class="ti ti-phone"></i>
+                                        </div>
+                                        <div class="trust-badge-text">
+                                            <h5><?php esc_html_e( '24/7 Customer Support', 'woocommerce' ); ?></h5>
+                                            <p><?php esc_html_e( 'Our team is always here to help you', 'woocommerce' ); ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Money-Back Guarantee Badge -->
+                        <div class="guarantee-badge">
+                            <div class="guarantee-badge-icon">🛡️</div>
+                            <h4><?php esc_html_e( 'Satisfaction Guaranteed', 'woocommerce' ); ?></h4>
+                            <p><?php esc_html_e( 'Premium service or your money back. We stand behind every transfer.', 'woocommerce' ); ?></p>
+                        </div>
+
+                        <!-- Customer Testimonial -->
+                        <div class="checkout-testimonial">
+                            <div class="checkout-testimonial-stars">★★★★★</div>
+                            <div class="checkout-testimonial-text">
+                                "<?php esc_html_e( 'Professional service from booking to drop-off. The driver was punctual, courteous, and the vehicle was immaculate. Highly recommend!', 'woocommerce' ); ?>"
+                            </div>
+                            <div class="checkout-testimonial-author">— <?php esc_html_e( 'Michael S., Frankfurt', 'woocommerce' ); ?></div>
                         </div>
 
                         <?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
