@@ -1,10 +1,86 @@
+/* test marker */
 /*
  * Booking Page Enhancements
  * ------------------------------------------------------------
- * Styles tailored for the transfer booking experience.
+ * Styles tailored for the transfer booking experience (modernized).
  */
 
 
+body.page-template-temp-transfer {
+    --booking-primary: #02a5ce;
+    --booking-secondary: #3cb371;
+    --booking-accent: #0d7f88;
+    --booking-surface: #ffffff;
+    --booking-surface-subtle: #f5f8f6;
+    --booking-border: rgba(9, 74, 58, 0.08);
+    --booking-shadow-soft: 0 30px 60px rgba(8, 63, 48, 0.12);
+    --booking-shadow-focus: 0 40px 70px rgba(9, 90, 85, 0.18);
+    background: var(--booking-surface-subtle);
+    color: #143628;
+.page-template-temp-transfer body,
+body.page-template-temp-transfer {
+    --booking-primary: #02a5ce;
+    --booking-secondary: #3cb371;
+    --booking-accent: #0d7f88;
+    --booking-surface: #ffffff;
+    --booking-surface-subtle: #f5f8f6;
+    --booking-border: rgba(9, 74, 58, 0.08);
+    --booking-shadow-soft: 0 30px 60px rgba(8, 63, 48, 0.12);
+    --booking-shadow-focus: 0 40px 70px rgba(9, 90, 85, 0.18);
+    background: var(--booking-surface-subtle);
+    color: #143628;
+}
+
+.page-template-temp-transfer .site,
+.page-template-temp-transfer .site-content,
+.page-template-temp-transfer .page-content {
+    background: transparent !important;
+}
+
+.page-template-temp-transfer body,
+body.page-template-temp-transfer {
+    --booking-primary: #02a5ce;
+    --booking-secondary: #3cb371;
+    --booking-accent: #0d7f88;
+    --booking-surface: #ffffff;
+    --booking-surface-subtle: #f5f8f6;
+    --booking-border: rgba(9, 74, 58, 0.08);
+    --booking-shadow-soft: 0 30px 60px rgba(8, 63, 48, 0.12);
+    --booking-shadow-focus: 0 40px 70px rgba(9, 90, 85, 0.18);
+    background: var(--booking-surface-subtle);
+    color: #143628;
+}
+
+.page-template-temp-transfer .site,
+.page-template-temp-transfer .site-content,
+.page-template-temp-transfer .page-content {
+    background: transparent !important;
+}
+
+.booking-hero {
+    --booking-primary: #02a5ce;
+    --booking-secondary: #3cb371;
+    --booking-accent: #0d7f88;
+    --booking-surface: #ffffff;
+    --booking-surface-subtle: #f5f8f6;
+    --booking-border: rgba(9, 74, 58, 0.08);
+    --booking-shadow-soft: 0 30px 60px rgba(8, 63, 48, 0.12);
+    --booking-shadow-focus: 0 40px 70px rgba(9, 90, 85, 0.18);
+    background: var(--booking-surface-subtle);
+    color: #143628;
+}
+
+.page-template-temp-transfer .site,
+.page-template-temp-transfer .site-content,
+.page-template-temp-transfer .page-content {
+    background: transparent !important;
+}
+
+body.page-template-temp-transfer .site,
+body.page-template-temp-transfer .site-content,
+body.page-template-temp-transfer .page-content {
+    background: transparent !important;
+}
 
 .booking-hero {
     position: relative;
@@ -174,19 +250,23 @@
     outline-offset: 3px;
 }
 
+
 .booking-form-section {
-    padding: clamp(2.5rem, 5vw, 3.5rem) 0 clamp(2.75rem, 5vw, 3.75rem);
-    background: linear-gradient(180deg, #ffffff 0%, #f4fbf7 100%);
+    padding: clamp(2.75rem, 5vw, 4rem) 0 clamp(3rem, 6vw, 4.5rem);
+    background: linear-gradient(180deg, #f6fafc 0%, #f1f9f4 100%);
 }
 
 .booking-form-wrapper {
-    background: #ffffff;
-    border-radius: 1.5rem;
-    padding: clamp(1.75rem, 3.5vw, 2.6rem);
-    box-shadow: 0 20px 42px rgba(22, 25, 32, 0.07);
+    background: #ffffff !important;
+    border-radius: 1.85rem !important;
+    padding: clamp(2rem, 4vw, 2.9rem) !important;
+    box-shadow: var(--booking-shadow-soft, 0 30px 60px rgba(8, 63, 48, 0.12)) !important;
     position: relative;
     width: 100%;
     margin-inline: auto;
+    border: 1px solid rgba(10, 86, 68, 0.08) !important;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
 }
 
 .booking-form-wrapper::after {
@@ -194,7 +274,7 @@
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    border: 1px solid rgba(25, 135, 84, 0.08);
+    border: 1px solid rgba(12, 115, 92, 0.08);
     pointer-events: none;
 }
 
@@ -810,60 +890,110 @@ section.booking-form-section div[class*="wp-block"]:not(.booking-step):not(.book
 }
 
 /* CHBS Booking Form Step Navigation Styling */
-.chbs-main-navigation-wrapper {
-    background: linear-gradient(135deg, rgba(60, 179, 113, 0.08) 0%, rgba(2, 165, 206, 0.08) 100%) !important;
-    border-radius: 1rem !important;
-    padding: 0.5rem !important;
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-navigation-wrapper {
+    background: transparent !important;
+    border-radius: 1.25rem !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    margin-bottom: clamp(1.75rem, 4vw, 2.5rem) !important;
 }
 
-.chbs-main-navigation > li {
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-navigation {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    list-style: none;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-navigation > li {
+    background: var(--booking-surface);
+    border: 1px solid var(--booking-border);
+    border-radius: 1.25rem;
+    box-shadow: 0 18px 36px rgba(12, 58, 44, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     position: relative;
+    overflow: hidden;
+    float: none !important;
+    width: auto !important;
 }
 
-.chbs-main-navigation > li::before {
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-navigation > li::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #3cb371 0%, #02a5ce 50%, #f7921f 100%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    inset: 0;
+    border-radius: inherit;
+    border: 2px solid transparent;
+    pointer-events: none;
+    transition: border-color 0.25s ease;
 }
 
-.chbs-main-navigation > li.chbs-state-selected::before,
-.chbs-main-navigation > li:hover::before {
-    opacity: 1;
-}
-
-.chbs-main-navigation > li > a {
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-navigation > li > a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.85rem !important;
+    padding: 1rem 1.35rem !important;
+    color: #1f4f3d !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
     background: transparent !important;
-    color: #35614a !important;
-    transition: all 0.3s ease !important;
+    line-height: 1.25 !important;
 }
 
-.chbs-main-navigation > li.chbs-state-selected > a {
-    background: linear-gradient(135deg, #3cb371 0%, #02a5ce 100%) !important;
-    color: #ffffff !important;
-    box-shadow: 0 8px 16px rgba(60, 179, 113, 0.25) !important;
-}
-
-.chbs-main-navigation > li:hover > a {
-    background: rgba(60, 179, 113, 0.15) !important;
-    color: #154830 !important;
-}
-
-.chbs-main-navigation > li > a > span:first-child {
-    background: linear-gradient(135deg, #3cb371 0%, #02a5ce 100%) !important;
-    color: #ffffff !important;
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-navigation > li > a > span:first-child {
+    flex-shrink: 0;
+    width: 2.75rem !important;
+    height: 2.75rem !important;
     border-radius: 50% !important;
-    box-shadow: 0 4px 12px rgba(60, 179, 113, 0.3) !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    background: linear-gradient(135deg, var(--booking-secondary) 0%, var(--booking-primary) 100%) !important;
+    box-shadow: 0 12px 24px rgba(60, 179, 113, 0.35) !important;
+    transition: transform 0.25s ease, background 0.25s ease;
 }
 
-.chbs-main-navigation > li.chbs-state-selected > a > span:first-child {
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-navigation > li > a > span:last-child {
+    flex: 1;
+    font-size: 1.05rem !important;
+    letter-spacing: 0.01em;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-navigation > li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 24px 44px rgba(15, 75, 55, 0.12);
+    border-color: rgba(60, 179, 113, 0.35);
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-navigation > li:hover::after {
+    border-color: rgba(60, 179, 113, 0.2);
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-navigation > li:hover > a {
+    color: #124332 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-navigation > li.chbs-state-selected {
+    border-color: rgba(2, 165, 206, 0.45);
+    box-shadow: 0 32px 52px rgba(2, 165, 206, 0.18);
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-navigation > li.chbs-state-selected::after {
+    border-color: rgba(2, 165, 206, 0.35);
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-navigation > li.chbs-state-selected > a {
+    color: #0f3c51 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-navigation > li.chbs-state-selected > a > span:first-child {
     background: #ffffff !important;
-    color: #3cb371 !important;
+    color: var(--booking-primary) !important;
+    transform: scale(1.05);
+    box-shadow: 0 18px 32px rgba(2, 165, 206, 0.35) !important;
 }
 
 /* CHBS Form Buttons */
@@ -881,6 +1011,507 @@ a[class*="chbs-button"] {
     color: #ffffff !important;
     font-weight: 600 !important;
     padding: 0.875rem 1.75rem !important;
+
+/* Position navigation buttons so the "Next" CTA sits on the right */
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content-navigation-button {
+    display: flex !important;
+    gap: 1rem !important;
+    align-items: center !important;
+    flex-wrap: wrap;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content-navigation-button .chbs-button-step-next {
+    margin-left: auto !important;
+}
+
+@media (max-width: 640px) {
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-content-navigation-button {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-content-navigation-button .chbs-button-step-next {
+        margin-left: 0 !important;
+    }
+}
+/* Modern multi-step layout refresh */
+body.page-template-temp-transfer,
+.page-template-temp-transfer body {
+    --booking-primary: #02a5ce;
+    --booking-secondary: #3cb371;
+    --booking-accent: #0d7f88;
+    --booking-surface: #ffffff;
+    --booking-surface-subtle: #f5f8f6;
+    --booking-border: rgba(9, 74, 58, 0.08);
+    --booking-shadow-soft: 0 30px 60px rgba(8, 63, 48, 0.12);
+    --booking-shadow-focus: 0 40px 70px rgba(9, 90, 85, 0.18);
+    background: var(--booking-surface-subtle);
+    color: #143628;
+}
+
+/* Modern multi-step layout refresh */
+body.page-template-temp-transfer,
+.page-template-temp-transfer body {
+    --booking-primary: #02a5ce;
+    --booking-secondary: #3cb371;
+    --booking-accent: #0d7f88;
+    --booking-surface: #ffffff;
+    --booking-surface-subtle: #f5f8f6;
+    --booking-border: rgba(9, 74, 58, 0.08);
+    --booking-shadow-soft: 0 30px 60px rgba(8, 63, 48, 0.12);
+    --booking-shadow-focus: 0 40px 70px rgba(9, 90, 85, 0.18);
+    background: var(--booking-surface-subtle);
+    color: #143628;
+}
+
+/* Modern multi-step layout refresh */
+body.page-template-temp-transfer,
+.page-template-temp-transfer body {
+    --booking-primary: #02a5ce;
+    --booking-secondary: #3cb371;
+    --booking-accent: #0d7f88;
+    --booking-surface: #ffffff;
+    --booking-surface-subtle: #f5f8f6;
+    --booking-border: rgba(9, 74, 58, 0.08);
+    --booking-shadow-soft: 0 30px 60px rgba(8, 63, 48, 0.12);
+    --booking-shadow-focus: 0 40px 70px rgba(9, 90, 85, 0.18);
+    background: var(--booking-surface-subtle);
+    color: #143628;
+}
+
+.page-template-temp-transfer .site,
+.page-template-temp-transfer .site-content,
+.page-template-temp-transfer .page-content {
+    background: transparent !important;
+}
+
+.page-template-temp-transfer .booking-form-section {
+    background: linear-gradient(180deg, #f6fafc 0%, #f1f9f4 100%);
+    padding: clamp(2.75rem, 5vw, 4rem) 0 clamp(3rem, 6vw, 4.5rem);
+}
+
+.page-template-temp-transfer .booking-form-wrapper {
+    background: #ffffff !important;
+    border-radius: 1.85rem !important;
+    padding: clamp(2rem, 4vw, 2.9rem) !important;
+    box-shadow: var(--booking-shadow-soft) !important;
+    border: 1px solid rgba(10, 86, 68, 0.08) !important;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    position: relative;
+}
+
+.page-template-temp-transfer .booking-form-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid rgba(12, 115, 92, 0.08);
+    pointer-events: none;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-label-group {
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    color: #103c2d !important;
+    margin: 1.75rem 0 1rem !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-label-group:first-child {
+    margin-top: 0 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(16, 100, 75, 0.08) !important;
+    border-radius: 0.95rem !important;
+    padding: 0.9rem 1.05rem !important;
+    margin-bottom: 1rem !important;
+    box-shadow: 0 12px 28px rgba(16, 60, 45, 0.06) !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field label {
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    color: #0f4032 !important;
+    letter-spacing: 0.01em;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field input,
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field select,
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field textarea,
+.page-template-temp-transfer .booking-form-wrapper input[class*="chbs"],
+.page-template-temp-transfer .booking-form-wrapper select[class*="chbs"],
+.page-template-temp-transfer .booking-form-wrapper textarea[class*="chbs"] {
+    border: 1px solid rgba(13, 110, 84, 0.25) !important;
+    border-radius: 0.75rem !important;
+    padding: 0.75rem 0.95rem !important;
+    background: #f9fbfa !important;
+    font-size: 0.95rem !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field input:focus,
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field select:focus,
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field textarea:focus,
+.page-template-temp-transfer .booking-form-wrapper input[class*="chbs"]:focus,
+.page-template-temp-transfer .booking-form-wrapper select[class*="chbs"]:focus,
+.page-template-temp-transfer .booking-form-wrapper textarea[class*="chbs"]:focus {
+    border-color: rgba(2, 165, 206, 0.6) !important;
+    background: #ffffff !important;
+    box-shadow: 0 0 0 4px rgba(2, 165, 206, 0.12) !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field .chbs-meta-icon-2,
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field .chbs-meta-icon-plus,
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field .chbs-meta-icon-minus {
+    color: var(--booking-primary) !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field-location-switch,
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field-waypoint {
+    background: #ffffff !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content-navigation-button {
+    margin-top: clamp(1.5rem, 4vw, 2.5rem) !important;
+    padding: 1.25rem 1.5rem !important;
+    border: 1px solid rgba(9, 74, 58, 0.08) !important;
+    border-radius: 1.25rem !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 14px 32px rgba(15, 68, 50, 0.08) !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content-navigation-button .chbs-button {
+    min-width: 190px;
+    justify-content: center;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-google-map,
+.page-template-temp-transfer .booking-form-wrapper .chbs-ride-info {
+    background: var(--booking-surface);
+    border: 1px solid rgba(9, 74, 58, 0.1);
+    border-radius: 1.15rem;
+    padding: 1.25rem;
+    box-shadow: 0 16px 38px rgba(13, 58, 44, 0.08);
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-ride-info > div {
+    background: rgba(2, 165, 206, 0.06);
+    border-radius: 0.9rem;
+    padding: 0.85rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-ride-info > div + div {
+    margin-top: 0.75rem;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-ride-info span[class*="chbs-meta-icon"] {
+    font-size: 1.15rem;
+    color: var(--booking-primary) !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-vehicle,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra,
+.page-template-temp-transfer .booking-form-wrapper .chbs-layout-responsive-cell {
+    display: grid !important;
+    grid-template-columns: minmax(96px, 130px) minmax(0, 1fr) auto;
+    align-items: center !important;
+    gap: 1.35rem !important;
+    background: var(--booking-surface) !important;
+    border: 1px solid rgba(12, 82, 61, 0.12) !important;
+    border-radius: 1.35rem !important;
+    padding: 1.4rem 1.6rem !important;
+    margin-bottom: 1.15rem !important;
+    box-shadow: 0 20px 46px rgba(16, 60, 45, 0.1) !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-vehicle:hover,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra:hover,
+.page-template-temp-transfer .booking-form-wrapper .chbs-layout-responsive-cell:hover {
+    transform: translateY(-4px) !important;
+    border-color: rgba(2, 165, 206, 0.4) !important;
+    box-shadow: 0 32px 60px rgba(2, 165, 206, 0.18) !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-vehicle.chbs-state-selected,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra.chbs-state-selected,
+.page-template-temp-transfer .booking-form-wrapper .chbs-layout-responsive-cell.chbs-state-selected {
+    background: linear-gradient(135deg, rgba(2, 165, 206, 0.12) 0%, rgba(60, 179, 113, 0.12) 100%) !important;
+    border-color: rgba(2, 165, 206, 0.55) !important;
+    box-shadow: 0 32px 60px rgba(2, 165, 206, 0.22) !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-vehicle img,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra img {
+    max-width: 120px !important;
+    width: 100% !important;
+    filter: none !important;
+    background: rgba(2, 165, 206, 0.06);
+    border-radius: 1rem;
+    padding: 0.85rem;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-vehicle-header,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra-header {
+    border: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-vehicle-header > span:first-child,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra-header > span:first-child {
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    color: #112f25 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-vehicle-meta,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra-meta {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem !important;
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-vehicle-meta > div,
+.page-template-temp-transfer .booking-form-wrapper .chbs-vehicle-meta span,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra-meta > div,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra-meta span {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.35rem;
+    background: rgba(2, 165, 206, 0.08);
+    color: #0f5165 !important;
+    border-radius: 999px;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.78rem !important;
+    font-weight: 600 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-vehicle-price,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra-price {
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    color: #0f3d57 !important;
+    text-align: right;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-price,
+.page-template-temp-transfer .booking-form-wrapper .chbs-price-element {
+    color: #0f3d57 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-price-discount,
+.page-template-temp-transfer .booking-form-wrapper .chbs-price-old {
+    background: rgba(247, 146, 31, 0.12) !important;
+    color: #b85a00 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-summary,
+.page-template-temp-transfer .booking-form-wrapper .chbs-total,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-summary,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-summary-price-element,
+.page-template-temp-transfer .booking-form-wrapper .chbs-info {
+    background: var(--booking-surface) !important;
+    border: 1px solid rgba(2, 165, 206, 0.15) !important;
+    border-radius: 1.5rem !important;
+    padding: 1.75rem !important;
+    box-shadow: 0 24px 48px rgba(13, 74, 59, 0.12) !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-summary > h3,
+.page-template-temp-transfer .booking-form-wrapper .chbs-summary > h3,
+.page-template-temp-transfer .booking-form-wrapper .chbs-total > h3 {
+    font-size: 1.15rem !important;
+    font-weight: 700 !important;
+    color: #0f3d57 !important;
+    margin-bottom: 1rem !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-summary-price-element-total,
+.page-template-temp-transfer .booking-form-wrapper .chbs-total .chbs-price-total {
+    font-size: 1.6rem !important;
+    background: linear-gradient(135deg, var(--booking-secondary) 0%, var(--booking-primary) 100%) !important;
+    color: #ffffff !important;
+    border-radius: 1rem !important;
+    padding: 1rem 1.25rem !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra-price-element > span:last-child {
+    font-size: 0.95rem !important;
+    color: #0c465b !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-info p,
+.page-template-temp-transfer .booking-form-wrapper .chbs-summary p,
+.page-template-temp-transfer .booking-form-wrapper .chbs-total p {
+    color: #1a3c2d !important;
+    line-height: 1.6 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-contact,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-billing {
+    border: 1px solid rgba(2, 165, 206, 0.18) !important;
+    border-radius: 1.35rem !important;
+    box-shadow: 0 18px 42px rgba(13, 74, 59, 0.12) !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-approve,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-approve,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-approve-all {
+    border: 1px solid rgba(15, 90, 70, 0.18) !important;
+    background: rgba(3, 150, 115, 0.06) !important;
+    border-radius: 1rem !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-approve label {
+    color: #13452f !important;
+    font-weight: 600 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-complete {
+    background: var(--booking-surface) !important;
+    border: 1px solid rgba(2, 165, 206, 0.18) !important;
+    border-radius: 1.75rem !important;
+    box-shadow: 0 28px 60px rgba(13, 74, 59, 0.14) !important;
+    padding: clamp(2rem, 5vw, 2.75rem) !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-complete h3 {
+    font-size: 1.45rem !important;
+    font-weight: 700 !important;
+    color: #0f3d57 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-complete-payment a {
+    border-radius: 999px !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-complete-payment > div {
+    border: 1px dashed rgba(2, 165, 206, 0.25) !important;
+    border-radius: 1.15rem !important;
+    padding: 1.25rem !important;
+    background: rgba(2, 165, 206, 0.06);
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra-list,
+.page-template-temp-transfer .booking-form-wrapper .chbs-vehicle-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content-step-1 .chbs-layout-50x50,
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content-step-1 .chbs-layout-25x75,
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content-step-2 .chbs-layout-25x75,
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content-step-3 .chbs-layout-25x75 {
+    display: grid !important;
+    gap: clamp(1.75rem, 4vw, 2.5rem);
+    grid-template-columns: minmax(0, 1.75fr) minmax(280px, 1fr);
+    align-items: flex-start;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-layout-50x50 > .chbs-layout-column-left,
+.page-template-temp-transfer .booking-form-wrapper .chbs-layout-50x50 > .chbs-layout-column-right,
+.page-template-temp-transfer .booking-form-wrapper .chbs-layout-25x75 > .chbs-layout-column-left,
+.page-template-temp-transfer .booking-form-wrapper .chbs-layout-25x75 > .chbs-layout-column-right,
+.page-template-temp-transfer .booking-form-wrapper .chbs-layout-33x33x33 > .chbs-layout-column-left,
+.page-template-temp-transfer .booking-form-wrapper .chbs-layout-33x33x33 > .chbs-layout-column-center,
+.page-template-temp-transfer .booking-form-wrapper .chbs-layout-33x33x33 > .chbs-layout-column-right {
+    float: none !important;
+    width: auto !important;
+    max-width: none !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-layout-column-left:empty,
+.page-template-temp-transfer .booking-form-wrapper .chbs-layout-column-left:empty + * {
+    grid-column: 1 / -1;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-layout-column-left:empty {
+    display: none !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-layout-column-right:only-child {
+    grid-column: 1 / -1;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content-step-4 .chbs-layout-33x33x33 {
+    display: grid !important;
+    gap: clamp(1.5rem, 3vw, 2.25rem);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    align-items: flex-start;
+}
+
+@media (max-width: 1024px) {
+    .page-template-temp-transfer .booking-form-wrapper {
+        padding: clamp(1.5rem, 5vw, 2.2rem) !important;
+    }
+
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-navigation {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-content-step-1 .chbs-layout-50x50,
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-content-step-1 .chbs-layout-25x75,
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-content-step-2 .chbs-layout-25x75,
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-content-step-3 .chbs-layout-25x75,
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-content-step-4 .chbs-layout-33x33x33 {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .page-template-temp-transfer .booking-form-wrapper .chbs-vehicle,
+    .page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra,
+    .page-template-temp-transfer .booking-form-wrapper .chbs-layout-responsive-cell {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .page-template-temp-transfer .booking-form-wrapper .chbs-vehicle img,
+    .page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra img {
+        max-width: 180px !important;
+        margin-inline: auto;
+    }
+
+    .page-template-temp-transfer .booking-form-wrapper .chbs-vehicle-price,
+    .page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra-price {
+        text-align: left;
+    }
+}
+
+@media (max-width: 640px) {
+    .page-template-temp-transfer .booking-form-section {
+        padding: 2.5rem 0;
+    }
+
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-navigation {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-navigation > li > a {
+        padding: 0.9rem 1rem !important;
+        gap: 0.65rem !important;
+    }
+
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-navigation > li > a > span:first-child {
+        width: 2.45rem !important;
+        height: 2.45rem !important;
+    }
+
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-content-navigation-button {
+        padding: 1rem !important;
+    }
+}
     border-radius: 0.5rem !important;
     box-shadow: 0 8px 16px rgba(60, 179, 113, 0.25) !important;
     transition: all 0.3s ease !important;
@@ -900,6 +1531,56 @@ a[class*="chbs-button"]:hover {
     box-shadow: 0 12px 24px rgba(60, 179, 113, 0.35) !important;
     transform: translateY(-2px) !important;
     color: #ffffff !important;
+}
+
+/* Ensure booking CTA buttons stay legible on transfer template */
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-1,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-2,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-1.chbs-button-step-next,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-2.chbs-button-step-prev {
+    color: #ffffff !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-1 span,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-2 span {
+    color: inherit !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-1:hover,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-2:hover,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-1:focus,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-2:focus {
+    background: linear-gradient(135deg, #2da05a 0%, #0189ab 100%) !important;
+    color: #ffffff !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-1:hover span,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-2:hover span,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-1:focus span,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-2:focus span {
+    color: inherit !important;
+}
+
+/* Ensure "Choose a vehicle" CTA stays legible */
+.page-template-temp-transfer .go_trip_bookingform .chbs-button-style-1 {
+    background: linear-gradient(135deg, #3cb371 0%, #02a5ce 100%) !important;
+    border-color: transparent !important;
+    color: #ffffff !important;
+}
+
+.page-template-temp-transfer .go_trip_bookingform .chbs-button-style-1 span {
+    color: inherit !important;
+}
+
+.page-template-temp-transfer .go_trip_bookingform .chbs-button-style-1:hover,
+.page-template-temp-transfer .go_trip_bookingform .chbs-button-style-1:focus {
+    background: linear-gradient(135deg, #2da05a 0%, #0189ab 100%) !important;
+    color: #ffffff !important;
+}
+
+.page-template-temp-transfer .go_trip_bookingform .chbs-button-style-1:hover span,
+.page-template-temp-transfer .go_trip_bookingform .chbs-button-style-1:focus span {
+    color: inherit !important;
 }
 
 /* Specific button text color */
@@ -1003,6 +1684,16 @@ img[class*="chbs"]:hover {
     background: #ffffff !important;
     border-radius: 1rem !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    color: #154830 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper,
+.page-template-temp-transfer .booking-form-wrapper .chbs-main,
+.page-template-temp-transfer .booking-form-wrapper .chbs-step,
+.page-template-temp-transfer .booking-form-wrapper .chbs-panel,
+.page-template-temp-transfer .booking-form-wrapper .chbs-content,
+.page-template-temp-transfer .booking-form-wrapper .chbs-widget {
+    color: #154830 !important;
 }
 
 /* Vehicle/Option panels and cards - Clean white with subtle borders */
@@ -1016,6 +1707,7 @@ img[class*="chbs"]:hover {
     padding: 1.25rem !important;
     margin-bottom: 1rem !important;
     transition: all 0.3s ease !important;
+    color: #154830 !important;
 }
 
 .chbs-vehicle:hover,
@@ -1059,20 +1751,19 @@ img[class*="chbs"]:hover {
 }
 
 /* Fix all gray/grayish backgrounds - Force white */
-.chbs-section,
-.chbs-step,
-.chbs-panel,
-.chbs-content,
-.chbs-widget,
-div[class*="chbs-"] {
+.page-template-temp-transfer .booking-form-wrapper .chbs-section,
+.page-template-temp-transfer .booking-form-wrapper .chbs-step,
+.page-template-temp-transfer .booking-form-wrapper .chbs-panel,
+.page-template-temp-transfer .booking-form-wrapper .chbs-content,
+.page-template-temp-transfer .booking-form-wrapper .chbs-widget {
     background: transparent !important;
 }
 
-.chbs-main-content-step,
-.chbs-main-content,
-.chbs-layout,
-.chbs-layout-responsive,
-.chbs-form-panel {
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content-step,
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content,
+.page-template-temp-transfer .booking-form-wrapper .chbs-layout,
+.page-template-temp-transfer .booking-form-wrapper .chbs-layout-responsive,
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-panel {
     background: #ffffff !important;
 }
 
@@ -1106,6 +1797,17 @@ button[class*="continue"],
     background: linear-gradient(135deg, #3cb371 0%, #02a5ce 100%) !important;
     color: #ffffff !important;
     font-weight: 700 !important;
+}
+
+/* Position navigation buttons so "Next" anchors snap right */
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content-navigation-button {
+    display: flex !important;
+    gap: 1rem !important;
+    align-items: center !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content-navigation-button .chbs-button-step-next {
+    margin-left: auto !important;
 }
 
 /* Vehicle selection buttons/links */
@@ -1180,6 +1882,31 @@ textarea[class*="chbs"] {
     border-radius: 0.5rem !important;
     padding: 0.75rem 1rem !important;
     transition: all 0.3s ease !important;
+    color: #154830 !important;
+}
+
+.chbs-form-field label,
+.chbs-form-field legend,
+.chbs-form-field span,
+.chbs-form-field p {
+    color: #154830 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper ::placeholder {
+    color: rgba(21, 72, 48, 0.6) !important;
+    opacity: 1 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper a:not([class*="chbs-button"]) {
+    color: #02a5ce !important;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.page-template-temp-transfer .booking-form-wrapper a:not([class*="chbs-button"]):hover,
+.page-template-temp-transfer .booking-form-wrapper a:not([class*="chbs-button"]):focus {
+    color: #3cb371 !important;
 }
 
 .chbs-form-field input:focus,
@@ -1309,44 +2036,52 @@ hr[class*="chbs"] {
    FINAL COMPREHENSIVE OVERRIDES - CRITICAL FIXES
    =================================================================== */
 
-/* Force ALL buttons to have visible white text */
-button, 
-input[type="button"],
-input[type="submit"],
-a.button,
-.button,
-[class*="button"],
-[class*="btn"] {
-    color: #ffffff !important;
-}
-
-/* Force ALL CHBS containers to have transparent/white backgrounds */
-[class*="chbs-main"],
-[class*="chbs-content"],
-[class*="chbs-step"],
-[class*="chbs-section"] {
+/* Force CHBS containers inside booking form to use white backgrounds */
+.page-template-temp-transfer .booking-form-wrapper [class*="chbs-main"],
+.page-template-temp-transfer .booking-form-wrapper [class*="chbs-content"],
+.page-template-temp-transfer .booking-form-wrapper [class*="chbs-step"],
+.page-template-temp-transfer .booking-form-wrapper [class*="chbs-section"] {
     background: #ffffff !important;
 }
 
-/* Remove ANY gray backgrounds from containers */
-div[style*="background"][style*="gray"],
-div[style*="background"][style*="grey"],
-div[style*="background-color"][style*="#6"],
-div[style*="background-color"][style*="#7"],
-div[style*="background-color"][style*="#8"],
-div[style*="background-color"][style*="#9"] {
-    background: transparent !important;
-    background-color: transparent !important;
-}
-
 /* Ensure all text within green/blue backgrounds is white */
-[style*="background"][style*="#3cb371"] *,
-[style*="background"][style*="#02a5ce"] *,
-[style*="background"][style*="rgb(60, 179, 113)"] *,
-[style*="background"][style*="rgb(2, 165, 206)"] *,
+.page-template-temp-transfer [style*="background"][style*="#3cb371"] *,
+.page-template-temp-transfer [style*="background"][style*="#02a5ce"] *,
+.page-template-temp-transfer [style*="background"][style*="rgb(60, 179, 113)"] *,
+.page-template-temp-transfer [style*="background"][style*="rgb(2, 165, 206)"] *,
 .chbs-button *,
 button[class*="chbs"] * {
     color: #ffffff !important;
+}
+
+/* Booking CTA buttons: keep copy readable */
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-1,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-2,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-1.chbs-button-step-next,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-2.chbs-button-step-prev {
+    color: #ffffff !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-1 span,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-2 span,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-1 strong,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-2 strong {
+    color: inherit !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-1:hover,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-2:hover,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-1:focus,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-2:focus {
+    background: linear-gradient(135deg, #2da05a 0%, #0189ab 100%) !important;
+    color: #ffffff !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-1:hover span,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-2:hover span,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-1:focus span,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-2:focus span {
+    color: inherit !important;
 }
 
 /* Force navigation buttons to have proper colors */
@@ -1361,8 +2096,448 @@ button[class*="chbs"] * {
     box-shadow: 0 8px 24px rgba(60, 179, 113, 0.4) !important;
 }
 
+/* Layout adjustment: keep "Next" CTA aligned right on booking template */
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content-navigation-button {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    flex-wrap: wrap;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content-navigation-button .chbs-button-step-next {
+    margin-left: auto !important;
+}
+
+@media (max-width: 640px) {
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-content-navigation-button {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-content-navigation-button .chbs-button-step-next {
+        margin-left: 0 !important;
+    }
+}
+
 /* Override any inline styles that set gray backgrounds */
-.chbs-main-content > div,
-.chbs-main-content > section {
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content > div,
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content > section {
     background-color: #ffffff !important;
+}
+
+/* Step navigation buttons: keep copy readable */
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-1,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-2 {
+    color: #ffffff !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-1 span,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-2 span {
+    color: inherit !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-1:hover,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-2:hover,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-1:focus,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-2:focus {
+    background: linear-gradient(135deg, #2da05a 0%, #0189ab 100%) !important;
+    color: #ffffff !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-1:hover span,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-2:hover span,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-1:focus span,
+.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-2:focus span {
+    color: inherit !important;
+}
+
+/* Modern multi-step layout refresh */
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-label-group {
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    color: #103c2d !important;
+    margin: 1.75rem 0 1rem !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-label-group:first-child {
+    margin-top: 0 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(16, 100, 75, 0.08) !important;
+    border-radius: 0.95rem !important;
+    padding: 0.9rem 1.05rem !important;
+    margin-bottom: 1rem !important;
+    box-shadow: 0 12px 28px rgba(16, 60, 45, 0.06) !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field label {
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    color: #0f4032 !important;
+    letter-spacing: 0.01em;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field input,
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field select,
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field textarea,
+.page-template-temp-transfer .booking-form-wrapper input[class*="chbs"],
+.page-template-temp-transfer .booking-form-wrapper select[class*="chbs"],
+.page-template-temp-transfer .booking-form-wrapper textarea[class*="chbs"] {
+    border: 1px solid rgba(13, 110, 84, 0.25) !important;
+    border-radius: 0.75rem !important;
+    padding: 0.75rem 0.95rem !important;
+    background: #f9fbfa !important;
+    font-size: 0.95rem !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field input:focus,
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field select:focus,
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field textarea:focus,
+.page-template-temp-transfer .booking-form-wrapper input[class*="chbs"]:focus,
+.page-template-temp-transfer .booking-form-wrapper select[class*="chbs"]:focus,
+.page-template-temp-transfer .booking-form-wrapper textarea[class*="chbs"]:focus {
+    border-color: rgba(2, 165, 206, 0.6) !important;
+    background: #ffffff !important;
+    box-shadow: 0 0 0 4px rgba(2, 165, 206, 0.12) !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field .chbs-meta-icon-2,
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field .chbs-meta-icon-plus,
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field .chbs-meta-icon-minus {
+    color: var(--booking-primary) !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field-location-switch,
+.page-template-temp-transfer .booking-form-wrapper .chbs-form-field-waypoint {
+    background: #ffffff !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content-navigation-button {
+    margin-top: clamp(1.5rem, 4vw, 2.5rem) !important;
+    padding: 1.25rem 1.5rem !important;
+    border: 1px solid rgba(9, 74, 58, 0.08) !important;
+    border-radius: 1.25rem !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 14px 32px rgba(15, 68, 50, 0.08) !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content-navigation-button .chbs-button {
+    min-width: 190px;
+    justify-content: center;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-google-map,
+.page-template-temp-transfer .booking-form-wrapper .chbs-ride-info {
+    background: var(--booking-surface);
+    border: 1px solid rgba(9, 74, 58, 0.1);
+    border-radius: 1.15rem;
+    padding: 1.25rem;
+    box-shadow: 0 16px 38px rgba(13, 58, 44, 0.08);
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-ride-info > div {
+    background: rgba(2, 165, 206, 0.06);
+    border-radius: 0.9rem;
+    padding: 0.85rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-ride-info > div + div {
+    margin-top: 0.75rem;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-ride-info span[class*="chbs-meta-icon"] {
+    font-size: 1.15rem;
+    color: var(--booking-primary) !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-vehicle,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra,
+.page-template-temp-transfer .booking-form-wrapper .chbs-layout-responsive-cell {
+    display: grid !important;
+    grid-template-columns: minmax(96px, 130px) minmax(0, 1fr) auto;
+    align-items: center !important;
+    gap: 1.35rem !important;
+    background: var(--booking-surface) !important;
+    border: 1px solid rgba(12, 82, 61, 0.12) !important;
+    border-radius: 1.35rem !important;
+    padding: 1.4rem 1.6rem !important;
+    margin-bottom: 1.15rem !important;
+    box-shadow: 0 20px 46px rgba(16, 60, 45, 0.1) !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-vehicle:hover,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra:hover,
+.page-template-temp-transfer .booking-form-wrapper .chbs-layout-responsive-cell:hover {
+    transform: translateY(-4px) !important;
+    border-color: rgba(2, 165, 206, 0.4) !important;
+    box-shadow: 0 32px 60px rgba(2, 165, 206, 0.18) !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-vehicle.chbs-state-selected,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra.chbs-state-selected,
+.page-template-temp-transfer .booking-form-wrapper .chbs-layout-responsive-cell.chbs-state-selected {
+    background: linear-gradient(135deg, rgba(2, 165, 206, 0.12) 0%, rgba(60, 179, 113, 0.12) 100%) !important;
+    border-color: rgba(2, 165, 206, 0.55) !important;
+    box-shadow: 0 32px 60px rgba(2, 165, 206, 0.22) !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-vehicle img,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra img {
+    max-width: 120px !important;
+    width: 100% !important;
+    filter: none !important;
+    background: rgba(2, 165, 206, 0.06);
+    border-radius: 1rem;
+    padding: 0.85rem;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-vehicle-header,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra-header {
+    border: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-vehicle-header > span:first-child,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra-header > span:first-child {
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    color: #112f25 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-vehicle-meta,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra-meta {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem !important;
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-vehicle-meta > div,
+.page-template-temp-transfer .booking-form-wrapper .chbs-vehicle-meta span,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra-meta > div,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra-meta span {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.35rem;
+    background: rgba(2, 165, 206, 0.08);
+    color: #0f5165 !important;
+    border-radius: 999px;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.78rem !important;
+    font-weight: 600 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-vehicle-price,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra-price {
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    color: #0f3d57 !important;
+    text-align: right;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-price,
+.page-template-temp-transfer .booking-form-wrapper .chbs-price-element {
+    color: #0f3d57 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-price-discount,
+.page-template-temp-transfer .booking-form-wrapper .chbs-price-old {
+    background: rgba(247, 146, 31, 0.12) !important;
+    color: #b85a00 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-summary,
+.page-template-temp-transfer .booking-form-wrapper .chbs-total,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-summary,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-summary-price-element,
+.page-template-temp-transfer .booking-form-wrapper .chbs-info {
+    background: var(--booking-surface) !important;
+    border: 1px solid rgba(2, 165, 206, 0.15) !important;
+    border-radius: 1.5rem !important;
+    padding: 1.75rem !important;
+    box-shadow: 0 24px 48px rgba(13, 74, 59, 0.12) !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-summary > h3,
+.page-template-temp-transfer .booking-form-wrapper .chbs-summary > h3,
+.page-template-temp-transfer .booking-form-wrapper .chbs-total > h3 {
+    font-size: 1.15rem !important;
+    font-weight: 700 !important;
+    color: #0f3d57 !important;
+    margin-bottom: 1rem !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-summary-price-element-total,
+.page-template-temp-transfer .booking-form-wrapper .chbs-total .chbs-price-total {
+    font-size: 1.6rem !important;
+    background: linear-gradient(135deg, var(--booking-secondary) 0%, var(--booking-primary) 100%) !important;
+    color: #ffffff !important;
+    border-radius: 1rem !important;
+    padding: 1rem 1.25rem !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra-price-element > span:last-child {
+    font-size: 0.95rem !important;
+    color: #0c465b !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-info p,
+.page-template-temp-transfer .booking-form-wrapper .chbs-summary p,
+.page-template-temp-transfer .booking-form-wrapper .chbs-total p {
+    color: #1a3c2d !important;
+    line-height: 1.6 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-contact,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-billing {
+    border: 1px solid rgba(2, 165, 206, 0.18) !important;
+    border-radius: 1.35rem !important;
+    box-shadow: 0 18px 42px rgba(13, 74, 59, 0.12) !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-approve,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-approve,
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-approve-all {
+    border: 1px solid rgba(15, 90, 70, 0.18) !important;
+    background: rgba(3, 150, 115, 0.06) !important;
+    border-radius: 1rem !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-approve label {
+    color: #13452f !important;
+    font-weight: 600 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-complete {
+    background: var(--booking-surface) !important;
+    border: 1px solid rgba(2, 165, 206, 0.18) !important;
+    border-radius: 1.75rem !important;
+    box-shadow: 0 28px 60px rgba(13, 74, 59, 0.14) !important;
+    padding: clamp(2rem, 5vw, 2.75rem) !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-complete h3 {
+    font-size: 1.45rem !important;
+    font-weight: 700 !important;
+    color: #0f3d57 !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-complete-payment a {
+    border-radius: 999px !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-complete-payment > div {
+    border: 1px dashed rgba(2, 165, 206, 0.25) !important;
+    border-radius: 1.15rem !important;
+    padding: 1.25rem !important;
+    background: rgba(2, 165, 206, 0.06);
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra-list,
+.page-template-temp-transfer .booking-form-wrapper .chbs-vehicle-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content-step-1 .chbs-layout-50x50,
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content-step-1 .chbs-layout-25x75,
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content-step-2 .chbs-layout-25x75,
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content-step-3 .chbs-layout-25x75 {
+    display: grid !important;
+    gap: clamp(1.75rem, 4vw, 2.5rem);
+    grid-template-columns: minmax(0, 1.75fr) minmax(280px, 1fr);
+    align-items: flex-start;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-main-content-step-4 .chbs-layout-33x33x33 {
+    display: grid !important;
+    gap: clamp(1.5rem, 3vw, 2.25rem);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    align-items: flex-start;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-layout-column-left:empty,
+.page-template-temp-transfer .booking-form-wrapper .chbs-layout-column-left:empty + * {
+    grid-column: 1 / -1;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-layout-column-left:empty {
+    display: none !important;
+}
+
+.page-template-temp-transfer .booking-form-wrapper .chbs-layout-column-right:only-child {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 1024px) {
+    .page-template-temp-transfer .booking-form-wrapper {
+        padding: clamp(1.5rem, 5vw, 2.2rem) !important;
+    }
+
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-navigation {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-content-step-1 .chbs-layout-50x50,
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-content-step-1 .chbs-layout-25x75,
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-content-step-2 .chbs-layout-25x75,
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-content-step-3 .chbs-layout-25x75,
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-content-step-4 .chbs-layout-33x33x33 {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .page-template-temp-transfer .booking-form-wrapper .chbs-vehicle,
+    .page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra,
+    .page-template-temp-transfer .booking-form-wrapper .chbs-layout-responsive-cell {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .page-template-temp-transfer .booking-form-wrapper .chbs-vehicle img,
+    .page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra img {
+        max-width: 180px !important;
+        margin-inline: auto;
+    }
+
+    .page-template-temp-transfer .booking-form-wrapper .chbs-vehicle-price,
+    .page-template-temp-transfer .booking-form-wrapper .chbs-booking-extra-price {
+        text-align: left;
+    }
+}
+
+@media (max-width: 640px) {
+    .page-template-temp-transfer .booking-form-section {
+        padding: 2.5rem 0;
+    }
+
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-navigation {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-navigation > li > a {
+        padding: 0.9rem 1rem !important;
+        gap: 0.65rem !important;
+    }
+
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-navigation > li > a > span:first-child {
+        width: 2.45rem !important;
+        height: 2.45rem !important;
+    }
+
+    .page-template-temp-transfer .booking-form-wrapper .chbs-main-content-navigation-button {
+        padding: 1rem !important;
+    }
 }

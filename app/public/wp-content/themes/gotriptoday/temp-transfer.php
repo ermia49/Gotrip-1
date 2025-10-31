@@ -47,80 +47,10 @@ get_header(); ?>
     </div>
 </section>
 
-
-
 <!-- Booking Section -->
 <section class="booking-section booking-form-section">
     <!-- Divider -->
     <div class="divider-sm"></div>
-
-    <style>
-        /* AGGRESSIVE REMOVAL OF MARKETING BLOCKS */
-        .booking-section .wp-block-group,
-        .booking-section .wp-block-columns,
-        .booking-form-section .wp-block-group,
-        .booking-form-section .wp-block-columns,
-        section.booking-section > .container > .wp-block-group,
-        section.booking-section > .container > .wp-block-columns,
-        section.booking-form-section > .container > .wp-block-group,
-        section.booking-form-section > .container > .wp-block-columns {
-            display: none !important;
-            visibility: hidden !important;
-            opacity: 0 !important;
-            height: 0 !important;
-            width: 0 !important;
-            overflow: hidden !important;
-            position: absolute !important;
-            left: -99999px !important;
-            pointer-events: none !important;
-        }
-    </style>
-
-    <script>
-        // IMMEDIATE REMOVAL - runs before DOM is ready
-        (function() {
-            var removeBlocks = function() {
-                var selectors = [
-                    '.booking-section .wp-block-group',
-                    '.booking-section .wp-block-columns',
-                    '.booking-form-section .wp-block-group',
-                    '.booking-form-section .wp-block-columns'
-                ];
-                
-                selectors.forEach(function(sel) {
-                    var els = document.querySelectorAll(sel);
-                    els.forEach(function(el) {
-                        el.remove();
-                    });
-                });
-
-                // Remove any div containing the marketing text
-                var allDivs = document.querySelectorAll('.booking-section div, .booking-form-section div');
-                allDivs.forEach(function(div) {
-                    var text = div.textContent || '';
-                    if (text.includes('Trusted transfers') || 
-                        text.includes('Licensed EU Chauffeurs') ||
-                        text.includes('verified chauffeurs') ||
-                        text.includes('Upgrade to premium sedans')) {
-                        div.remove();
-                    }
-                });
-            };
-            
-            // Run immediately
-            removeBlocks();
-            
-            // Run when DOM is ready
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', removeBlocks);
-            }
-            
-            // Run after a delay to catch late-loaded content
-            setTimeout(removeBlocks, 100);
-            setTimeout(removeBlocks, 500);
-            setTimeout(removeBlocks, 1000);
-        })();
-    </script>
 
     <div class="container">
         <div class="booking-steps" aria-label="<?php esc_attr_e('How online booking works', 'gotriptoday'); ?>">
