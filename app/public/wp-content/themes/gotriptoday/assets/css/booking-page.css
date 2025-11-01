@@ -246,7 +246,6 @@ body.page-template-temp-transfer,
 .chbs-booking-form-id-10007 .chbs-select-container .select2-selection {
     border-radius: 16px !important;
     border: 1px solid rgba(16, 32, 39, 0.14) !important;
-    min-height: 52px !important;
     padding: 8px 16px !important;
     display: flex;
     align-items: center;
@@ -349,38 +348,9 @@ body.page-template-temp-transfer,
     color: var(--gt-primary-dark) !important;
 }
 
-.chbs-booking-form-id-10007 .chbs-layout-column-left,
-.chbs-booking-form-id-10007 .chbs-layout-column-right {
-    padding: 0 !important;
-}
 
-.chbs-booking-form-id-10007 .chbs-layout-column-left {
-    border-right: 1px solid rgba(16, 32, 39, 0.07) !important;
-}
 
-.chbs-booking-form-id-10007 .chbs-layout-column-right {
-    padding-left: 28px !important;
-}
 
-.chbs-booking-form-id-10007 .chbs-layout-container {
-    display: grid !important;
-    grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
-    gap: 36px;
-    align-items: start;
-}
-
-@media (max-width: 992px) {
-    .chbs-booking-form-id-10007 .chbs-layout-container {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-
-    .chbs-booking-form-id-10007 .chbs-layout-column-left,
-    .chbs-booking-form-id-10007 .chbs-layout-column-right {
-        border-right: none !important;
-        padding: 0 !important;
-    }
-}
 
 .chbs-booking-form-id-10007 .chbs-customer-form .chbs-form-field,
 .chbs-booking-form-id-10007 .chbs-customer-form .chbs-form-line {
@@ -406,7 +376,6 @@ body.page-template-temp-transfer,
 }
 
 .chbs-booking-form-id-10007 .chbs-customer-form textarea {
-    min-height: 140px !important;
     resize: vertical !important;
 }
 
