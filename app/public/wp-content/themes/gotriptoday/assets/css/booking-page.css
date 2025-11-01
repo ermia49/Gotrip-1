@@ -1412,5 +1412,72 @@ body.page-template-temp-transfer,
     }
 }
 
+/* CHBS Form Icons Color Styling */
+/* Date picker icons */
+.chbs-booking-form-id-10007 .chbs-field svg,
+.chbs-booking-form-id-10007 .chbs-field-element svg,
+.chbs-booking-form-id-10007 .chbs-field-element-icon svg {
+    fill: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+}
+
+/* Calendar and time picker icons */
+.chbs-booking-form-id-10007 .ui-datepicker-trigger,
+.chbs-booking-form-id-10007 .chbs-calendar-icon,
+.chbs-booking-form-id-10007 .chbs-time-icon {
+    color: var(--primary-color) !important;
+    fill: var(--primary-color) !important;
+}
+
+/* Address input icons (Google Places) */
+.chbs-booking-form-id-10007 .pac-icon,
+.chbs-booking-form-id-10007 .pac-item .pac-icon {
+    background-color: var(--primary-color) !important;
+    color: #ffffff !important;
+}
+
+/* Dropdown arrow icons */
+.chbs-booking-form-id-10007 .chbs-field-element-text::after,
+.chbs-booking-form-id-10007 .chbs-field-element select::after,
+.chbs-booking-form-id-10007 .chbs-field-element-dropdown::after {
+    color: var(--primary-color) !important;
+}
+
+/* Select2 dropdown arrows */
+.chbs-booking-form-id-10007 .select2-container .select2-selection--single .select2-selection__arrow b {
+    border-color: var(--primary-color) transparent transparent transparent !important;
+}
+
+/* jQuery UI icons */
+.chbs-booking-form-id-10007 .ui-icon,
+.chbs-booking-form-id-10007 .ui-datepicker-prev,
+.chbs-booking-form-id-10007 .ui-datepicker-next {
+    background-color: var(--primary-color) !important;
+    color: #ffffff !important;
+}
+
+/* Form field icons general styling */
+.chbs-booking-form-id-10007 .chbs-field-element::before,
+.chbs-booking-form-id-10007 .chbs-field-element::after,
+.chbs-booking-form-id-10007 .chbs-field-text::before,
+.chbs-booking-form-id-10007 .chbs-field-text::after {
+    color: var(--primary-color) !important;
+}
+
+/* Custom icon colors for different input types */
+.chbs-booking-form-id-10007 input[type="text"]::placeholder {
+    color: rgba(2, 165, 206, 0.6) !important;
+}
+
+/* Additional icon selectors that might be used by CHBS */
+.chbs-booking-form-id-10007 .fa,
+.chbs-booking-form-id-10007 .fas,
+.chbs-booking-form-id-10007 .far,
+.chbs-booking-form-id-10007 .fal,
+.chbs-booking-form-id-10007 [class*="icon-"],
+.chbs-booking-form-id-10007 [class*="fa-"] {
+    color: var(--primary-color) !important;
+}
+
 
 
