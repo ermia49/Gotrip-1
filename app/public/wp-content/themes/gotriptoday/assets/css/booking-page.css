@@ -1429,6 +1429,25 @@ body.page-template-temp-transfer,
     fill: var(--primary-color) !important;
 }
 
+/* Address input field icons - Location/Map pins */
+.chbs-booking-form-id-10007 .chbs-field-element-text[data-chbs-field="pickup_location"]::before,
+.chbs-booking-form-id-10007 .chbs-field-element-text[data-chbs-field="dropoff_location"]::before,
+.chbs-booking-form-id-10007 .chbs-field-pickup::before,
+.chbs-booking-form-id-10007 .chbs-field-dropoff::before,
+.chbs-booking-form-id-10007 .chbs-location-icon,
+.chbs-booking-form-id-10007 .chbs-map-pin-icon {
+    color: var(--primary-color) !important;
+    fill: var(--primary-color) !important;
+}
+
+/* CHBS specific field icons */
+.chbs-booking-form-id-10007 .chbs-field-element-icon,
+.chbs-booking-form-id-10007 .chbs-field-icon,
+.chbs-booking-form-id-10007 .chbs-input-icon {
+    color: var(--primary-color) !important;
+    fill: var(--primary-color) !important;
+}
+
 /* Address input icons (Google Places) */
 .chbs-booking-form-id-10007 .pac-icon,
 .chbs-booking-form-id-10007 .pac-item .pac-icon {
@@ -1477,6 +1496,22 @@ body.page-template-temp-transfer,
 .chbs-booking-form-id-10007 [class*="icon-"],
 .chbs-booking-form-id-10007 [class*="fa-"] {
     color: var(--primary-color) !important;
+}
+
+/* Location picker specific icons */
+.chbs-booking-form-id-10007 .chbs-google-map-pin,
+.chbs-booking-form-id-10007 .chbs-location-marker,
+.chbs-booking-form-id-10007 .chbs-address-icon {
+    color: var(--primary-color) !important;
+    fill: var(--primary-color) !important;
+}
+
+/* More specific CHBS icon targeting */
+.chbs-booking-form-id-10007 [data-chbs-field*="location"] .chbs-field-element-icon,
+.chbs-booking-form-id-10007 [data-chbs-field*="pickup"] .chbs-field-element-icon,
+.chbs-booking-form-id-10007 [data-chbs-field*="dropoff"] .chbs-field-element-icon {
+    color: var(--primary-color) !important;
+    fill: var(--primary-color) !important;
 }
 
 
