@@ -1412,85 +1412,103 @@ body.page-template-temp-transfer,
     }
 }
 
-/* ===================================================================== */
-/* CHBS Form Icons - Orange Color (Footer Brand Color)                  */
-/* ===================================================================== */
+/* CHBS Form Icon Color Customization - Orange footer color */
+/* Change all form icons to orange color (#fd7e14) */
 
-/* Dropdown Arrows - Orange Color */
-.chbs-booking-form-id-10007 .select2-container .select2-selection__arrow b {
-    border-color: #f7921f transparent transparent transparent !important;
+/* Date and Time Picker Icons */
+.chbs-booking-form-id-10007 .chbs-form-field-date .chbs-form-field-icon:before,
+.chbs-booking-form-id-10007 .chbs-form-field-time .chbs-form-field-icon:before,
+.chbs-booking-form-id-10007 .chbs-form-field-date:after,
+.chbs-booking-form-id-10007 .chbs-form-field-time:after {
+    color: #fd7e14 !important;
 }
 
-.chbs-booking-form-id-10007 .select2-container.select2-container--open .select2-selection__arrow b {
-    border-color: transparent transparent #f7921f transparent !important;
+/* Calendar and clock icons in date/time fields */
+.chbs-booking-form-id-10007 .chbs-date-field .fa,
+.chbs-booking-form-id-10007 .chbs-time-field .fa,
+.chbs-booking-form-id-10007 .chbs-form-field-date .fa,
+.chbs-booking-form-id-10007 .chbs-form-field-time .fa {
+    color: #fd7e14 !important;
 }
 
-/* Date Picker Navigation Arrows - Orange Background */
-.chbs-datepicker.ui-datepicker .ui-datepicker-prev,
-.chbs-datepicker.ui-datepicker .ui-datepicker-next {
-    background: rgba(247, 146, 31, 0.2) !important;
-    color: #f7921f !important;
+/* Date picker calendar icon */
+.chbs-booking-form-id-10007 .ui-datepicker-trigger,
+.chbs-booking-form-id-10007 .chbs-date-field-trigger {
+    color: #fd7e14 !important;
 }
 
-.chbs-datepicker.ui-datepicker .ui-datepicker-prev:hover,
-.chbs-datepicker.ui-datepicker .ui-datepicker-next:hover {
-    background: rgba(247, 146, 31, 0.35) !important;
-    color: #ffffff !important;
+/* Address/Location Field Icons */
+.chbs-booking-form-id-10007 .chbs-form-field-geolocation .chbs-form-field-icon:before,
+.chbs-booking-form-id-10007 .chbs-form-field-location .chbs-form-field-icon:before,
+.chbs-booking-form-id-10007 .chbs-address-field .fa,
+.chbs-booking-form-id-10007 .chbs-location-field .fa {
+    color: #fd7e14 !important;
 }
 
-/* Phone Number Flag Container - Orange Accent */
-.chbs-booking-form-id-10007 .iti__flag-container {
-    border-right: 1px solid rgba(247, 146, 31, 0.2) !important;
+/* Google Places/Address icons */
+.chbs-booking-form-id-10007 .pac-icon,
+.chbs-booking-form-id-10007 .pac-icon-marker {
+    background-color: #fd7e14 !important;
 }
 
-/* Form Field Icons (if any) - Orange Color */
-.chbs-booking-form-id-10007 .chbs-meta-icon,
-.chbs-booking-form-id-10007 .chbs-meta-icon-2,
-.chbs-booking-form-id-10007 .chbs-form-field-icon {
-    color: #f7921f !important;
+/* Ride Info Icons */
+.chbs-booking-form-id-10007 .chbs-ride-info .fa,
+.chbs-booking-form-id-10007 .chbs-ride-info .chbs-form-field-icon:before,
+.chbs-booking-form-id-10007 .chbs-ride-info-item .fa {
+    color: #fd7e14 !important;
 }
 
-/* Step Navigation Icons - Orange for Active States */
-.chbs-booking-form-id-10007 .chbs-main-navigation .chbs-state-selected .chbs-meta-icon,
-.chbs-booking-form-id-10007 .chbs-main-navigation .chbs-state-completed .chbs-meta-icon {
-    color: #f7921f !important;
+/* Transfer Type and Extra Options Icons */
+.chbs-booking-form-id-10007 .chbs-form-field-select .chbs-form-field-icon:before,
+.chbs-booking-form-id-10007 .chbs-form-field-option .chbs-form-field-icon:before,
+.chbs-booking-form-id-10007 .chbs-transfer-type-field .fa,
+.chbs-booking-form-id-10007 .chbs-extra-field .fa {
+    color: #fd7e14 !important;
 }
 
-/* Any Generic Icons in CHBS Form - Orange Color */
-.chbs-booking-form-id-10007 i,
-.chbs-booking-form-id-10007 .icon,
-.chbs-booking-form-id-10007 [class*="icon-"],
-.chbs-booking-form-id-10007 [class*="fa-"],
-.chbs-booking-form-id-10007 [class*="ti-"] {
-    color: #f7921f !important;
+/* Select dropdown arrows */
+.chbs-booking-form-id-10007 .chbs-form-field-select:after,
+.chbs-booking-form-id-10007 .select2-container .select2-selection__arrow:after {
+    color: #fd7e14 !important;
 }
 
-/* Calendar Grid Icons - Orange Highlights */
-.chbs-datepicker.ui-datepicker .ui-icon {
-    color: #f7921f !important;
+/* Generic form field icons */
+.chbs-booking-form-id-10007 .chbs-form-field-icon,
+.chbs-booking-form-id-10007 .chbs-form-field-icon:before,
+.chbs-booking-form-id-10007 .chbs-form-field .fa {
+    color: #fd7e14 !important;
 }
 
-/* Time Picker Clock Icons */
-.ui-timepicker-wrapper .ui-icon {
-    color: #f7921f !important;
+/* FontAwesome icons specifically */
+.chbs-booking-form-id-10007 .fa-calendar,
+.chbs-booking-form-id-10007 .fa-clock,
+.chbs-booking-form-id-10007 .fa-clock-o,
+.chbs-booking-form-id-10007 .fa-map-marker,
+.chbs-booking-form-id-10007 .fa-map-marker-alt,
+.chbs-booking-form-id-10007 .fa-location-arrow,
+.chbs-booking-form-id-10007 .fa-car,
+.chbs-booking-form-id-10007 .fa-user,
+.chbs-booking-form-id-10007 .fa-users,
+.chbs-booking-form-id-10007 .fa-caret-down,
+.chbs-booking-form-id-10007 .fa-chevron-down {
+    color: #fd7e14 !important;
 }
 
-/* Close/Clear Button Icons - Orange */
-.chbs-booking-form-id-10007 .chbs-clear,
-.chbs-booking-form-id-10007 .chbs-close,
-.chbs-booking-form-id-10007 .select2-selection__clear {
-    color: #f7921f !important;
+/* Input field icons (for any CSS-based icons) */
+.chbs-booking-form-id-10007 input[type="date"]::-webkit-calendar-picker-indicator,
+.chbs-booking-form-id-10007 input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(42%) sepia(85%) saturate(4000%) hue-rotate(12deg) brightness(100%) contrast(101%) !important;
 }
 
-/* Vehicle Selection Icons - Orange Accent */
-.chbs-booking-form-id-10007 .chbs-vehicle-icon,
-.chbs-booking-form-id-10007 .chbs-vehicle-meta-icon {
-    color: #f7921f !important;
+/* Material design icons if used */
+.chbs-booking-form-id-10007 .material-icons {
+    color: #fd7e14 !important;
 }
 
-/* Exclude Trust Badge Icons (Keep Original Colors) */
-.chbs-trust-badge-icon {
-    color: var(--gt-primary) !important; /* Keep trust badges as designed */
+/* Custom CHBS icons */
+.chbs-booking-form-id-10007 [class^="chbs-icon-"],
+.chbs-booking-form-id-10007 [class*=" chbs-icon-"] {
+    color: #fd7e14 !important;
 }
 
 
