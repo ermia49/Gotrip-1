@@ -52,10 +52,92 @@
         });
     }
 
+    function injectTrustBadges() {
+        // Only inject once
+        if (document.querySelector('.chbs-trust-badges')) {
+            return;
+        }
+
+        // Find the ride info or route info containers
+        var targetElements = [
+            '.chbs-booking-form-id-10007 .chbs-ride-info',
+            '.chbs-booking-form-id-10007 .chbs-route-info',
+            '.chbs-booking-form-id-10007 .chbs-route-summary'
+        ];
+
+        var insertAfter = null;
+        for (var i = 0; i < targetElements.length; i++) {
+            var element = document.querySelector(targetElements[i]);
+            if (element) {
+                insertAfter = element;
+                break;
+            }
+        }
+
+        if (!insertAfter) {
+            // Fallback: insert after any section within the form
+            insertAfter = document.querySelector('.chbs-booking-form-id-10007 .chbs-section');
+        }
+
+        if (insertAfter) {
+            var trustBadgesHTML = `
+                <div class="chbs-trust-badges">
+                    <div class="chbs-trust-badge">
+                        <div class="chbs-trust-badge-icon">✓</div>
+                        <div class="chbs-trust-badge-content">
+                            <div class="chbs-trust-badge-title">100% Cancellation Free</div>
+                            <div class="chbs-trust-badge-subtitle">Up to 24 hours before pickup</div>
+                        </div>
+                    </div>
+                    <div class="chbs-trust-badge">
+                        <div class="chbs-trust-badge-icon">★</div>
+                        <div class="chbs-trust-badge-content">
+                            <div class="chbs-trust-badge-title">Satisfaction Guarantee</div>
+                            <div class="chbs-trust-badge-subtitle">Premium service quality assured</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Insert the trust badges after the target element
+            insertAfter.insertAdjacentHTML('afterend', trustBadgesHTML);
+        }
+    }
+
+    function observeFormChanges() {
+        // Watch for CHBS form updates and re-inject badges if needed
+        var observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                    // Small delay to ensure CHBS has finished updating
+                    setTimeout(injectTrustBadges, 500);
+                }
+            });
+        });
+
+        var chbsForm = document.querySelector('.chbs-booking-form-id-10007');
+        if (chbsForm) {
+            observer.observe(chbsForm, {
+                childList: true,
+                subtree: true
+            });
+        }
+    }
+
     document.addEventListener("DOMContentLoaded", function () {
         handleWidgetStepReset();
         enhanceTabs();
         manageFormFocus();
+        
+        // Inject trust badges initially
+        injectTrustBadges();
+        
+        // Setup observer for dynamic content
+        observeFormChanges();
+        
+        // Also try to inject badges after a short delay in case CHBS loads content dynamically
+        setTimeout(injectTrustBadges, 1000);
+        setTimeout(injectTrustBadges, 3000);
     });
 })();
 

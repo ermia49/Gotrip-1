@@ -1142,12 +1142,133 @@ body.page-template-temp-transfer,
     box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* Google Maps Container */
+/* Google Maps Container - 30% smaller height */
 .chbs-booking-form-id-10007 #chbs_google_map {
     border-radius: 0 0 20px 20px !important;
     overflow: hidden !important;
-    min-height: 300px !important;
+    min-height: 210px !important; /* Reduced from 300px (30% smaller) */
+    height: 210px !important;
     border: none !important;
+}
+
+.chbs-booking-form-id-10007 .chbs-google-map #chbs_google_map {
+    height: 294px !important; /* Reduced from 420px (30% smaller) */
+}
+
+.chbs-booking-form-id-10007 .chbs-google-map-summary #chbs_google_map {
+    height: 175px !important; /* Reduced from 250px (30% smaller) */
+}
+
+/* Trust Badges Section - Positioned after ride info */
+.chbs-booking-form-id-10007 .chbs-ride-info + .chbs-trust-badges,
+.chbs-booking-form-id-10007 .chbs-route-info + .chbs-trust-badges,
+.chbs-booking-form-id-10007 .chbs-route-summary + .chbs-trust-badges {
+    display: flex !important;
+    gap: 16px !important;
+    margin: 24px 0 32px 0 !important;
+    flex-wrap: wrap !important;
+}
+
+.chbs-trust-badge {
+    background: linear-gradient(135deg, #ffffff 0%, var(--gt-surface-alt) 100%) !important;
+    border: 1px solid var(--gt-border) !important;
+    border-radius: 16px !important;
+    padding: 16px 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    flex: 1 !important;
+    min-width: 280px !important;
+    box-shadow: 0 8px 24px -12px rgba(2, 165, 206, 0.15) !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.chbs-trust-badge:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 32px -12px rgba(2, 165, 206, 0.25) !important;
+}
+
+.chbs-trust-badge::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 4px !important;
+    height: 100% !important;
+    background: linear-gradient(135deg, var(--gt-accent) 0%, var(--gt-primary) 100%) !important;
+}
+
+.chbs-trust-badge-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 12px !important;
+    background: linear-gradient(135deg, rgba(60, 179, 113, 0.1) 0%, rgba(2, 165, 206, 0.1) 100%) !important;
+    color: var(--gt-primary) !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    flex-shrink: 0 !important;
+}
+
+.chbs-trust-badge-content {
+    flex: 1 !important;
+}
+
+.chbs-trust-badge-title {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: var(--gt-text) !important;
+    margin: 0 0 4px 0 !important;
+    line-height: 1.3 !important;
+}
+
+.chbs-trust-badge-subtitle {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: var(--gt-muted) !important;
+    margin: 0 !important;
+    line-height: 1.4 !important;
+}
+
+/* Responsive trust badges */
+@media (max-width: 767px) {
+    .chbs-booking-form-id-10007 .chbs-ride-info + .chbs-trust-badges,
+    .chbs-booking-form-id-10007 .chbs-route-info + .chbs-trust-badges,
+    .chbs-booking-form-id-10007 .chbs-route-summary + .chbs-trust-badges {
+        flex-direction: column !important;
+        gap: 12px !important;
+        margin: 20px 0 28px 0 !important;
+    }
+    
+    .chbs-trust-badge {
+        min-width: unset !important;
+        padding: 14px 18px !important;
+        border-radius: 14px !important;
+    }
+    
+    .chbs-trust-badge-icon {
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 18px !important;
+    }
+    
+    .chbs-trust-badge-title {
+        font-size: 14px !important;
+    }
+    
+    .chbs-trust-badge-subtitle {
+        font-size: 12px !important;
+    }
+    
+    /* Smaller map on mobile too */
+    .chbs-booking-form-id-10007 #chbs_google_map {
+        min-height: 180px !important;
+        height: 180px !important;
+    }
 }
 
 /* Enhanced Summary Styling */
