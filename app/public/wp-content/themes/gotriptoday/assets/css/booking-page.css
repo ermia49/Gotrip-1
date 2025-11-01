@@ -150,9 +150,8 @@ body.page-template-temp-transfer,
     box-shadow: none !important;
     padding: 0 !important;
     border: none !important;
-    max-width: calc(100% + 40px) !important;
-    margin-left: -20px !important;
-    margin-right: -20px !important;
+    margin-left: -2cm !important; /* Extend form width 2cm to the left */
+    margin-right: -2cm !important; /* Extend form width 2cm to the right */
 }
 
 .chbs-booking-form-id-10007 .chbs-main-header,
@@ -511,9 +510,6 @@ body.page-template-temp-transfer,
     .chbs-booking-form-id-10007 {
         padding: 24px !important;
         border-radius: 18px !important;
-        max-width: calc(100% + 20px) !important;
-        margin-left: -10px !important;
-        margin-right: -10px !important;
     }
 
     .chbs-booking-form-id-10007 .chbs-section {
@@ -525,9 +521,6 @@ body.page-template-temp-transfer,
 @media (max-width: 575px) {
     .chbs-booking-form-id-10007 {
         padding: 18px !important;
-        max-width: 100% !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
     }
 
     .chbs-booking-form-id-10007 input[type="text"],
@@ -546,6 +539,28 @@ body.page-template-temp-transfer,
     .chbs-booking-form-id-10007 input[type="submit"] {
         width: 100% !important;
         justify-content: center;
+    }
+}
+
+/* Responsive adjustments for wider form */
+@media (max-width: 991px) {
+    .chbs-booking-form-id-10007 {
+        margin-left: -1.5cm !important; /* Reduce extension on tablets */
+        margin-right: -1.5cm !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .chbs-booking-form-id-10007 {
+        margin-left: -1cm !important; /* Further reduce on mobile */
+        margin-right: -1cm !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .chbs-booking-form-id-10007 {
+        margin-left: -0.5cm !important; /* Minimal extension on small mobile */
+        margin-right: -0.5cm !important;
     }
 }
 
