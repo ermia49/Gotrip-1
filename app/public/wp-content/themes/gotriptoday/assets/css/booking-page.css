@@ -1002,5 +1002,290 @@ body.page-template-temp-transfer,
     }
 }
 
+/* ===================================================================== */
+/* CHBS Ride Info Box & Map - Enhanced GoTrip Theme Styling           */
+/* ===================================================================== */
+
+/* Enhanced Ride Info Box */
+.chbs-booking-form-id-10007 .chbs-ride-info {
+    background: linear-gradient(135deg, var(--gt-surface) 0%, var(--gt-surface-alt) 100%) !important;
+    border: 1px solid var(--gt-border) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 20px 48px -24px rgba(2, 165, 206, 0.25) !important;
+    padding: 0 !important;
+    margin: 24px 0 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    width: 100% !important;
+}
+
+.chbs-booking-form-id-10007 .chbs-ride-info > div {
+    padding: 28px 32px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    width: 50% !important;
+    position: relative !important;
+}
+
+.chbs-booking-form-id-10007 .chbs-ride-info > div:first-child {
+    border-right: 1px solid rgba(16, 32, 39, 0.08) !important;
+    background: rgba(2, 165, 206, 0.02) !important;
+}
+
+.chbs-booking-form-id-10007 .chbs-ride-info > div:last-child {
+    background: rgba(60, 179, 113, 0.02) !important;
+}
+
+/* Ride Info Typography & Icons */
+.chbs-booking-form-id-10007 .chbs-ride-info > div > span:first-child {
+    font-size: 42px !important;
+    color: var(--gt-primary) !important;
+    margin-bottom: 12px !important;
+    margin-top: 0 !important;
+    line-height: 1 !important;
+}
+
+.chbs-booking-form-id-10007 .chbs-ride-info > div > span:first-child + span {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: var(--gt-muted) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    margin-bottom: 4px !important;
+    margin-left: 0 !important;
+}
+
+.chbs-booking-form-id-10007 .chbs-ride-info > div > span:first-child + span + span {
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    color: var(--gt-text) !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    line-height: 1.2 !important;
+}
+
+/* Enhanced Route Info Cards */
+.chbs-booking-form-id-10007 .chbs-route-info,
+.chbs-booking-form-id-10007 .chbs-route-summary {
+    background: linear-gradient(135deg, #ffffff 0%, var(--gt-surface-alt) 100%) !important;
+    border: 1px solid var(--gt-border) !important;
+    border-radius: 18px !important;
+    box-shadow: 0 16px 40px -20px rgba(2, 165, 206, 0.2) !important;
+    padding: 20px 24px !important;
+    margin: 16px 0 !important;
+    transition: all 0.3s ease !important;
+}
+
+.chbs-booking-form-id-10007 .chbs-route-info:hover,
+.chbs-booking-form-id-10007 .chbs-route-summary:hover {
+    box-shadow: 0 20px 48px -20px rgba(2, 165, 206, 0.3) !important;
+    transform: translateY(-2px) !important;
+}
+
+.chbs-booking-form-id-10007 .chbs-route-info > div,
+.chbs-booking-form-id-10007 .chbs-route-summary > div {
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+/* Route Info Values */
+.chbs-booking-form-id-10007 .chbs-route-info-value,
+.chbs-booking-form-id-10007 .chbs-route-summary-value {
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    color: var(--gt-primary-dark) !important;
+    background: rgba(2, 165, 206, 0.08) !important;
+    padding: 6px 14px !important;
+    border-radius: 999px !important;
+    white-space: nowrap !important;
+}
+
+/* Enhanced Map Styling */
+.chbs-booking-form-id-10007 .chbs-map,
+.chbs-booking-form-id-10007 .chbs-map-container {
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    box-shadow: 0 24px 64px -32px rgba(2, 165, 206, 0.4) !important;
+    border: 1px solid var(--gt-border) !important;
+    margin: 20px 0 !important;
+}
+
+.chbs-booking-form-id-10007 .chbs-header-map {
+    border-radius: 20px 20px 0 0 !important;
+    background: linear-gradient(135deg, var(--gt-primary) 0%, var(--gt-primary-dark) 100%) !important;
+    padding: 16px 24px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.chbs-booking-form-id-10007 .chbs-header-map-button {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 999px !important;
+    padding: 12px 20px !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    transition: all 0.3s ease !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.chbs-booking-form-id-10007 .chbs-header-map-button:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Google Maps Container */
+.chbs-booking-form-id-10007 #chbs_google_map {
+    border-radius: 0 0 20px 20px !important;
+    overflow: hidden !important;
+    min-height: 300px !important;
+    border: none !important;
+}
+
+/* Enhanced Summary Styling */
+.chbs-booking-form-id-10007 .chbs-summary {
+    background: linear-gradient(135deg, #ffffff 0%, var(--gt-surface-alt) 100%) !important;
+    border: 1px solid var(--gt-border) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 20px 48px -24px rgba(2, 165, 206, 0.25) !important;
+    padding: 28px 32px !important;
+    margin: 24px 0 !important;
+}
+
+.chbs-booking-form-id-10007 .chbs-summary-header {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 0 20px 0 !important;
+    margin-bottom: 20px !important;
+    border-bottom: 1px solid var(--gt-border) !important;
+}
+
+.chbs-booking-form-id-10007 .chbs-summary-header > h4 {
+    color: var(--gt-text) !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
+}
+
+.chbs-booking-form-id-10007 .chbs-summary-header > a {
+    background: var(--gt-primary) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 999px !important;
+    padding: 8px 16px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    transition: all 0.3s ease !important;
+}
+
+.chbs-booking-form-id-10007 .chbs-summary-header > a:hover {
+    background: var(--gt-primary-dark) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 20px -6px rgba(2, 165, 206, 0.4) !important;
+}
+
+/* Summary Field Styling */
+.chbs-booking-form-id-10007 .chbs-summary-field {
+    padding: 16px 0 !important;
+    border-bottom: 1px solid rgba(16, 32, 39, 0.06) !important;
+    margin: 0 !important;
+}
+
+.chbs-booking-form-id-10007 .chbs-summary-field:last-child {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+}
+
+.chbs-booking-form-id-10007 .chbs-summary-field-name {
+    color: var(--gt-muted) !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    margin-bottom: 6px !important;
+}
+
+.chbs-booking-form-id-10007 .chbs-summary-field-value {
+    color: var(--gt-text) !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+}
+
+/* Summary Element Buttons */
+.chbs-booking-form-id-10007 .chbs-summary-element-button a {
+    background: linear-gradient(135deg, var(--gt-accent) 0%, var(--gt-primary) 100%) !important;
+    border: none !important;
+    border-radius: 999px !important;
+    padding: 14px 28px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 12px 32px -12px rgba(2, 165, 206, 0.4) !important;
+}
+
+.chbs-booking-form-id-10007 .chbs-summary-element-button a:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 16px 40px -12px rgba(2, 165, 206, 0.6) !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .chbs-booking-form-id-10007 .chbs-ride-info {
+        flex-direction: column !important;
+    }
+    
+    .chbs-booking-form-id-10007 .chbs-ride-info > div {
+        width: 100% !important;
+        padding: 20px 24px !important;
+    }
+    
+    .chbs-booking-form-id-10007 .chbs-ride-info > div:first-child {
+        border-right: none !important;
+        border-bottom: 1px solid rgba(16, 32, 39, 0.08) !important;
+    }
+    
+    .chbs-booking-form-id-10007 .chbs-ride-info > div > span:first-child {
+        font-size: 36px !important;
+    }
+    
+    .chbs-booking-form-id-10007 .chbs-ride-info > div > span:first-child + span + span {
+        font-size: 20px !important;
+    }
+    
+    .chbs-booking-form-id-10007 .chbs-route-info,
+    .chbs-booking-form-id-10007 .chbs-route-summary {
+        padding: 16px 20px !important;
+        border-radius: 16px !important;
+    }
+    
+    .chbs-booking-form-id-10007 .chbs-route-info-value,
+    .chbs-booking-form-id-10007 .chbs-route-summary-value {
+        font-size: 16px !important;
+        padding: 4px 12px !important;
+    }
+    
+    .chbs-booking-form-id-10007 .chbs-summary {
+        padding: 20px 24px !important;
+        border-radius: 18px !important;
+    }
+}
+
 
 
