@@ -96,6 +96,20 @@
                             <div class="chbs-trust-badge-subtitle">Premium service quality assured</div>
                         </div>
                     </div>
+                    <div class="chbs-trust-badge">
+                        <div class="chbs-trust-badge-icon">🚗</div>
+                        <div class="chbs-trust-badge-content">
+                            <div class="chbs-trust-badge-title">Door to Door Service</div>
+                            <div class="chbs-trust-badge-subtitle">Convenient pickup & drop-off</div>
+                        </div>
+                    </div>
+                    <div class="chbs-trust-badge">
+                        <div class="chbs-trust-badge-icon">👋</div>
+                        <div class="chbs-trust-badge-content">
+                            <div class="chbs-trust-badge-title">Meet and Greet</div>
+                            <div class="chbs-trust-badge-subtitle">Personalized welcome service</div>
+                        </div>
+                    </div>
                 </div>
             `;
 
