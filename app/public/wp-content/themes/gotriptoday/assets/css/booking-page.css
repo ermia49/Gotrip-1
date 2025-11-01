@@ -1183,7 +1183,7 @@ body.page-template-temp-transfer,
     gap: 12px !important;
     flex: 1 !important;
     min-width: 280px !important;
-    box-shadow: 0 8px 24px -12px rgba(2, 165, 206, 0.15) !important;
+    box-shadow: 0 8px 24px -12px rgba(253, 126, 20, 0.15) !important;
     transition: all 0.3s ease !important;
     position: relative !important;
     overflow: hidden !important;
@@ -1191,7 +1191,7 @@ body.page-template-temp-transfer,
 
 .chbs-trust-badge:hover {
     transform: translateY(-2px) !important;
-    box-shadow: 0 12px 32px -12px rgba(2, 165, 206, 0.25) !important;
+    box-shadow: 0 12px 32px -12px rgba(253, 126, 20, 0.25) !important;
 }
 
 .chbs-trust-badge::before {
@@ -1201,7 +1201,7 @@ body.page-template-temp-transfer,
     left: 0 !important;
     width: 4px !important;
     height: 100% !important;
-    background: linear-gradient(135deg, var(--gt-accent) 0%, var(--gt-primary) 100%) !important;
+    background: linear-gradient(135deg, #fd7e14 0%, #ff9635 100%) !important;
 }
 
 .chbs-trust-badge-icon {
@@ -1211,8 +1211,8 @@ body.page-template-temp-transfer,
     width: 44px !important;
     height: 44px !important;
     border-radius: 12px !important;
-    background: linear-gradient(135deg, rgba(60, 179, 113, 0.1) 0%, rgba(2, 165, 206, 0.1) 100%) !important;
-    color: var(--gt-primary) !important;
+    background: linear-gradient(135deg, rgba(253, 126, 20, 0.15) 0%, rgba(253, 126, 20, 0.1) 100%) !important;
+    color: #fd7e14 !important;
     font-size: 20px !important;
     font-weight: 600 !important;
     flex-shrink: 0 !important;
