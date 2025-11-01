@@ -357,24 +357,6 @@ body.page-template-temp-transfer,
     margin-bottom: 26px !important;
 }
 
-.chbs-booking-form-id-10007 .chbs-customer-form .chbs-form-field-group {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px 28px;
-}
-
-.chbs-booking-form-id-10007 .chbs-customer-form .chbs-form-field-group .chbs-form-field,
-.chbs-booking-form-id-10007 .chbs-customer-form .chbs-form-field-group .chbs-form-line {
-    margin-bottom: 0 !important;
-    width: 100% !important;
-}
-
-.chbs-booking-form-id-10007 .chbs-customer-form .chbs-form-field-group .chbs-form-field input,
-.chbs-booking-form-id-10007 .chbs-customer-form .chbs-form-field-group .chbs-form-field select,
-.chbs-booking-form-id-10007 .chbs-customer-form .chbs-form-field-group .chbs-form-field textarea {
-    width: 100% !important;
-}
-
 .chbs-booking-form-id-10007 .chbs-customer-form textarea {
     resize: vertical !important;
 }
