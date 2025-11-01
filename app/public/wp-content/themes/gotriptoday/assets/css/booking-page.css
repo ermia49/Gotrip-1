@@ -1144,7 +1144,7 @@ body.page-template-temp-transfer,
 
 /* Google Maps Container - 30% smaller height */
 .chbs-booking-form-id-10007 #chbs_google_map {
-    border-radius: 0 0 20px 20px !important;
+    border-radius: 16px !important;
     overflow: hidden !important;
     min-height: 210px !important; /* Reduced from 300px (30% smaller) */
     height: 210px !important;
@@ -1153,10 +1153,14 @@ body.page-template-temp-transfer,
 
 .chbs-booking-form-id-10007 .chbs-google-map #chbs_google_map {
     height: 294px !important; /* Reduced from 420px (30% smaller) */
+    border-radius: 16px !important;
+    overflow: hidden !important;
 }
 
 .chbs-booking-form-id-10007 .chbs-google-map-summary #chbs_google_map {
     height: 175px !important; /* Reduced from 250px (30% smaller) */
+    border-radius: 16px !important;
+    overflow: hidden !important;
 }
 
 /* Trust Badges Section - Positioned after ride info */
