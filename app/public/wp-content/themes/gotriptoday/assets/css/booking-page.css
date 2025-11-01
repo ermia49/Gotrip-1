@@ -1012,7 +1012,7 @@ body.page-template-temp-transfer,
 /* CHBS Ride Info Box & Map - Enhanced GoTrip Theme Styling           */
 /* ===================================================================== */
 
-/* Enhanced Ride Info Box - Resized to 2cm height */
+/* Enhanced Ride Info Box */
 .chbs-booking-form-id-10007 .chbs-ride-info {
     background: linear-gradient(135deg, var(--gt-surface) 0%, var(--gt-surface-alt) 100%) !important;
     border: 1px solid var(--gt-border) !important;
@@ -1023,13 +1023,13 @@ body.page-template-temp-transfer,
     overflow: hidden !important;
     display: flex !important;
     width: 100% !important;
-    height: 2cm !important; /* Set to exactly 2cm height */
+    height: 2cm !important; /* Exact 2cm height constraint */
     min-height: 2cm !important;
     max-height: 2cm !important;
 }
 
 .chbs-booking-form-id-10007 .chbs-ride-info > div {
-    padding: 20px 24px !important; /* Reduced padding to fit 2cm height */
+    padding: 20px 24px !important; /* Reduced from 28px 32px to fit 2cm height */
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
@@ -1048,27 +1048,27 @@ body.page-template-temp-transfer,
     background: rgba(60, 179, 113, 0.02) !important;
 }
 
-/* Ride Info Typography & Icons - Adjusted for 2cm height */
+/* Ride Info Typography & Icons */
 .chbs-booking-form-id-10007 .chbs-ride-info > div > span:first-child {
     font-size: 32px !important; /* Reduced from 42px to fit 2cm height */
     color: var(--gt-primary) !important;
-    margin-bottom: 8px !important; /* Reduced margin */
+    margin-bottom: 8px !important; /* Reduced from 12px */
     margin-top: 0 !important;
     line-height: 1 !important;
 }
 
 .chbs-booking-form-id-10007 .chbs-ride-info > div > span:first-child + span {
-    font-size: 11px !important; /* Reduced from 13px */
+    font-size: 11px !important; /* Reduced from 13px to fit 2cm height */
     font-weight: 600 !important;
     color: var(--gt-muted) !important;
     text-transform: uppercase !important;
     letter-spacing: 0.08em !important;
-    margin-bottom: 3px !important; /* Reduced margin */
+    margin-bottom: 2px !important; /* Reduced from 4px */
     margin-left: 0 !important;
 }
 
 .chbs-booking-form-id-10007 .chbs-ride-info > div > span:first-child + span + span {
-    font-size: 20px !important; /* Reduced from 24px */
+    font-size: 20px !important; /* Reduced from 24px to fit 2cm height */
     font-weight: 700 !important;
     color: var(--gt-text) !important;
     margin-left: 0 !important;
@@ -1086,6 +1086,42 @@ body.page-template-temp-transfer,
     padding: 20px 24px !important;
     margin: 16px 0 !important;
     transition: all 0.3s ease !important;
+}
+
+/* Mobile Responsive Styles for Ride Info Box */
+@media (max-width: 767px) {
+    .chbs-booking-form-id-10007 .chbs-ride-info {
+        height: auto !important; /* Allow auto height on mobile */
+        min-height: 1.5cm !important; /* Minimum height for mobile */
+        max-height: none !important;
+        flex-direction: column !important; /* Stack vertically on mobile */
+    }
+    
+    .chbs-booking-form-id-10007 .chbs-ride-info > div {
+        padding: 16px 20px !important; /* Further reduced for mobile */
+        width: 100% !important; /* Full width on mobile */
+        height: auto !important;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(16, 32, 39, 0.08) !important;
+    }
+    
+    .chbs-booking-form-id-10007 .chbs-ride-info > div:last-child {
+        border-bottom: none !important;
+    }
+    
+    .chbs-booking-form-id-10007 .chbs-ride-info > div > span:first-child {
+        font-size: 28px !important; /* Further reduced for mobile */
+        margin-bottom: 6px !important;
+    }
+    
+    .chbs-booking-form-id-10007 .chbs-ride-info > div > span:first-child + span {
+        font-size: 10px !important; /* Further reduced for mobile */
+        margin-bottom: 1px !important;
+    }
+    
+    .chbs-booking-form-id-10007 .chbs-ride-info > div > span:first-child + span + span {
+        font-size: 18px !important; /* Further reduced for mobile */
+    }
 }
 
 .chbs-booking-form-id-10007 .chbs-route-info:hover,
@@ -1214,7 +1250,6 @@ body.page-template-temp-transfer,
     background: linear-gradient(135deg, var(--gt-accent) 0%, var(--gt-primary) 100%) !important;
 }
 
-/* Trust Badge Icons - Changed to Footer Orange Color */
 .chbs-trust-badge-icon {
     display: flex !important;
     align-items: center !important;
@@ -1222,8 +1257,8 @@ body.page-template-temp-transfer,
     width: 44px !important;
     height: 44px !important;
     border-radius: 12px !important;
-    background: linear-gradient(135deg, rgba(253, 126, 20, 0.1) 0%, rgba(253, 126, 20, 0.15) 100%) !important; /* Orange background */
-    color: #fd7e14 !important; /* Footer orange color */
+    background: linear-gradient(135deg, rgba(253, 126, 20, 0.1) 0%, rgba(253, 126, 20, 0.15) 100%) !important; /* Orange gradient background */
+    color: #fd7e14 !important; /* Orange icon color to match footer */
     font-size: 20px !important;
     font-weight: 600 !important;
     flex-shrink: 0 !important;
@@ -1269,8 +1304,8 @@ body.page-template-temp-transfer,
         width: 40px !important;
         height: 40px !important;
         font-size: 18px !important;
-        background: linear-gradient(135deg, rgba(253, 126, 20, 0.1) 0%, rgba(253, 126, 20, 0.15) 100%) !important; /* Keep orange on mobile */
-        color: #fd7e14 !important; /* Keep orange color on mobile */
+        background: linear-gradient(135deg, rgba(253, 126, 20, 0.1) 0%, rgba(253, 126, 20, 0.15) 100%) !important; /* Maintain orange on mobile */
+        color: #fd7e14 !important; /* Maintain orange icon color on mobile */
     }
     
     .chbs-trust-badge-title {
@@ -1387,14 +1422,11 @@ body.page-template-temp-transfer,
 @media (max-width: 767px) {
     .chbs-booking-form-id-10007 .chbs-ride-info {
         flex-direction: column !important;
-        height: auto !important; /* Allow automatic height on mobile */
-        min-height: 1.5cm !important; /* Reduced height for mobile */
     }
     
     .chbs-booking-form-id-10007 .chbs-ride-info > div {
         width: 100% !important;
-        padding: 16px 20px !important; /* Further reduced padding for mobile */
-        height: auto !important;
+        padding: 20px 24px !important;
     }
     
     .chbs-booking-form-id-10007 .chbs-ride-info > div:first-child {
@@ -1403,11 +1435,11 @@ body.page-template-temp-transfer,
     }
     
     .chbs-booking-form-id-10007 .chbs-ride-info > div > span:first-child {
-        font-size: 28px !important; /* Reduced for mobile */
+        font-size: 36px !important;
     }
     
     .chbs-booking-form-id-10007 .chbs-ride-info > div > span:first-child + span + span {
-        font-size: 18px !important; /* Reduced for mobile */
+        font-size: 20px !important;
     }
     
     .chbs-booking-form-id-10007 .chbs-route-info,
