@@ -90,13 +90,6 @@
                         </div>
                     </div>
                     <div class="chbs-trust-badge">
-                        <div class="chbs-trust-badge-icon">★</div>
-                        <div class="chbs-trust-badge-content">
-                            <div class="chbs-trust-badge-title">Satisfaction Guarantee</div>
-                            <div class="chbs-trust-badge-subtitle">Premium service quality assured</div>
-                        </div>
-                    </div>
-                    <div class="chbs-trust-badge">
                         <div class="chbs-trust-badge-icon">⟷</div>
                         <div class="chbs-trust-badge-content">
                             <div class="chbs-trust-badge-title">Door to Door Service</div>
