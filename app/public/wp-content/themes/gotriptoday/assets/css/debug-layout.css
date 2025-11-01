@@ -1,0 +1,36 @@
+/* DEBUG - Visual confirmation that CSS is loading */
+body::before {
+    content: "DEBUG: CSS LOADED - Two Column Layout Active";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #ff0000;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    z-index: 999999;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* Force the step to show with grid */
+.chbs-main-content-step-1 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    background: yellow !important;
+    min-height: 500px !important;
+}
+
+/* Force columns to show */
+.chbs-column-left {
+    background: lightblue !important;
+    border: 5px solid blue !important;
+    min-height: 400px !important;
+}
+
+.chbs-column-right {
+    background: lightgreen !important;
+    border: 5px solid green !important;
+    min-height: 400px !important;
+}

@@ -344,47 +344,6 @@
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/active.js"></script>
 <?php wp_footer(); ?>
 
-<!-- CHBS Vehicle Pre-selection Script -->
-<script>
-jQuery(document).ready(function($) {
-    // Check if we're on the booking page and have a pre-selected vehicle
-    if ($('.chbs-booking-form').length > 0) {
-        var vehicleData = sessionStorage.getItem('chbs_preselected_vehicle');
-        var forceStep2 = sessionStorage.getItem('chbs_force_step_2');
-        
-        if (vehicleData && forceStep2 === '1') {
-            vehicleData = JSON.parse(vehicleData);
-            console.log('Pre-selected vehicle:', vehicleData);
-            
-            // Wait for CHBS to fully load
-            setTimeout(function() {
-                // Try to auto-select the vehicle on step 2
-                var vehicleButton = $('.chbs-vehicle-list').find('[data-vehicle-id="' + vehicleData.id + '"]');
-                
-                if (vehicleButton.length > 0) {
-                    console.log('Auto-selecting vehicle:', vehicleData.name);
-                    vehicleButton.click();
-                    // Clear the session storage
-                    sessionStorage.removeItem('chbs_preselected_vehicle');
-                    sessionStorage.removeItem('chbs_force_step_2');
-                } else {
-                    console.log('Vehicle button not found, trying alternative selector');
-                    // Alternative: try clicking by vehicle name or other attributes
-                    $('.chbs-vehicle-list .chbs-button').each(function() {
-                        if ($(this).text().indexOf(vehicleData.name) !== -1) {
-                            $(this).click();
-                            sessionStorage.removeItem('chbs_preselected_vehicle');
-                            sessionStorage.removeItem('chbs_force_step_2');
-                            return false;
-                        }
-                    });
-                }
-            }, 1500);
-        }
-    }
-});
-</script>
-
 </body>
 
 </html>

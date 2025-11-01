@@ -194,7 +194,7 @@ add_action('wp_head', function () {
     }
 }, 1);
 
-// Enqueue booking page assets
+// Enqueue booking page assets with maximum priority
 function enqueue_booking_page_assets() {
     if (is_page('booking-page') || is_page_template('temp-transfer.php')) {
         wp_enqueue_style(
@@ -213,7 +213,177 @@ function enqueue_booking_page_assets() {
         );
     }
 }
-add_action('wp_enqueue_scripts', 'enqueue_booking_page_assets');
+add_action('wp_enqueue_scripts', 'enqueue_booking_page_assets', 9999);
+
+// ULTRA NUCLEAR OPTION: Inline critical CSS in footer to beat everything
+function force_booking_critical_css_inline() {
+    if (is_page('booking-page') || is_page_template('temp-transfer.php')) {
+        ?>
+        <style id="chbs-force-modern-design">
+            /* CRITICAL: MAXIMUM SPECIFICITY with html body prefix */
+            html body .chbs-booking-form-id-10007 .chbs-button,
+            html body .chbs-booking-form-id-10007 .chbs-button.chbs-button-style-1,
+            html body .chbs-booking-form-id-10007 .chbs-button.chbs-button-style-2,
+            html body .chbs-booking-form-id-10007 .chbs-button.chbs-button-style-1:hover,
+            html body .chbs-booking-form-id-10007 .chbs-button.chbs-button-style-2:hover,
+            html body .chbs-booking-form-id-10007 button[class*="chbs"],
+            html body .chbs-booking-form-id-10007 .chbs-main-content-navigation-button,
+            html body .chbs-booking-form-id-10007 a.chbs-button,
+            html body .chbs-booking-form-id-10007 .chbs-main-navigation-default>ul>li.chbs-state-selected>a>span:first-child {
+                background: linear-gradient(135deg, #3cb371 0%, #02a5ce 100%) !important;
+                background-color: #3cb371 !important;
+                border: none !important;
+                color: #ffffff !important;
+                font-weight: 600 !important;
+                padding: 12px 28px !important;
+                border-radius: 50px !important;
+                box-shadow: 0 4px 15px rgba(60, 179, 113, 0.3) !important;
+                text-shadow: none !important;
+                transition: all 0.3s ease !important;
+            }
+            
+            /* Force modern input styling */
+            html body .chbs-booking-form-id-10007 .chbs-form-field input[type="text"],
+            html body .chbs-booking-form-id-10007 .chbs-form-field input[type="email"],
+            html body .chbs-booking-form-id-10007 .chbs-form-field input[type="tel"],
+            html body .chbs-booking-form-id-10007 .chbs-form-field select,
+            html body .chbs-booking-form-id-10007 .chbs-form-field textarea,
+            html body .chbs-booking-form-id-10007 input[class*="chbs"],
+            html body .chbs-booking-form-id-10007 select[class*="chbs"],
+            html body .chbs-booking-form-id-10007 textarea[class*="chbs"] {
+                border: 1px solid rgba(13, 110, 84, 0.25) !important;
+                border-radius: 12px !important;
+                padding: 12px 16px !important;
+                background: #f9fbfa !important;
+                background-color: #f9fbfa !important;
+                font-size: 15px !important;
+                box-shadow: none !important;
+            }
+            
+            html body .chbs-booking-form-id-10007 input:focus,
+            html body .chbs-booking-form-id-10007 select:focus,
+            html body .chbs-booking-form-id-10007 textarea:focus {
+                border-color: #3cb371 !important;
+                box-shadow: 0 0 0 3px rgba(60, 179, 113, 0.1) !important;
+                background: #ffffff !important;
+                outline: none !important;
+            }
+            
+            /* Force white backgrounds */
+            html body .chbs-booking-form-id-10007 .chbs-main,
+            html body .chbs-booking-form-id-10007 .chbs-content,
+            html body .chbs-booking-form-id-10007 .chbs-step,
+            html body .chbs-booking-form-id-10007 .chbs-panel,
+            html body .chbs-booking-form-id-10007 .chbs-main-content,
+            html body .chbs-booking-form-id-10007 [class*="chbs-main-content"],
+            html body .chbs-booking-form-id-10007 [class*="chbs-step"] {
+                background: #ffffff !important;
+                background-color: #ffffff !important;
+            }
+            
+            /* Force modern navigation */
+            html body .chbs-booking-form-id-10007 .chbs-main-navigation-default > ul > li.chbs-state-selected > a {
+                background: linear-gradient(135deg, #3cb371 0%, #02a5ce 100%) !important;
+                color: #ffffff !important;
+            }
+            
+            html body .chbs-booking-form-id-10007 .chbs-main-navigation-default > ul > li.chbs-state-selected > a > span:first-child {
+                background: linear-gradient(135deg, #3cb371 0%, #02a5ce 100%) !important;
+                color: #ffffff !important;
+            }
+        </style>
+        <?php
+    }
+}
+add_action('wp_footer', 'force_booking_critical_css_inline', 999999);
+
+// Add inline critical CSS to override CHBS with maximum specificity
+function add_critical_chbs_override_css() {
+    if (is_page('booking-page') || is_page_template('temp-transfer.php')) {
+        ?>
+        <style id="chbs-critical-override">
+            /* CRITICAL OVERRIDES - Maximum specificity to survive CHBS updates */
+            body.page-template-temp-transfer .booking-form-wrapper .chbs-main,
+            body.page-template-temp-transfer .booking-form-wrapper [class*="chbs"],
+            html body.page-template-temp-transfer .go_trip_bookingform [class*="chbs"] {
+                font-family: inherit !important;
+            }
+            
+            /* Force modern button styles */
+            body.page-template-temp-transfer .booking-form-wrapper .chbs-button,
+            body.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-1,
+            body.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-2,
+            body.page-template-temp-transfer .booking-form-wrapper button[class*="chbs"],
+            html body.page-template-temp-transfer .go_trip_bookingform button[class*="chbs"] {
+                background: linear-gradient(135deg, #3cb371 0%, #02a5ce 100%) !important;
+                border: none !important;
+                color: #ffffff !important;
+                font-weight: 600 !important;
+                padding: 0.875rem 1.75rem !important;
+                border-radius: 999px !important;
+                transition: all 0.3s ease !important;
+                text-transform: none !important;
+                box-shadow: 0 4px 15px rgba(60, 179, 113, 0.3) !important;
+            }
+            
+            body.page-template-temp-transfer .booking-form-wrapper .chbs-button:hover,
+            body.page-template-temp-transfer .booking-form-wrapper .chbs-button-style-1:hover,
+            html body.page-template-temp-transfer .go_trip_bookingform button[class*="chbs"]:hover {
+                background: linear-gradient(135deg, #2da05a 0%, #0189ab 100%) !important;
+                transform: translateY(-2px) !important;
+                box-shadow: 0 6px 20px rgba(60, 179, 113, 0.4) !important;
+            }
+            
+            /* Force modern form field styles */
+            body.page-template-temp-transfer .booking-form-wrapper .chbs-form-field input,
+            body.page-template-temp-transfer .booking-form-wrapper .chbs-form-field select,
+            body.page-template-temp-transfer .booking-form-wrapper .chbs-form-field textarea,
+            html body.page-template-temp-transfer .go_trip_bookingform input[class*="chbs"],
+            html body.page-template-temp-transfer .go_trip_bookingform select[class*="chbs"] {
+                border: 1px solid rgba(13, 110, 84, 0.25) !important;
+                border-radius: 0.75rem !important;
+                padding: 0.75rem 0.95rem !important;
+                background: #f9fbfa !important;
+                font-size: 0.95rem !important;
+                transition: all 0.2s ease !important;
+            }
+            
+            body.page-template-temp-transfer .booking-form-wrapper .chbs-form-field input:focus,
+            body.page-template-temp-transfer .booking-form-wrapper .chbs-form-field select:focus,
+            html body.page-template-temp-transfer .go_trip_bookingform input[class*="chbs"]:focus {
+                border-color: #3cb371 !important;
+                box-shadow: 0 0 0 3px rgba(60, 179, 113, 0.1) !important;
+                background: #ffffff !important;
+                outline: none !important;
+            }
+            
+            /* Force white backgrounds on all CHBS containers */
+            body.page-template-temp-transfer .booking-form-wrapper .chbs-main,
+            body.page-template-temp-transfer .booking-form-wrapper .chbs-content,
+            body.page-template-temp-transfer .booking-form-wrapper .chbs-step,
+            body.page-template-temp-transfer .booking-form-wrapper .chbs-panel,
+            html body.page-template-temp-transfer .go_trip_bookingform [class*="chbs-main"] {
+                background: #ffffff !important;
+            }
+            
+            /* Force modern navigation styles */
+            body.page-template-temp-transfer .booking-form-wrapper .chbs-main-navigation-default > ul > li.chbs-state-selected > a,
+            html body.page-template-temp-transfer .go_trip_bookingform .chbs-main-navigation-default > ul > li.chbs-state-selected > a {
+                background: linear-gradient(135deg, #3cb371 0%, #02a5ce 100%) !important;
+                color: #ffffff !important;
+            }
+            
+            /* Force green accents throughout */
+            body.page-template-temp-transfer .booking-form-wrapper [class*="chbs-price"],
+            html body.page-template-temp-transfer .go_trip_bookingform [class*="chbs-price"] {
+                color: #0f3d57 !important;
+                font-weight: 700 !important;
+            }
+        </style>
+        <?php
+    }
+}
+add_action('wp_head', 'add_critical_chbs_override_css', 99999);
 
 // Enqueue checkout page assets
 function enqueue_checkout_page_assets() {

@@ -1,0 +1,12 @@
+/* Safe CSS to hide ONLY the distance/time meta boxes */
+.chbs-booking-form-content-meta {
+    display: none !important;
+}
+
+.chbs-booking-form-content-meta-list {
+    display: none !important;
+}
+
+.chbs-booking-form-content-meta-item {
+    display: none !important;
+}

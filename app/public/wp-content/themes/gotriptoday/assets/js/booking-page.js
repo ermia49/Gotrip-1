@@ -52,46 +52,10 @@
         });
     }
 
-    function removeMarketingBlocks() {
-        // Remove all Gutenberg blocks in booking section
-        var selectors = [
-            ".booking-section .wp-block-group",
-            ".booking-section .wp-block-columns",
-            ".booking-form-section .wp-block-group",
-            ".booking-form-section .wp-block-columns",
-            ".booking-section > .container > .wp-block-group",
-            ".booking-section > .container > .wp-block-columns",
-            'section.booking-section div[class*="wp-block"]:not(.booking-step):not(.booking-benefits):not(.booking-form-wrapper)',
-            'section.booking-form-section div[class*="wp-block"]:not(.booking-step):not(.booking-benefits):not(.booking-form-wrapper)'
-        ];
-
-        selectors.forEach(function(selector) {
-            var elements = document.querySelectorAll(selector);
-            elements.forEach(function(el) {
-                if (el.parentNode) {
-                    el.parentNode.removeChild(el);
-                }
-            });
-        });
-
-        // Also remove any element containing the marketing text
-        var allDivs = document.querySelectorAll('.booking-section div, .booking-form-section div');
-        allDivs.forEach(function(div) {
-            var text = div.textContent || '';
-            if (text.includes('Trusted transfers across Germany') || 
-                text.includes('Licensed EU Chauffeurs') ||
-                text.includes('verified chauffeurs')) {
-                if (div.parentNode) {
-                    div.parentNode.removeChild(div);
-                }
-            }
-        });
-    }
-
     document.addEventListener("DOMContentLoaded", function () {
         handleWidgetStepReset();
         enhanceTabs();
         manageFormFocus();
-        removeMarketingBlocks();
     });
 })();
+
