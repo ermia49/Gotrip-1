@@ -564,5 +564,221 @@ body.page-template-temp-transfer,
     }
 }
 
+/* ===================================================================== */
+/* CHBS Date & Time Picker Popup Styling - GoTrip Theme Integration    */
+/* ===================================================================== */
+
+/* Datepicker Popup Container */
+.chbs-datepicker.ui-datepicker,
+.chbs-datepicker#ui-datepicker-div {
+    background: var(--gt-surface) !important;
+    border: 1px solid var(--gt-border) !important;
+    border-radius: 18px !important;
+    box-shadow: 0 24px 64px -24px rgba(2, 165, 206, 0.35) !important;
+    padding: 18px !important;
+    margin-top: 8px !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* Datepicker Header */
+.chbs-datepicker.ui-datepicker .ui-datepicker-header {
+    background: linear-gradient(135deg, var(--gt-primary), var(--gt-primary-dark)) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 14px !important;
+    margin-bottom: 16px !important;
+}
+
+.chbs-datepicker.ui-datepicker .ui-datepicker-title {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+}
+
+/* Datepicker Navigation Arrows */
+.chbs-datepicker.ui-datepicker .ui-datepicker-prev,
+.chbs-datepicker.ui-datepicker .ui-datepicker-next {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    color: #ffffff !important;
+    width: 32px !important;
+    height: 32px !important;
+    top: 8px !important;
+}
+
+.chbs-datepicker.ui-datepicker .ui-datepicker-prev:hover,
+.chbs-datepicker.ui-datepicker .ui-datepicker-next:hover {
+    background: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Datepicker Calendar Table */
+.chbs-datepicker.ui-datepicker table {
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+.chbs-datepicker.ui-datepicker th {
+    color: var(--gt-muted) !important;
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    padding: 8px 4px !important;
+}
+
+/* Datepicker Day Cells */
+.chbs-datepicker.ui-datepicker td {
+    padding: 2px !important;
+}
+
+.chbs-datepicker.ui-datepicker td a,
+.chbs-datepicker.ui-datepicker td span {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 10px !important;
+    color: var(--gt-text) !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    margin: 1px !important;
+}
+
+.chbs-datepicker.ui-datepicker td a:hover {
+    background: rgba(2, 165, 206, 0.1) !important;
+    color: var(--gt-primary-dark) !important;
+}
+
+.chbs-datepicker.ui-datepicker .ui-state-active,
+.chbs-datepicker.ui-datepicker .ui-state-active:hover {
+    background: var(--gt-primary) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+.chbs-datepicker.ui-datepicker .ui-state-highlight {
+    background: var(--gt-accent) !important;
+    color: #ffffff !important;
+}
+
+/* Timepicker Popup Container */
+.ui-timepicker-wrapper {
+    background: var(--gt-surface) !important;
+    border: 1px solid var(--gt-border) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 24px 64px -24px rgba(2, 165, 206, 0.35) !important;
+    padding: 8px !important;
+    margin-top: 8px !important;
+    max-height: 220px !important;
+    width: 200px !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* Timepicker List Items */
+.ui-timepicker-list {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.ui-timepicker-list li {
+    padding: 12px 16px !important;
+    border-radius: 12px !important;
+    margin: 2px 0 !important;
+    color: var(--gt-text) !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+}
+
+.ui-timepicker-list li:hover {
+    background: rgba(2, 165, 206, 0.08) !important;
+    color: var(--gt-primary-dark) !important;
+}
+
+.ui-timepicker-list li.ui-timepicker-selected,
+.ui-timepicker-list li.ui-timepicker-selected:hover {
+    background: var(--gt-primary) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+.ui-timepicker-duration {
+    color: var(--gt-muted) !important;
+    font-size: 12px !important;
+}
+
+.ui-timepicker-list li:hover .ui-timepicker-duration {
+    color: rgba(2, 165, 206, 0.7) !important;
+}
+
+.ui-timepicker-list li.ui-timepicker-selected .ui-timepicker-duration {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Enhanced Z-Index for Popup Visibility */
+.chbs-datepicker.ui-datepicker,
+.chbs-datepicker#ui-datepicker-div,
+.ui-timepicker-wrapper {
+    z-index: 99999 !important;
+    position: absolute !important;
+}
+
+/* Disabled/Unavailable Date Styling */
+.chbs-datepicker.ui-datepicker .ui-state-disabled,
+.chbs-datepicker.ui-datepicker .ui-state-disabled:hover {
+    background: transparent !important;
+    color: rgba(16, 32, 39, 0.25) !important;
+    cursor: not-allowed !important;
+}
+
+/* Today's Date Highlight */
+.chbs-datepicker.ui-datepicker .ui-state-highlight:not(.ui-state-active) {
+    background: rgba(60, 179, 113, 0.15) !important;
+    color: var(--gt-accent) !important;
+    font-weight: 600 !important;
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 767px) {
+    .chbs-datepicker.ui-datepicker,
+    .chbs-datepicker#ui-datepicker-div {
+        padding: 14px !important;
+        border-radius: 16px !important;
+        margin-top: 6px !important;
+    }
+    
+    .chbs-datepicker.ui-datepicker .ui-datepicker-header {
+        padding: 12px !important;
+        border-radius: 10px !important;
+        margin-bottom: 14px !important;
+    }
+    
+    .chbs-datepicker.ui-datepicker td a,
+    .chbs-datepicker.ui-datepicker td span {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 13px !important;
+    }
+    
+    .ui-timepicker-wrapper {
+        width: 180px !important;
+        padding: 6px !important;
+        border-radius: 14px !important;
+    }
+    
+    .ui-timepicker-list li {
+        padding: 10px 14px !important;
+        border-radius: 10px !important;
+        font-size: 13px !important;
+    }
+}
+
 
 
