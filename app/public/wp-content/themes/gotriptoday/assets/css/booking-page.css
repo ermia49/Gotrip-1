@@ -780,5 +780,227 @@ body.page-template-temp-transfer,
     }
 }
 
+/* ===================================================================== */
+/* CHBS Dropdown Styling - Address, Transfer Type & Extra Time Pickers */
+/* ===================================================================== */
+
+/* Google Places Autocomplete (Address Picker) */
+.pac-container {
+    background: var(--gt-surface) !important;
+    border: 1px solid var(--gt-border) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 24px 64px -24px rgba(2, 165, 206, 0.35) !important;
+    padding: 8px !important;
+    margin-top: 4px !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    z-index: 99999 !important;
+}
+
+.pac-item {
+    padding: 12px 16px !important;
+    border-radius: 12px !important;
+    margin: 2px 0 !important;
+    color: var(--gt-text) !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+    border: none !important;
+    border-bottom: none !important;
+}
+
+.pac-item:hover,
+.pac-item.pac-item-selected {
+    background: rgba(2, 165, 206, 0.08) !important;
+    color: var(--gt-primary-dark) !important;
+}
+
+.pac-item-query {
+    color: var(--gt-text) !important;
+    font-weight: 600 !important;
+}
+
+.pac-matched {
+    color: var(--gt-primary) !important;
+    font-weight: 700 !important;
+}
+
+.pac-icon {
+    margin-right: 12px !important;
+    margin-top: 2px !important;
+}
+
+/* jQuery UI Autocomplete (General) */
+.ui-autocomplete {
+    background: var(--gt-surface) !important;
+    border: 1px solid var(--gt-border) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 24px 64px -24px rgba(2, 165, 206, 0.35) !important;
+    padding: 8px !important;
+    margin-top: 4px !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    z-index: 99999 !important;
+    max-height: 250px !important;
+    overflow-y: auto !important;
+}
+
+.ui-autocomplete .ui-menu-item {
+    padding: 0 !important;
+    margin: 2px 0 !important;
+    list-style: none !important;
+}
+
+.ui-autocomplete .ui-menu-item-wrapper {
+    padding: 12px 16px !important;
+    border-radius: 12px !important;
+    color: var(--gt-text) !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+    display: block !important;
+}
+
+.ui-autocomplete .ui-menu-item-wrapper:hover,
+.ui-autocomplete .ui-state-active .ui-menu-item-wrapper {
+    background: rgba(2, 165, 206, 0.08) !important;
+    color: var(--gt-primary-dark) !important;
+}
+
+/* Select2 Dropdown (Transfer Type, Extra Time) */
+.chbs-booking-form-id-10007 .select2-dropdown {
+    background: var(--gt-surface) !important;
+    border: 1px solid var(--gt-border) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 24px 64px -24px rgba(2, 165, 206, 0.35) !important;
+    padding: 8px !important;
+    margin-top: 4px !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    z-index: 99999 !important;
+}
+
+.chbs-booking-form-id-10007 .select2-results__options {
+    max-height: 250px !important;
+    padding: 0 !important;
+}
+
+.chbs-booking-form-id-10007 .select2-results__option {
+    padding: 12px 16px !important;
+    border-radius: 12px !important;
+    margin: 2px 0 !important;
+    color: var(--gt-text) !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+}
+
+.chbs-booking-form-id-10007 .select2-results__option:hover,
+.chbs-booking-form-id-10007 .select2-results__option--highlighted,
+.chbs-booking-form-id-10007 .select2-results__option[aria-selected="true"] {
+    background: rgba(2, 165, 206, 0.08) !important;
+    color: var(--gt-primary-dark) !important;
+}
+
+.chbs-booking-form-id-10007 .select2-results__option--selected {
+    background: var(--gt-primary) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+/* Select2 Search Field */
+.chbs-booking-form-id-10007 .select2-search--dropdown {
+    padding: 8px !important;
+    border-bottom: 1px solid var(--gt-border) !important;
+    margin-bottom: 4px !important;
+}
+
+.chbs-booking-form-id-10007 .select2-search__field {
+    background: var(--gt-surface-alt) !important;
+    border: 1px solid rgba(16, 32, 39, 0.12) !important;
+    border-radius: 12px !important;
+    padding: 10px 14px !important;
+    font-size: 14px !important;
+    color: var(--gt-text) !important;
+    width: 100% !important;
+}
+
+.chbs-booking-form-id-10007 .select2-search__field:focus {
+    border-color: var(--gt-primary) !important;
+    box-shadow: 0 0 0 3px rgba(2, 165, 206, 0.15) !important;
+    outline: none !important;
+}
+
+/* jQuery UI Selectmenu (Legacy Support) */
+.ui-selectmenu-menu {
+    background: var(--gt-surface) !important;
+    border: 1px solid var(--gt-border) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 24px 64px -24px rgba(2, 165, 206, 0.35) !important;
+    padding: 8px !important;
+    margin-top: 4px !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    z-index: 99999 !important;
+}
+
+.ui-selectmenu-menu .ui-menu-item-wrapper {
+    padding: 12px 16px !important;
+    border-radius: 12px !important;
+    margin: 2px 0 !important;
+    color: var(--gt-text) !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+}
+
+.ui-selectmenu-menu .ui-menu-item-wrapper:hover,
+.ui-selectmenu-menu .ui-state-active .ui-menu-item-wrapper {
+    background: rgba(2, 165, 206, 0.08) !important;
+    color: var(--gt-primary-dark) !important;
+}
+
+/* Enhanced Focus States for Dropdown Triggers */
+.chbs-booking-form-id-10007 .select2-container .select2-selection:focus,
+.chbs-booking-form-id-10007 .select2-container .select2-selection.select2-selection--open {
+    border-color: var(--gt-primary) !important;
+    box-shadow: 0 0 0 3px rgba(2, 165, 206, 0.15) !important;
+    outline: none !important;
+}
+
+/* Dropdown Arrow Styling */
+.chbs-booking-form-id-10007 .select2-container .select2-selection__arrow b {
+    border-color: var(--gt-muted) transparent transparent transparent !important;
+    transition: all 0.2s ease !important;
+}
+
+.chbs-booking-form-id-10007 .select2-container.select2-container--open .select2-selection__arrow b {
+    border-color: transparent transparent var(--gt-muted) transparent !important;
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 767px) {
+    .pac-container,
+    .ui-autocomplete,
+    .chbs-booking-form-id-10007 .select2-dropdown,
+    .ui-selectmenu-menu {
+        border-radius: 14px !important;
+        padding: 6px !important;
+    }
+    
+    .pac-item,
+    .ui-autocomplete .ui-menu-item-wrapper,
+    .chbs-booking-form-id-10007 .select2-results__option,
+    .ui-selectmenu-menu .ui-menu-item-wrapper {
+        padding: 10px 14px !important;
+        border-radius: 10px !important;
+        font-size: 13px !important;
+    }
+    
+    .chbs-booking-form-id-10007 .select2-search__field {
+        padding: 8px 12px !important;
+        font-size: 13px !important;
+    }
+}
+
 
 
