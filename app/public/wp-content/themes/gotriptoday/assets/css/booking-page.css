@@ -99,10 +99,10 @@ body.page-template-temp-transfer,
 .booking-micro-hero {
     background: linear-gradient(135deg, rgba(60, 179, 113, 0.95), rgba(2, 165, 206, 0.95));
     color: #ffffff;
-    min-height: 4cm;
+    min-height: 1cm; /* Reduced from 4cm (-3cm) */
     padding: 0 0;
-    margin-bottom: 32px;
-    box-shadow: 0 18px 48px -36px rgba(2, 165, 206, 0.65);
+    margin-bottom: 22px; /* Proportionally reduced from 32px */
+    box-shadow: 0 12px 32px -24px rgba(2, 165, 206, 0.65); /* Proportionally reduced */
     display: flex;
     align-items: center;
 }
@@ -133,6 +133,8 @@ body.page-template-temp-transfer,
 @media (max-width: 575px) {
     .booking-micro-hero {
         border-radius: 0;
+        min-height: 0.8cm; /* Further reduced for mobile */
+        margin-bottom: 16px; /* Proportionally reduced for mobile */
     }
     }
 
@@ -152,6 +154,10 @@ body.page-template-temp-transfer,
     border: none !important;
     margin-left: -2cm !important; /* Extend form width 2cm to the left */
     margin-right: -2cm !important; /* Extend form width 2cm to the right */
+    transform: scale(0.85); /* Scale down entire form by 15% to accommodate -3cm height reduction */
+    transform-origin: top center;
+    margin-top: -20px !important; /* Adjust top spacing after scaling */
+    margin-bottom: -30px !important; /* Adjust bottom spacing after scaling */
 }
 
 .chbs-booking-form-id-10007 .chbs-main-header,
@@ -176,15 +182,15 @@ body.page-template-temp-transfer,
 
 .chbs-booking-form-id-10007 .chbs-section {
     background: var(--gt-surface-alt) !important;
-    border-radius: 18px !important;
-    padding: 28px !important;
+    border-radius: 15px !important; /* Proportionally reduced from 18px */
+    padding: 20px !important; /* Proportionally reduced from 28px */
     border: 1px solid var(--gt-border) !important;
-    margin-bottom: 28px !important;
+    margin-bottom: 20px !important; /* Proportionally reduced from 28px */
 }
 
 .chbs-booking-form-id-10007 .chbs-form-field,
 .chbs-booking-form-id-10007 .chbs-form-line {
-    margin-bottom: 24px !important;
+    margin-bottom: 18px !important; /* Proportionally reduced from 24px */
 }
 
 .chbs-booking-form-id-10007 label,
@@ -193,7 +199,7 @@ body.page-template-temp-transfer,
     font-weight: 600 !important;
     color: var(--gt-text) !important;
     letter-spacing: 0.01em;
-    margin-bottom: 10px !important;
+    margin-bottom: 7px !important; /* Proportionally reduced from 10px */
     display: inline-block;
 }
 
@@ -207,9 +213,9 @@ body.page-template-temp-transfer,
 .chbs-booking-form-id-10007 textarea {
     background: #ffffff !important;
     border: 1px solid rgba(16, 32, 39, 0.12) !important;
-    border-radius: 16px !important;
-    padding: 14px 18px !important;
-    font-size: 16px !important;
+    border-radius: 14px !important; /* Proportionally reduced from 16px */
+    padding: 10px 14px !important; /* Proportionally reduced from 14px 18px */
+    font-size: 14px !important; /* Proportionally reduced from 16px */
     line-height: 1.55 !important;
     color: var(--gt-text) !important;
     transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease !important;
@@ -1142,24 +1148,24 @@ body.page-template-temp-transfer,
     box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* Google Maps Container - 30% smaller height */
+/* Google Maps Container - Proportionally reduced for -3cm height */
 .chbs-booking-form-id-10007 #chbs_google_map {
-    border-radius: 16px !important;
+    border-radius: 14px !important; /* Proportionally reduced from 16px */
     overflow: hidden !important;
-    min-height: 210px !important; /* Reduced from 300px (30% smaller) */
-    height: 210px !important;
+    min-height: 179px !important; /* Proportionally reduced from 210px */
+    height: 179px !important;
     border: none !important;
 }
 
 .chbs-booking-form-id-10007 .chbs-google-map #chbs_google_map {
-    height: 294px !important; /* Reduced from 420px (30% smaller) */
-    border-radius: 16px !important;
+    height: 250px !important; /* Proportionally reduced from 294px */
+    border-radius: 14px !important; /* Proportionally reduced from 16px */
     overflow: hidden !important;
 }
 
 .chbs-booking-form-id-10007 .chbs-google-map-summary #chbs_google_map {
-    height: 175px !important; /* Reduced from 250px (30% smaller) */
-    border-radius: 16px !important;
+    height: 149px !important; /* Proportionally reduced from 175px */
+    border-radius: 14px !important; /* Proportionally reduced from 16px */
     overflow: hidden !important;
 }
 
