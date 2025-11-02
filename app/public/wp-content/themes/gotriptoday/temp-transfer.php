@@ -4,12 +4,6 @@
 get_header();
 ?>
 
-<section class="booking-micro-hero" role="presentation" aria-hidden="true">
-    <div class="container">
-        <div class="micro-hero-content" aria-hidden="true"></div>
-    </div>
-</section>
-
 <section class="booking-trust-strip" aria-label="Service trust highlights">
     <div class="container">
         <ul class="trust-items" role="list">
