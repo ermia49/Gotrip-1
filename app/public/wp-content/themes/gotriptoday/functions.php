@@ -232,6 +232,17 @@ function enqueue_checkout_page_assets() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_checkout_page_assets');
 
+// Enqueue global page gradient background
+function enqueue_page_gradient_assets() {
+    wp_enqueue_style(
+        'page-gradient',
+        get_stylesheet_directory_uri() . '/assets/css/page-gradient.css',
+        array(),
+        '1.0.' . time()
+    );
+}
+add_action('wp_enqueue_scripts', 'enqueue_page_gradient_assets', 5);
+
 
 function enqueue_wishlist_script() {
     if (is_singular('tours') || is_page_template('wishlist.php')) { 

@@ -1,3 +1,65 @@
+/* ========================================
+   PAGE GRADIENT BACKGROUND
+   ======================================== */
+
+/* Main page background gradient - dark footer colors to light */
+body {
+    background: linear-gradient(
+        to bottom, 
+        rgba(16, 26, 27, 0.25) 0%,      /* Dark footer color at top */
+        rgba(12, 24, 26, 0.18) 15%,     /* Fade down */
+        rgba(12, 28, 30, 0.12) 30%,     /* More fade */
+        rgba(255, 255, 255, 0.92) 60%,  /* White middle */
+        rgba(249, 249, 249, 0.96) 80%,  /* Light gray */
+        rgba(245, 248, 249, 1) 100%     /* Lightest at bottom */
+    ) !important;
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Ensure content areas have proper background for readability */
+.container, 
+.container-fluid,
+.booking-section,
+main {
+    position: relative;
+    z-index: 1;
+}
+
+/* Header area should blend nicely with dark top */
+.header-area {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(16, 26, 27, 0.06);
+}
+
+/* Footer should maintain its dark colors */
+.footer-wrapper {
+    position: relative;
+    z-index: 10;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        background: linear-gradient(
+            to bottom, 
+            rgba(16, 26, 27, 0.20) 0%,      /* Slightly lighter on mobile */
+            rgba(12, 24, 26, 0.15) 20%,     
+            rgba(12, 28, 30, 0.10) 40%,     
+            rgba(255, 255, 255, 0.95) 70%,  
+            rgba(249, 249, 249, 0.98) 90%,  
+            rgba(245, 248, 249, 1) 100%     
+        ) !important;
+        background-attachment: scroll; /* Better performance on mobile */
+    }
+}
+
+/* ========================================
+   END PAGE GRADIENT BACKGROUND
+   ======================================== */
+
 /* .chbs-meta-icon-2 .icon {
   font-family: "chbs-meta-icon-2" !important;
 }
