@@ -131,6 +131,30 @@
         }
     }
 
+    // Smooth scroll to booking form functionality
+    function initSmoothScroll() {
+        const scrollButtons = document.querySelectorAll('.scroll-to-form');
+        
+        scrollButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const headerHeight = document.querySelector('.header-area')?.offsetHeight || 80;
+                    const targetPosition = targetElement.offsetTop - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    }
+
     document.addEventListener("DOMContentLoaded", function () {
         handleWidgetStepReset();
         enhanceTabs();
@@ -141,6 +165,9 @@
         
         // Setup observer for dynamic content
         observeFormChanges();
+        
+        // Initialize smooth scroll functionality
+        initSmoothScroll();
         
         // Also try to inject badges after a short delay in case CHBS loads content dynamically
         setTimeout(injectTrustBadges, 1000);

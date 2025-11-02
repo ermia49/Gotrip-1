@@ -4,26 +4,28 @@
 get_header();
 ?>
 
-<section class="booking-trust-strip" aria-label="Service trust highlights">
-    <div class="container">
-        <ul class="trust-items" role="list">
-            <li class="trust-item">
-                <span class="trust-icon" aria-hidden="true"><i class="ti ti-shield-check"></i></span>
-                <span class="trust-text"><?php esc_html_e('Licensed chauffeurs & insured fleet', 'gotriptoday'); ?></span>
-            </li>
-            <li class="trust-item">
-                <span class="trust-icon" aria-hidden="true"><i class="ti ti-clock-check"></i></span>
-                <span class="trust-text"><?php esc_html_e('On-time guarantee with live flight tracking', 'gotriptoday'); ?></span>
-            </li>
-            <li class="trust-item">
-                <span class="trust-icon" aria-hidden="true"><i class="ti ti-star"></i></span>
-                <span class="trust-text"><?php esc_html_e('5-star rated service across Europe', 'gotriptoday'); ?></span>
-            </li>
-            <li class="trust-item">
-                <span class="trust-icon" aria-hidden="true"><i class="ti ti-headset"></i></span>
-                <span class="trust-text"><?php esc_html_e('24/7 concierge support in multiple languages', 'gotriptoday'); ?></span>
-            </li>
-        </ul>
+<section class="booking-hero-section" role="banner">
+    <div class="booking-hero-container">
+        <div class="booking-hero-content">
+            <div class="hero-text-content">
+                <h1 class="hero-main-title">Book Your Comfortable Transfer</h1>
+                <p class="hero-subtitle">Premium chauffeur service across Germany with luxury vehicles and professional drivers</p>
+                <div class="hero-cta-button">
+                    <a href="#booking-form" class="btn-hero-cta">
+                        <span class="btn-text">Book Now</span>
+                        <span class="btn-icon"><i class="ti ti-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-decorative-elements">
+            <div class="hero-gradient-orb"></div>
+            <div class="hero-floating-icons">
+                <div class="floating-icon icon-1"><i class="ti ti-car"></i></div>
+                <div class="floating-icon icon-2"><i class="ti ti-shield-check"></i></div>
+                <div class="floating-icon icon-3"><i class="ti ti-clock"></i></div>
+            </div>
+        </div>
     </div>
 </section>
 
