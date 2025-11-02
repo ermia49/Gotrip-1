@@ -1,0 +1,141 @@
+/* Two-phase, two-column layout for CHBS (non-invasive) */
+/* Scope to specific form ID to avoid side effects */
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init {
+  --gap: 24px;
+}
+
+/* Hide stepper/navigation/header elements */
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-main-navigation-default,
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-header,
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-header-step {
+  display: none !important;
+}
+
+/* Remove hard borders/shadows for one-page feel */
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-main,
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-content,
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-panel,
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-step,
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-box-shadow {
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-tab,
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-tab > ul,
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-tab > div,
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-layout-50x50,
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-layout-25x75,
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-layout-column-left,
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-layout-column-right {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Core grid: two columns, no outer borders */
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-main-content {
+  display: grid !important;
+  grid-template-columns: minmax(340px, 1fr) minmax(340px, 1fr);
+  gap: var(--gap);
+  align-items: start;
+}
+
+/* Left column: Step 1 or Step 2 main pane (depending on phase) */
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-main-content-step-1,
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-main-content-step-2,
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-main-content-step-3,
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-main-content-step-4 {
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+}
+
+/* Hide map and ride info in Phase 1 context */
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-google-map,
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-ride-info,
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init [class*="ride-info"],
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init [class*="distance"],
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init [class*="km"],
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init [class*="map"] {
+  display: none !important;
+}
+
+/* Right column context wrappers created by JS */
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .gotrip-right-context {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  min-height: 320px;
+}
+
+/* Vehicles list shown as context in Phase 1 */
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .gotrip-context-vehicles {
+  display: block !important;
+}
+
+/* Summary shown as context in Phase 2 */
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .gotrip-context-summary {
+  display: block !important;
+}
+
+/* Placeholder card */
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .gotrip-placeholder {
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(6px);
+  color: #0f3d57;
+  font-size: 14px;
+  line-height: 1.4;
+}
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .gotrip-placeholder strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+/* Minimal step label */
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .gotrip-mini-step {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+/* Trust badges under primary CTA */
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .gotrip-trust-badges {
+  margin-top: 12px;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 12px;
+  align-items: center;
+}
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .gotrip-trust-badges .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #374151;
+}
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .gotrip-trust-badges .dot {
+  width: 6px; height: 6px; border-radius: 999px; background:#3cb371;
+}
+
+/* Ensure inner panes can scroll without page scroll */
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-main-content-step-1,
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-main-content-step-2,
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-main-content-step-3,
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init .chbs-main-content-step-4 {
+  max-height: calc(100vh - 260px);
+  overflow: auto;
+  padding-right: 18px !important;
+}
+
+/* Phase toggles (controlled by JS by toggling classes on form) */
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init.gotrip-phase-1 .gotrip-context-vehicles { display:block; }
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init.gotrip-phase-1 .gotrip-context-summary { display:none; }
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init.gotrip-phase-2 .gotrip-context-vehicles { display:none; }
+html body .chbs-booking-form-id-10007.gotrip-two-phase-init.gotrip-phase-2 .gotrip-context-summary { display:block; }
+
+/* Make plugin's inactive tabs visible when we need them for context */
+/* We reveal step 2 panel inside the right context via cloning; no need to override ui-tabs-panel display here */
